@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.LikeMapper" >
+  <resultMap id="BaseResultMap" type="com.shop.entity.Like" >
+    <id column="l_id" property="lId" jdbcType="INTEGER" />
+    <result column="l_shopid" property="lShopid" jdbcType="INTEGER" />
+    <result column="l_username" property="lUsername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    l_id, l_shopid, l_username
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from os_like
+    where l_id = #{lId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from os_like
+    where l_id = #{lId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shop.entity.Like" >
+    insert into os_like (l_id, l_shopid, l_username
+      )
+    values (#{lId,jdbcType=INTEGER}, #{lShopid,jdbcType=INTEGER}, #{lUsername,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shop.entity.Like" >
+    insert into os_like
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="lId != null" >
+        l_id,
+      </if>
+      <if test="lShopid != null" >
+        l_shopid,
+      </if>
+      <if test="lUsername != null" >
+        l_username,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="lId != null" >
+        #{lId,jdbcType=INTEGER},
+      </if>
+      <if test="lShopid != null" >
+        #{lShopid,jdbcType=INTEGER},
+      </if>
+      <if test="lUsername != null" >
+        #{lUsername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shop.entity.Like" >
+    update os_like
+    <set >
+      <if test="lShopid != null" >
+        l_shopid = #{lShopid,jdbcType=INTEGER},
+      </if>
+      <if test="lUsername != null" >
+        l_username = #{lUsername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where l_id = #{lId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shop.entity.Like" >
+    update os_like
+    set l_shopid = #{lShopid,jdbcType=INTEGER},
+      l_username = #{lUsername,jdbcType=VARCHAR}
+    where l_id = #{lId,jdbcType=INTEGER}
+  </update>
+</mapper>

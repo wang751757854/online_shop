@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.shop.dao.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.shop.entity.Order" >
+    <id column="o_id" property="oId" jdbcType="INTEGER" />
+    <result column="o_number" property="oNumber" jdbcType="INTEGER" />
+    <result column="o_shopid" property="oShopid" jdbcType="INTEGER" />
+    <result column="o_username" property="oUsername" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    o_id, o_number, o_shopid, o_username
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from os_order
+    where o_id = #{oId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from os_order
+    where o_id = #{oId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.shop.entity.Order" >
+    insert into os_order (o_id, o_number, o_shopid, 
+      o_username)
+    values (#{oId,jdbcType=INTEGER}, #{oNumber,jdbcType=INTEGER}, #{oShopid,jdbcType=INTEGER}, 
+      #{oUsername,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.shop.entity.Order" >
+    insert into os_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="oId != null" >
+        o_id,
+      </if>
+      <if test="oNumber != null" >
+        o_number,
+      </if>
+      <if test="oShopid != null" >
+        o_shopid,
+      </if>
+      <if test="oUsername != null" >
+        o_username,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="oId != null" >
+        #{oId,jdbcType=INTEGER},
+      </if>
+      <if test="oNumber != null" >
+        #{oNumber,jdbcType=INTEGER},
+      </if>
+      <if test="oShopid != null" >
+        #{oShopid,jdbcType=INTEGER},
+      </if>
+      <if test="oUsername != null" >
+        #{oUsername,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.shop.entity.Order" >
+    update os_order
+    <set >
+      <if test="oNumber != null" >
+        o_number = #{oNumber,jdbcType=INTEGER},
+      </if>
+      <if test="oShopid != null" >
+        o_shopid = #{oShopid,jdbcType=INTEGER},
+      </if>
+      <if test="oUsername != null" >
+        o_username = #{oUsername,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where o_id = #{oId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.shop.entity.Order" >
+    update os_order
+    set o_number = #{oNumber,jdbcType=INTEGER},
+      o_shopid = #{oShopid,jdbcType=INTEGER},
+      o_username = #{oUsername,jdbcType=VARCHAR}
+    where o_id = #{oId,jdbcType=INTEGER}
+  </update>
+</mapper>
