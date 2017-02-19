@@ -28,6 +28,11 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="themes/images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
+	<script src="themes/js/jquery.js" type="text/javascript"></script>
+	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
+	<script src="themes/js/google-code-prettify/prettify.js"></script>
+	<script src="themes/js/bootshop.js"></script>
+    <script src="themes/js/jquery.lightbox-0.5.js"></script>
   </head>
 <body>
 <div id="header">
@@ -130,7 +135,7 @@
 	<div id="sidebar" class="span3">
 		<div class="well well-small"><a id="myCart" href="product_summary.jsp"><img src="themes/images/ico-cart.png" alt="cart">在你的购物车有3件商品 <span class="badge badge-warning pull-right">$155.00</span></a></div>
 		<ul id="sideManu" class="nav nav-tabs nav-stacked">
-			<li class="subMenu open"><a>日常用品 </a>
+			<li class="subMenu open"><a>图书/数码/手机</a>
 				<ul>
 				<li><a class="active" href="products.jsp"><i class="icon-chevron-right"></i>菜刀</a></li>
 				<li><a href="products.jsp"><i class="icon-chevron-right"></i>碗</a></li>
@@ -138,7 +143,7 @@
 				<li><a href="products.jsp"><i class="icon-chevron-right"></i>电炒锅</a></li>
 				</ul>
 			</li>
-			<li class="subMenu"><a>男女服装 </a>
+			<li class="subMenu"><a>美食/零食/水果</a>
 			<ul style="display:none">
 				<li><a href="products.jsp"><i class="icon-chevron-right"></i>男装</a></li>
 				<li><a href="products.jsp"><i class="icon-chevron-right"></i>女装</a></li>												
@@ -149,7 +154,7 @@
 				<li><a href="products.jsp"><i class="icon-chevron-right"></i>裤子</a></li>												
 			</ul>
 			</li>
-			<li class="subMenu"><a>电子竞技</a>
+			<li class="subMenu"><a>游戏/动漫/竞技</a>
 				<ul style="display:none">
 				<li><a href="products.jsp"><i class="icon-chevron-right"></i>电竞椅</a></li>
 				<li><a href="products.jsp"><i class="icon-chevron-right"></i>键盘</a></li>												
@@ -161,9 +166,9 @@
 				<li><a href="products.jsp"><i class="icon-chevron-right"></i>树莓派</a></li>												
 			</ul>
 			</li>
-			<li><a href="products.jsp">家居彩电</a></li>
-			<li><a href="products.jsp">古董收藏</a></li>
-			<li><a href="products.jsp">创意玩具</a></li>
+			<li><a href="products.jsp">美妆/洗护/保健品</a></li>
+			<li><a href="products.jsp">百货/创意/DIY</a></li>
+			<li><a href="products.jsp">学习/点卡/激活码</a></li>
 		</ul>
 		<br/>
 		  <div class="thumbnail">

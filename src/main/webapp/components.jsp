@@ -36,13 +36,13 @@
 	<div class="span6">Welcome!<strong> User</strong></div>
 	<div class="span6">
 	<div class="pull-right">
-		<a href="product_summary.jsp"><span class="">Fr</span></a>
-		<a href="product_summary.jsp"><span class="">Es</span></a>
-		<span class="btn btn-mini">En</span>
+		<a href="product_summary.jsp"><span class="">法语</span></a>
+		<a href="product_summary.jsp"><span class="">西班牙语</span></a>
+		<span class="btn btn-mini">中文</span>
 		<a href="product_summary.jsp"><span>&pound;</span></a>
 		<span class="btn btn-mini">$155.00</span>
 		<a href="product_summary.jsp"><span class="">$</span></a>
-		<a href="product_summary.jsp"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i> [ 3 ] Itemes in your cart </span> </a> 
+		<a href="product_summary.jsp"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i>3件商品在你的gouwuche</span> </a> 
 	</div>
 	</div>
 </div>
@@ -57,42 +57,65 @@
 		<form class="form-inline navbar-search" method="post" action="products.jsp" >
 		<input id="srchFld" class="srchTxt" type="text" />
 		  <select class="srchTxt">
-			<option>All</option>
-			<option>CLOTHES </option>
-			<option>FOOD AND BEVERAGES </option>
-			<option>HEALTH & BEAUTY </option>
-			<option>SPORTS & LEISURE </option>
-			<option>BOOKS & ENTERTAINMENTS </option>
+			<option>所有</option>
+			<option>衣服</option>
+			<option>食物和饮料</option>
+			<option>健康和美丽</option>
+			<option>运动和休闲</option>
+			<option>书和娱乐</option>
 		</select> 
 		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
     </form>
     <ul id="topMenu" class="nav pull-right">
-	 <li class=""><a href="special_offer.jsp">Specials Offer</a></li>
-	 <li class=""><a href="normal.jsp">Delivery</a></li>
-	 <li class=""><a href="contact.jsp">Contact</a></li>
-	 <li class="">
-	 <a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
+	 <li class=""><a href="special_offer.jsp">特价提供</a></li>
+	 <li class=""><a href="normal.jsp">交付</a></li>
+	 <li class=""><a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">登录</span></a>
 	<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
 		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">�</button>
-			<h3>Login Block</h3>
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3>登录</h3>
 		  </div>
 		  <div class="modal-body">
 			<form class="form-horizontal loginFrm">
 			  <div class="control-group">								
-				<input type="text" id="inputEmail" placeholder="Email">
+				<input type="text" id="inputEmail" placeholder="邮箱">
 			  </div>
 			  <div class="control-group">
-				<input type="password" id="inputPassword" placeholder="Password">
+				<input type="password" id="inputPassword" placeholder="密码">
 			  </div>
 			  <div class="control-group">
 				<label class="checkbox">
-				<input type="checkbox"> Remember me
+				<input type="checkbox"> 记住我
 				</label>
 			  </div>
 			</form>		
-			<button type="submit" class="btn btn-success">Sign in</button>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button type="submit" class="btn btn-success">登录</button>
+			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
+		  </div>
+	</div>
+	</li>
+	 <li class=""><a href="#regedit" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">注册</span></a>
+	 <div id="regedit" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="regedit" aria-hidden="false" >
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h3>注册</h3>
+		  </div>
+		  <div class="modal-body">
+			<form class="form-horizontal loginFrm">
+			  <div class="control-group">								
+				<input type="text" id="inputEmail" placeholder="注销1">
+			  </div>
+			  <div class="control-group">
+				<input type="password" id="inputPassword" placeholder="注销2">
+			  </div>
+			  <div class="control-group">
+				<label class="checkbox">
+				<input type="checkbox"> 记住我
+				</label>
+			  </div>
+			</form>		
+			<button type="submit" class="btn btn-success">注册</button>
+			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
 		  </div>
 	</div>
 	</li>
@@ -104,12 +127,12 @@
 <div id="mainBody">
 <div class="container">
 <hr class="soften">
-<h1>Components used in bootshop are:</h1>
+<h1>用于bootshop组件 :</h1>
 <hr class="soften"/>	
 <header>
 	<div class="container">
 	<div class="page-header">
-	<h3>A. Boots cms Navigation</h3>
+	<h3>A. 靴子CMS导航</h3>
 	</div>
 <section id="navbar">
   <div class="navbar">
@@ -120,23 +143,23 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Project name</a>
+        <a class="brand" href="#">项目名称</a>
         <div class="nav-collapse">
           <ul class="nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
-            <li><a href="#">Link</a></li>
+            <li><a href="#">链接</a></li>
+            <li><a href="#">链接</a></li>
+            <li><a href="#">链接</a></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">下拉 <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="#">行为</a></li>
+                <li><a href="#">另一个行为</a></li>
+                <li><a href="#">一些其他的</a></li>
                 <li class="divider"></li>
-                <li class="nav-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li class="nav-header">导航栏</li>
+                <li><a href="#">分开的链接</a></li>
+                <li><a href="#">一个或多个链接</a></li>
               </ul>
             </li>
           </ul>
@@ -144,16 +167,16 @@
             <input type="text" class="search-query span2" placeholder="Search"/>
           </form>
           <ul class="nav pull-right">
-            <li><a href="#">Link</a></li>
+            <li><a href="#">链接</a></li>
             <li class="divider-vertical"></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
+                <li><a href="#">行为</a></li>
+                <li><a href="#">其他行为</a></li>
+                <li><a href="#">一些其他的</a></li>
                 <li class="divider"></li>
-                <li><a href="#">Separated link</a></li>
+                <li><a href="#">分开的链接</a></li>
               </ul>
             </li>
           </ul>
@@ -165,52 +188,52 @@
     </div>	 
 	</header>
 <div class="page-header">
-<h3>B.  Headings </h3>
+<h3>B.  标题们 </h3>
 </div>
 <div class="row-fluid">
 <div class="span4">
-	<h6>h6. Heading 6</h6>
-	<h5>h5. Heading 5</h5>
-	<h4>h4. Heading 4</h4>
-	<h3>h3. Heading 3</h3>
-	<h2>h2. Heading 2</h2>
-	<h1>h1. Heading 1</h1>
+	<h6>h6. 标题 6</h6>
+	<h5>h5. 标题 5</h5>
+	<h4>h4. 标题 4</h4>
+	<h3>h3. 标题 3</h3>
+	<h2>h2. 标题 2</h2>
+	<h1>h1. 标题 1</h1>
 </div>
 <div class="span4">
-	<h6><a href="#">h6. Heading 6</a></h6>
-	<h5><a href="#">h5. Heading 5</a></h5>
-	<h4><a href="#">h4. Heading 4</a></h4>
-	<h3><a href="#">h3. Heading 3</a></h3>
-	<h2><a href="#">h2. Heading 2</a></h2>
-	<h1><a href="#">h1. Heading 1</a></h1>
+	<h6><a href="#">h6. 标题 6</a></h6>
+	<h5><a href="#">h5. 标题 5</a></h5>
+	<h4><a href="#">h4. 标题 4</a></h4>
+	<h3><a href="#">h3. 标题 3</a></h3>
+	<h2><a href="#">h2. 标题 2</a></h2>
+	<h1><a href="#">h1. 标题 1</a></h1>
 </div>
 <div class="span4">
-	<h6><a href="#">h6. Heading 6 <small>Small text</small></a></h6>
-	<h5><a href="#">h5. Heading 5 <small>Small text</small> </a></h5>
-	<h4><a href="#">h4. Heading 4 <small>Small text</small> </a></h4>
-	<h3><a href="#">h3. Heading 3 <small>Small text</small> </a></h3>
-	<h2><a href="#">h2. Heading 2 <small>Small text</small></a></h2>
-	<h1><a href="#">h1. Heading 1 <small>Small text</small></a></h1>
+	<h6><a href="#">h6. 标题 6 <small>少的段落</small></a></h6>
+	<h5><a href="#">h5. 标题 5 <small>少的段落</small> </a></h5>
+	<h4><a href="#">h4. 标题 4 <small>少的段落</small> </a></h4>
+	<h3><a href="#">h3. 标题 3 <small>少的段落</small> </a></h3>
+	<h2><a href="#">h2. 标题 2 <small>少的段落</small></a></h2>
+	<h1><a href="#">h1. 标题 1 <small>少的段落</small></a></h1>
 </div>
 </div>
 <div class="page-header">
-<h3>C.  Grids </h3>
+<h3>C.  网格 </h3>
 </div>
 <div id="grids">
 <ul class="nav nav-tabs" id="myTab">
-  <li><a href="#one" data-toggle="tab">1 Column page</a></li>
-  <li class="active"><a href="#two" data-toggle="tab">2 Column page</a></li>
-  <li><a data-toggle="tab" href="#three">3 Comumn page</a></li>
-  <li><a href="#four" data-toggle="tab">4 Comumn page</a></li>
+  <li><a href="#one" data-toggle="tab">1 列</a></li>
+  <li class="active"><a href="#two" data-toggle="tab">2 列</a></li>
+  <li><a data-toggle="tab" href="#three">3 列</a></li>
+  <li><a href="#four" data-toggle="tab">4 列</a></li>
 </ul>
  
 <div class="tab-content">
   <div class="tab-pane" id="one">
   <div class="row-fluid">
 	 <div class="span12">
-	  <h4>Lorem Ipsum is simply dummy text ... </h4>
+	  <h4>乱数假文只是虚拟文本 ... </h4>
 	  <p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 	  </p>
 	  </div>
   </div>
@@ -218,15 +241,15 @@
   <div class="tab-pane active" id="two">
   <div class="row-fluid">
 	  <div class="span6">
-	  <h4>Lorem Ipsum is simply dummy text ... </h4>
+	  <h4>乱数假文只是虚拟文本 ... </h4>
 		<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 		</p>
 	  </div>
 	  <div class="span6">
-	  <h4>Lorem Ipsum is simply dummy text ... </h4>
+	  <h4>乱数假文只是虚拟文本 ... </h4>
 		<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 		</p>
 	  </div>
   </div>
@@ -234,21 +257,21 @@
   <div class="tab-pane" id="three">
   <div class="row-fluid">
 	<div class="span4">
-	  <h4>Lorem Ipsum is simply dummy text ... </h4>
+	  <h4>乱数假文只是虚拟文本 ... </h4>
 		<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 		</p>
 	  </div>
 	  <div class="span4">
-		<h4>Lorem Ipsum is simply dummy text ... </h4>
+		<h4>乱数假文只是虚拟文本 ... </h4>
 		<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 		</p>
 	  </div>
 	  <div class="span4">
-		<h4>Lorem Ipsum is simply dummy text ... </h4>
+		<h4>乱数假文只是虚拟文本 ... </h4>
 		<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 		</p>
 	  </div>
 	 </div>
@@ -256,27 +279,27 @@
   <div class="tab-pane" id="four">
   <div class="row-fluid">
 	<div class="span3">
-		<h4>Lorem Ipsum is simply dummy text ... </h4>
+		<h4>乱数假文只是虚拟文本 ... </h4>
 		<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 		</p>
 	 </div>
 	  <div class="span3">
-		<h4>Lorem Ipsum is simply dummy text ... </h4>
+		<h4>乱数假文只是虚拟文本 ... </h4>
 		<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 		</p>
 	  </div>
 	  <div class="span3">
-		<h4>Lorem Ipsum is simply dummy text ... </h4>
+		<h4>乱数假文只是虚拟文本 ... </h4>
 		<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 		</p>
 	  </div>
 	  <div class="span3">
-		<h4>Lorem Ipsum is simply dummy text ... </h4>
+		<h4>乱数假文只是虚拟文本 ... </h4>
 		<p>
-		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+		乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16世纪，当一个未知的打印机把厨房型和炒它做字体样本。它不仅保存了五个世纪，而且还飞跃电子排版，基本上保持不变。这是流行在上世纪60年代随着拉突激光印字传输系统含乱数假文通道释放，以及最近的桌面出版软件Aldus PageMaker包括乱数假文版本。
 		</p>
 	  </div>
   
@@ -285,18 +308,18 @@
 </div>
 </div>
   <div class="page-header">
-    <h3>D. Button <small>button groups and buttons</small></h3>
+    <h3>D. 按钮 <small>按钮组和按钮</small></h3>
   </div>
   <div class="row-fluid">
   <div class="span6">
 	<section id="buttonGroups">
-      <h4>Button groups</h4><br/>
+      <h4>按钮组</h4><br/>
 		<div class="btn-group" style="margin: 9px 0;">
-          <button class="btn">Left</button>
-          <button class="btn">Middle</button>
-          <button class="btn">Right</button>
+          <button class="btn">左</button>
+          <button class="btn">中</button>
+          <button class="btn">右</button>
         </div>
-      <h4>Toolbar example</h4>
+      <h4>工具栏例子</h4>
      
       <div class="btn-toolbar">
         <div class="btn-group">
@@ -318,178 +341,178 @@
       </div>
 <div class="span6">
 <section id="buttonDropdowns">
-  <h4>Button dropdowns</h4>
+  <h4>按钮下拉</h4>
       <div class="btn-toolbar" style="margin-top: 18px;">
         <div class="btn-group">
-          <button class="btn dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+          <button class="btn dropdown-toggle" data-toggle="dropdown">行为 <span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
 		
         <div class="btn-group">
-          <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Action <span class="caret"></span></button>
+          <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">行为 <span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Danger <span class="caret"></span></button>
+          <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">危险 <span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
 
         <div class="btn-group">
-          <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Warning <span class="caret"></span></button>
+          <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown">警告 <span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">Success <span class="caret"></span></button>
+          <button class="btn btn-success dropdown-toggle" data-toggle="dropdown">成功 <span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">Info <span class="caret"></span></button>
+          <button class="btn btn-info dropdown-toggle" data-toggle="dropdown">信息 <span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">Inverse <span class="caret"></span></button>
+          <button class="btn btn-inverse dropdown-toggle" data-toggle="dropdown">相反 <span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
 		<div class="btn-toolbar" style="margin-top: 18px;">
         <div class="btn-group">
-          <button class="btn btn-large dropdown-toggle" data-toggle="dropdown">Large button <span class="caret"></span></button>
+          <button class="btn btn-large dropdown-toggle" data-toggle="dropdown">放大按钮<span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">Small button <span class="caret"></span></button>
+          <button class="btn btn-small dropdown-toggle" data-toggle="dropdown">小按钮<span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">Mini button <span class="caret"></span></button>
+          <button class="btn btn-mini dropdown-toggle" data-toggle="dropdown">迷你按钮<span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
       </div>
 	  <div class="btn-toolbar" style="margin-top: 18px;">
         <div class="btn-group">
-          <button class="btn">Action</button>
+          <button class="btn">行为</button>
           <button class="btn dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-primary">Action</button>
+          <button class="btn btn-primary">行为</button>
           <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-danger">Danger</button>
+          <button class="btn btn-danger">危险的</button>
           <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div>
 		
         <div class="btn-group">
-          <button class="btn btn-warning">Warning</button>
+          <button class="btn btn-warning">警告</button>
           <button class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-success">Success</button>
+          <button class="btn btn-success">成功</button>
           <button class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
         <div class="btn-group">
-          <button class="btn btn-info">Info</button>
+          <button class="btn btn-info">信息</button>
           <button class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="#">行为</a></li>
+            <li><a href="#">其他行为</a></li>
+            <li><a href="#">一些其他的</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="#">分开的线</a></li>
           </ul>
         </div><!-- /btn-group -->
       </div>
@@ -504,7 +527,7 @@
   <div class="span6">
   <div class="well" style="padding: 8px 0;">
         <ul class="nav nav-list">
-          <li class="nav-header">List header</li>
+          <li class="nav-header">目录头部</li>
           <li class="active"><a href="#"><i class="icon-white icon-home"></i> Home</a></li>
           <li><a href="#"><i class="icon-book"></i> Library</a></li>
           <li><a href="#"><i class="icon-pencil"></i> Applications</a></li>
@@ -520,7 +543,7 @@
 	  <h4>Stacked tabs</h4><br/>
 	  <ul class="nav nav-tabs nav-stacked">
         <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
+        <li><a href="#">轮廓</a></li>
         <li><a href="#">Item 1</a></li>
         <li><a href="#">Item 2</a></li>
         <li><a href="#">Messages</a></li>
@@ -824,7 +847,7 @@
             <div class="caption">
               <h5>Thumbnail label</h5>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>
+              <p><a href="#" class="btn btn-primary">行为</a> <a href="#" class="btn">行为</a></p>
             </div>
           </div>
         </li>
@@ -834,7 +857,7 @@
             <div class="caption">
               <h5>Thumbnail label</h5>
               <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a href="#" class="btn btn-primary">Action</a> <a href="#" class="btn">Action</a></p>
+              <p><a href="#" class="btn btn-primary">行为</a> <a href="#" class="btn">行为</a></p>
             </div>
           </div>
         </li>
@@ -1331,101 +1354,45 @@
 	<div class="container">
 		<div class="row">
 			<div class="span3">
-				<h5>ACCOUNT</h5>
-				<a href="login.jsp">YOUR ACCOUNT</a>
-				<a href="login.jsp">PERSONAL INFORMATION</a> 
-				<a href="login.jsp">ADDRESSES</a> 
-				<a href="login.jsp">DISCOUNT</a>  
-				<a href="login.jsp">ORDER HISTORY</a>
+				<h5>账户</h5>
+				<a href="login.jsp">你的账户</a>
+				<a href="login.jsp">个人信息</a> 
+				<a href="login.jsp">地址</a> 
+				<a href="login.jsp">折扣</a>  
+				<a href="login.jsp">历史订单</a>
 			 </div>
 			<div class="span3">
-				<h5>INFORMATION</h5>
-				<a href="contact.jsp">CONTACT</a>  
-				<a href="register.jsp">REGISTRATION</a>  
-				<a href="legal_notice.jsp">LEGAL NOTICE</a>  
-				<a href="tac.jsp">TERMS AND CONDITIONS</a> 
+				<h5>信息</h5>
+				<a href="contact.jsp">联系方式</a>  
+				<a href="register.jsp">注册</a>  
+				<a href="legal_notice.jsp">法律告示</a>  
+				<a href="tac.jsp">条款和条件</a> 
 				<a href="faq.jsp">FAQ</a>
 			 </div>
 			<div class="span3">
-				<h5>OUR OFFERS</h5>
-				<a href="#">NEW PRODUCTS</a> 
-				<a href="#">TOP SELLERS</a>  
-				<a href="special_offer.jsp">SPECIAL OFFERS</a>  
-				<a href="#">MANUFACTURERS</a> 
-				<a href="#">SUPPLIERS</a> 
+				<h5>我们的公司</h5>
+				<a href="#">新产品</a> 
+				<a href="#">畅销书</a>  
+				<a href="special_offer.jsp">特价优惠</a>  
+				<a href="#">制造商</a> 
+				<a href="#">供应商</a> 
 			 </div>
 			<div id="socialMedia" class="span3 pull-right">
-				<h5>SOCIAL MEDIA </h5>
+				<h5>社会媒体</h5>
 				<a href="#"><img width="60" height="60" src="themes/images/facebook.png" title="facebook" alt="facebook"/></a>
 				<a href="#"><img width="60" height="60" src="themes/images/twitter.png" title="twitter" alt="twitter"/></a>
 				<a href="#"><img width="60" height="60" src="themes/images/youtube.png" title="youtube" alt="youtube"/></a>
 			 </div> 
 		 </div>
-		<p class="pull-right">&copy; Bootshop</p>
+		<p class="pull-right">&copy; online_shop</p>
 	</div><!-- Container End -->
 	</div>
 <!-- Placed at the end of the document so the pages load faster ============================================= -->
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
-	
 	<script src="themes/js/bootshop.js"></script>
     <script src="themes/js/jquery.lightbox-0.5.js"></script>
-	
-	<!-- Themes switcher section ============================================================================================= -->
-<div id="secectionBox">
-<link rel="stylesheet" href="themes/switch/themeswitch.css" type="text/css" media="screen" />
-<script src="themes/switch/theamswitcher.js" type="text/javascript" charset="utf-8"></script>
-	<div id="themeContainer">
-	<div id="hideme" class="themeTitle">Style Selector</div>
-	<div class="themeName">Oregional Skin</div>
-	<div class="images style">
-	<a href="themes/css/#" name="bootshop"><img src="themes/switch/images/clr/bootshop.png" alt="bootstrap business templates" class="active"></a>
-	<a href="themes/css/#" name="businessltd"><img src="themes/switch/images/clr/businessltd.png" alt="bootstrap business templates" class="active"></a>
-	</div>
-	<div class="themeName">Bootswatch Skins (11)</div>
-	<div class="images style">
-		<a href="themes/css/#" name="amelia" title="Amelia"><img src="themes/switch/images/clr/amelia.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="spruce" title="Spruce"><img src="themes/switch/images/clr/spruce.png" alt="bootstrap business templates" ></a>
-		<a href="themes/css/#" name="superhero" title="Superhero"><img src="themes/switch/images/clr/superhero.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="cyborg"><img src="themes/switch/images/clr/cyborg.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="cerulean"><img src="themes/switch/images/clr/cerulean.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="journal"><img src="themes/switch/images/clr/journal.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="readable"><img src="themes/switch/images/clr/readable.png" alt="bootstrap business templates"></a>	
-		<a href="themes/css/#" name="simplex"><img src="themes/switch/images/clr/simplex.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="slate"><img src="themes/switch/images/clr/slate.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="spacelab"><img src="themes/switch/images/clr/spacelab.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="united"><img src="themes/switch/images/clr/united.png" alt="bootstrap business templates"></a>
-		<p style="margin:0;line-height:normal;margin-left:-10px;display:none;"><small>These are just examples and you can build your own color scheme in the backend.</small></p>
-	</div>
-	<div class="themeName">Background Patterns </div>
-	<div class="images patterns">
-		<a href="themes/css/#" name="pattern1"><img src="themes/switch/images/pattern/pattern1.png" alt="bootstrap business templates" class="active"></a>
-		<a href="themes/css/#" name="pattern2"><img src="themes/switch/images/pattern/pattern2.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern3"><img src="themes/switch/images/pattern/pattern3.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern4"><img src="themes/switch/images/pattern/pattern4.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern5"><img src="themes/switch/images/pattern/pattern5.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern6"><img src="themes/switch/images/pattern/pattern6.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern7"><img src="themes/switch/images/pattern/pattern7.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern8"><img src="themes/switch/images/pattern/pattern8.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern9"><img src="themes/switch/images/pattern/pattern9.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern10"><img src="themes/switch/images/pattern/pattern10.png" alt="bootstrap business templates"></a>
-		
-		<a href="themes/css/#" name="pattern11"><img src="themes/switch/images/pattern/pattern11.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern12"><img src="themes/switch/images/pattern/pattern12.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern13"><img src="themes/switch/images/pattern/pattern13.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern14"><img src="themes/switch/images/pattern/pattern14.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern15"><img src="themes/switch/images/pattern/pattern15.png" alt="bootstrap business templates"></a>
-		
-		<a href="themes/css/#" name="pattern16"><img src="themes/switch/images/pattern/pattern16.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern17"><img src="themes/switch/images/pattern/pattern17.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern18"><img src="themes/switch/images/pattern/pattern18.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern19"><img src="themes/switch/images/pattern/pattern19.png" alt="bootstrap business templates"></a>
-		<a href="themes/css/#" name="pattern20"><img src="themes/switch/images/pattern/pattern20.png" alt="bootstrap business templates"></a>
-		 
-	</div>
-	</div>
-</div>
 <span id="themesBtn"></span>
 </body>
 </html>
