@@ -192,33 +192,33 @@
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
 		<li class="active"> SHOPPING CART</li>
     </ul>
-	<h3>  SHOPPING CART [ <small>3 Item(s) </small>]<a href="products.jsp" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Continue Shopping </a></h3>	
+	<h3>  购物车 [ <small>3 件物品 </small>]<a href="products.jsp" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> 继续购物 </a></h3>	
 	<hr class="soft"/>
 	<table class="table table-bordered">
-		<tr><th> I AM ALREADY REGISTERED  </th></tr>
+		<tr><th> 我已经注册了 </th></tr>
 		 <tr> 
 		 <td>
 			<form class="form-horizontal">
 				<div class="control-group">
-				  <label class="control-label" for="inputUsername">Username</label>
+				  <label class="control-label" for="inputUsername">用户名</label>
 				  <div class="controls">
-					<input type="text" id="inputUsername" placeholder="Username">
+					<input type="text" id="inputUsername" placeholder="用户名。。。">
 				  </div>
 				</div>
 				<div class="control-group">
-				  <label class="control-label" for="inputPassword1">Password</label>
+				  <label class="control-label" for="inputPassword1">密码</label>
 				  <div class="controls">
-					<input type="password" id="inputPassword1" placeholder="Password">
+					<input type="password" id="inputPassword1" placeholder="密码。。。">
 				  </div>
 				</div>
 				<div class="control-group">
 				  <div class="controls">
-					<button type="submit" class="btn">Sign in</button> OR <a href="register.jsp" class="btn">Register Now!</a>
+					<button type="submit" class="btn">登录</button> OR <a href="register.jsp" class="btn">现在注册</a>
 				  </div>
 				</div>
 				<div class="control-group">
 					<div class="controls">
-					  <a href="forgetpass.jsp" style="text-decoration:underline">Forgot password ?</a>
+					  <a href="forgetpass.jsp" style="text-decoration:underline">忘记密码?</a>
 					</div>
 				</div>
 			</form>
@@ -229,19 +229,19 @@
 	<table class="table table-bordered">
               <thead>
                 <tr>
-                  <th>Product</th>
-                  <th>Description</th>
-                  <th>Quantity/Update</th>
-				  <th>Price</th>
-                  <th>Discount</th>
-                  <th>Tax</th>
-                  <th>Total</th>
+                  <th>产品</th>
+                  <th>描述</th>
+                  <th>数量</th>
+				  <th>价格</th>
+                  <th>描述</th>
+                  <th>税金</th>
+                  <th>总额</th>
 				</tr>
               </thead>
               <tbody>
                 <tr>
                   <td> <img width="60" src="themes/images/products/4.jpg" alt=""/></td>
-                  <td>MASSA AST<br/>Color : black, Material : metal</td>
+                  <td>马萨AST<br/>颜色 : 黑色, 材质 : 金属</td>
 				  <td>
 					<div class="input-append"><input class="span1" style="max-width:34px" placeholder="1" id="appendedInputButtons" size="16" type="text"><button class="btn" type="button"><i class="icon-minus"></i></button><button class="btn" type="button"><i class="icon-plus"></i></button><button class="btn btn-danger" type="button"><i class="icon-remove icon-white"></i></button>				</div>
 				  </td>
@@ -252,7 +252,7 @@
                 </tr>
 				<tr>
                   <td> <img width="60" src="themes/images/products/8.jpg" alt=""/></td>
-                  <td>MASSA AST<br/>Color : black, Material : metal</td>
+                  <td>马萨AST<br/>颜色 : 黑色, 材质 : 金属</td>
 				  <td>
 					<div class="input-append"><input class="span1" style="max-width:34px" placeholder="1"  size="16" type="text"><button class="btn" type="button"><i class="icon-minus"></i></button><button class="btn" type="button"><i class="icon-plus"></i></button><button class="btn btn-danger" type="button"><i class="icon-remove icon-white"></i></button>				</div>
 				  </td>
@@ -263,7 +263,7 @@
                 </tr>
 				<tr>
                   <td> <img width="60" src="themes/images/products/3.jpg" alt=""/></td>
-                  <td>MASSA AST<br/>Color : black, Material : metal</td>
+                  <td>马萨AST<br/>颜色 : 黑色, 材质 : 金属</td>
 				  <td>
 					<div class="input-append"><input class="span1" style="max-width:34px" placeholder="1"  size="16" type="text"><button class="btn" type="button"><i class="icon-minus"></i></button><button class="btn" type="button"><i class="icon-plus"></i></button><button class="btn btn-danger" type="button"><i class="icon-remove icon-white"></i></button>				</div>
 				  </td>
@@ -274,19 +274,19 @@
                 </tr>
 				
                 <tr>
-                  <td colspan="6" style="text-align:right">Total Price:	</td>
+                  <td colspan="6" style="text-align:right">总价格:	</td>
                   <td> $228.00</td>
                 </tr>
 				 <tr>
-                  <td colspan="6" style="text-align:right">Total Discount:	</td>
+                  <td colspan="6" style="text-align:right">总折扣:	</td>
                   <td> $50.00</td>
                 </tr>
                  <tr>
-                  <td colspan="6" style="text-align:right">Total Tax:	</td>
+                  <td colspan="6" style="text-align:right">总税额:	</td>
                   <td> $31.00</td>
                 </tr>
 				 <tr>
-                  <td colspan="6" style="text-align:right"><strong>TOTAL ($228 - $50 + $31) =</strong></td>
+                  <td colspan="6" style="text-align:right"><strong>总计 ($228 - $50 + $31) =</strong></td>
                   <td class="label label-important" style="display:block"> <strong> $155.00 </strong></td>
                 </tr>
 				</tbody>
@@ -299,10 +299,10 @@
                   <td> 
 				<form class="form-horizontal">
 				<div class="control-group">
-				<label class="control-label"><strong> VOUCHERS CODE: </strong> </label>
+				<label class="control-label"><strong>抵用卷代码: </strong> </label>
 				<div class="controls">
-				<input type="text" class="input-medium" placeholder="CODE">
-				<button type="submit" class="btn"> ADD </button>
+				<input type="text" class="input-medium" placeholder="请输入优惠劵代码">
+				<button type="submit" class="btn"> 添加 </button>
 				</div>
 				</div>
 				</form>
@@ -313,33 +313,33 @@
 			</table>
 			
 			<table class="table table-bordered">
-			 <tr><th>ESTIMATE YOUR SHIPPING </th></tr>
+			 <tr><th>你希望的快递</th></tr>
 			 <tr> 
 			 <td>
 				<form class="form-horizontal">
 				  <div class="control-group">
-					<label class="control-label" for="inputCountry">Country </label>
+					<label class="control-label" for="inputCountry">国家 </label>
 					<div class="controls">
-					  <input type="text" id="inputCountry" placeholder="Country">
+					  <input type="text" id="inputCountry" placeholder="国家">
 					</div>
 				  </div>
 				  <div class="control-group">
-					<label class="control-label" for="inputPost">Post Code/ Zipcode </label>
+					<label class="control-label" for="inputPost">邮编 </label>
 					<div class="controls">
-					  <input type="text" id="inputPost" placeholder="Postcode">
+					  <input type="text" id="inputPost" placeholder="邮编">
 					</div>
 				  </div>
 				  <div class="control-group">
 					<div class="controls">
-					  <button type="submit" class="btn">ESTIMATE </button>
+					  <button type="submit" class="btn">预计 </button>
 					</div>
 				  </div>
 				</form>				  
 			  </td>
 			  </tr>
             </table>		
-	<a href="products.jsp" class="btn btn-large"><i class="icon-arrow-left"></i> Continue Shopping </a>
-	<a href="login.jsp" class="btn btn-large pull-right">Next <i class="icon-arrow-right"></i></a>
+	<a href="products.jsp" class="btn btn-large"><i class="icon-arrow-left"></i> 继续购物 </a>
+	<a href="login.jsp" class="btn btn-large pull-right">确认订单 <i class="icon-arrow-right"></i></a>
 	
 </div>
 </div></div>

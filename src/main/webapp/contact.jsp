@@ -127,31 +127,31 @@
 <div id="mainBody">
 <div class="container">
 	<hr class="soften">
-	<h1>Visit us</h1>
+	<h1>访问我们</h1>
 	<hr class="soften"/>	
 	<div class="row">
 		<div class="span4">
-		<h4>Contact Details</h4>
-		<p>	18 Fresno,<br/> CA 93727, USA
+		<h4>联系方式</h4>
+		<p>	18 弗雷斯诺,<br/> CA 93727, USA
 			<br/><br/>
-			info@bootsshop.com<br/>
-			﻿Tel 123-456-6780<br/>
-			Fax 123-456-5679<br/>
-			web:bootsshop.com
+			deathguidao@163.com<br/>
+			电话 123-456-6780<br/>
+			传真 123-456-5679<br/>
+			网站首页:onlie_shop.com
 		</p>		
 		</div>
 			
 		<div class="span4">
-		<h4>Opening Hours</h4>
-			<h5> Monday - Friday</h5>
+		<h4>营业时间</h4>
+			<h5>周一 --周五</h5>
 			<p>09:00am - 09:00pm<br/><br/></p>
-			<h5>Saturday</h5>
+			<h5>周六</h5>
 			<p>09:00am - 07:00pm<br/><br/></p>
-			<h5>Sunday</h5>
+			<h5>周日</h5>
 			<p>12:30pm - 06:00pm<br/><br/></p>
 		</div>
 		<div class="span4">
-		<h4>Email Us</h4>
+		<h4>给我们发送邮箱</h4>
 		<form class="form-horizontal">
         <fieldset>
           <div class="control-group">
@@ -174,7 +174,7 @@
            
           </div>
 
-            <button class="btn btn-large" type="submit">Send Messages</button>
+            <button class="btn btn-large" type="submit">发送消息</button>
 
         </fieldset>
       </form>
@@ -183,7 +183,7 @@
 	<div class="row">
 	<div class="span12">
 	<iframe style="width:100%; height:300; border: 0px" scrolling="no" src="https://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=18+California,+Fresno,+CA,+United+States&amp;aq=0&amp;oq=18+California+united+state&amp;sll=39.9589,-120.955336&amp;sspn=0.007114,0.016512&amp;ie=UTF8&amp;hq=&amp;hnear=18,+Fresno,+California+93727,+United+States&amp;t=m&amp;ll=36.732762,-119.695787&amp;spn=0.017197,0.100336&amp;z=14&amp;output=embed"></iframe><br />
-	<small><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=18+California,+Fresno,+CA,+United+States&amp;aq=0&amp;oq=18+California+united+state&amp;sll=39.9589,-120.955336&amp;sspn=0.007114,0.016512&amp;ie=UTF8&amp;hq=&amp;hnear=18,+Fresno,+California+93727,+United+States&amp;t=m&amp;ll=36.732762,-119.695787&amp;spn=0.017197,0.100336&amp;z=14" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+	<small><a href="https://maps.google.co.uk/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=18+California,+Fresno,+CA,+United+States&amp;aq=0&amp;oq=18+California+united+state&amp;sll=39.9589,-120.955336&amp;sspn=0.007114,0.016512&amp;ie=UTF8&amp;hq=&amp;hnear=18,+Fresno,+California+93727,+United+States&amp;t=m&amp;ll=36.732762,-119.695787&amp;spn=0.017197,0.100336&amp;z=14" style="color:#0000FF;text-align:left">查看详细地图</a></small>
 	</div>
 	</div>
 </div>

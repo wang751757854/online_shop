@@ -192,23 +192,23 @@
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
 		<li class="active">Forget password?</li>
     </ul>
-	<h3> FORGET YOUR PASSWORD?</h3>	
+	<h3> 忘记密码?</h3>	
 	<hr class="soft"/>
 	
 	<div class="row">
 		<div class="span9" style="min-height:900px">
 			<div class="well">
-			<h5>Reset your password</h5><br/>
-			Please enter the email address for your account. A verification code will be sent to you. Once you have received the verification code, you will be able to choose a new password for your account.<br/><br/><br/>
+			<h5>重置你的密码</h5><br/>
+			请输入你的邮箱地址. 一个验证码将发送给你。一旦您收到了验证码，您将能够为您的帐户选择一个新的密码。.<br/><br/><br/>
 			<form>
 			  <div class="control-group">
-				<label class="control-label" for="inputEmail1">E-mail address</label>
+				<label class="control-label" for="inputEmail1">邮箱地址</label>
 				<div class="controls">
 				  <input class="span3"  type="text" id="inputEmail1" placeholder="Email">
 				</div>
 			  </div>
 			  <div class="controls">
-			  <button type="submit" class="btn block">Submit</button>
+			  <button type="submit" class="btn block">提交</button>
 			  </div>
 			</form>
 		</div>

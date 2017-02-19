@@ -256,7 +256,7 @@
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
 		<li class="active">Products Compairsition</li>
     </ul>
-	<h3> Products Compairsition <small class="pull-right"> 2 products are compaired </small></h3>	
+	<h3> 产品配置 <small class="pull-right"> 2个产品被配置了 </small></h3>	
 	<hr class="soft"/>
 
 	<table id="compairTbl" class="table table-bordered">

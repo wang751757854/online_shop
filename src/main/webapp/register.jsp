@@ -192,7 +192,7 @@
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
 		<li class="active">Registration</li>
     </ul>
-	<h3> Registration</h3>	
+	<h3> 注册</h3>	
 	<div class="well">
 	<!--
 	<div class="alert alert-info fade in">
@@ -208,44 +208,44 @@
 		<strong>Lorem Ipsum is simply</strong> dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
 	 </div> -->
 	<form class="form-horizontal" >
-		<h4>Your personal information</h4>
+		<h4>你的个人信息</h4>
 		<div class="control-group">
-		<label class="control-label">Title <sup>*</sup></label>
+		<label class="control-label">性别 <sup>*</sup></label>
 		<div class="controls">
 		<select class="span1" name="days">
 			<option value="">-</option>
-			<option value="1">Mr.</option>
-			<option value="2">Mrs</option>
-			<option value="3">Miss</option>
+			<option value="1">先生.</option>
+			<option value="2">夫人</option>
+			<option value="3">女士</option>
 		</select>
 		</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="inputFname1">First name <sup>*</sup></label>
+			<label class="control-label" for="inputFname1">姓氏<sup>*</sup></label>
 			<div class="controls">
 			  <input type="text" id="inputFname1" placeholder="First Name">
 			</div>
 		 </div>
 		 <div class="control-group">
-			<label class="control-label" for="inputLnam">Last name <sup>*</sup></label>
+			<label class="control-label" for="inputLnam">名字 <sup>*</sup></label>
 			<div class="controls">
 			  <input type="text" id="inputLnam" placeholder="Last Name">
 			</div>
 		 </div>
 		<div class="control-group">
-		<label class="control-label" for="input_email">Email <sup>*</sup></label>
+		<label class="control-label" for="input_email">邮箱 <sup>*</sup></label>
 		<div class="controls">
 		  <input type="text" id="input_email" placeholder="Email">
 		</div>
 	  </div>	  
 	<div class="control-group">
-		<label class="control-label" for="inputPassword1">Password <sup>*</sup></label>
+		<label class="control-label" for="inputPassword1">密码 <sup>*</sup></label>
 		<div class="controls">
 		  <input type="password" id="inputPassword1" placeholder="Password">
 		</div>
 	  </div>	  
 		<div class="control-group">
-		<label class="control-label">Date of Birth <sup>*</sup></label>
+		<label class="control-label">生日 <sup>*</sup></label>
 		<div class="controls">
 		  <select class="span1" name="days">
 				<option value="">-</option>
@@ -282,51 +282,51 @@
 
 	<div class="alert alert-block alert-error fade in">
 		<button type="button" class="close" data-dismiss="alert">×</button>
-		<strong>Lorem Ipsum is simply</strong> dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+		<strong>文本内容为空</strong> 请把*的内容全部填写
 	 </div>	
 
-		<h4>Your address</h4>
+		<h4>你的地址</h4>
 		<div class="control-group">
-			<label class="control-label" for="inputFname">First name <sup>*</sup></label>
+			<label class="control-label" for="inputFname">姓 <sup>*</sup></label>
 			<div class="controls">
 			  <input type="text" id="inputFname" placeholder="First Name">
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="inputLname">Last name <sup>*</sup></label>
+			<label class="control-label" for="inputLname">名 <sup>*</sup></label>
 			<div class="controls">
 			  <input type="text" id="inputLname" placeholder="Last Name"/>
 			</div>
 		</div>
 		
 		<div class="control-group">
-			<label class="control-label" for="company">Company</label>
+			<label class="control-label" for="company">公司</label>
 			<div class="controls">
 			  <input type="text" id="company" placeholder="company"/>
 			</div>
 		</div>
 		
 		<div class="control-group">
-			<label class="control-label" for="address">Address<sup>*</sup></label>
+			<label class="control-label" for="address">地址<sup>*</sup></label>
 			<div class="controls">
-			  <input type="text" id="address" placeholder="Adress"/> <span>Street address, P.O. box, company name, c/o</span>
+			  <input type="text" id="address" placeholder="Adress"/> <span>街道地址, P.O. box, 公司名字, c/o</span>
 			</div>
 		</div>
 		
 		<div class="control-group">
-			<label class="control-label" for="address2">Address (Line 2)<sup>*</sup></label>
+			<label class="control-label" for="address2">地址 (Line 2)<sup>*</sup></label>
 			<div class="controls">
-			  <input type="text" id="address2" placeholder="Adress line 2"/> <span>Apartment, suite, unit, building, floor, etc.</span>
+			  <input type="text" id="address2" placeholder="Adress line 2"/> <span>公寓、单位、建筑物.</span>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="city">City<sup>*</sup></label>
+			<label class="control-label" for="city">城市<sup>*</sup></label>
 			<div class="controls">
 			  <input type="text" id="city" placeholder="city"/> 
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="state">State<sup>*</sup></label>
+			<label class="control-label" for="state">州<sup>*</sup></label>
 			<div class="controls">
 			  <select id="state" >
 				<option value="">-</option>
@@ -334,42 +334,42 @@
 			</div>
 		</div>		
 		<div class="control-group">
-			<label class="control-label" for="postcode">Zip / Postal Code<sup>*</sup></label>
+			<label class="control-label" for="postcode">邮编<sup>*</sup></label>
 			<div class="controls">
 			  <input type="text" id="postcode" placeholder="Zip / Postal Code"/> 
 			</div>
 		</div>
 		
 		<div class="control-group">
-			<label class="control-label" for="country">Country<sup>*</sup></label>
+			<label class="control-label" for="country">国家<sup>*</sup></label>
 			<div class="controls">
 			<select id="country" >
 				<option value="">-</option>
-				<option value="1">Country</option>
+				<option value="1">国家</option>
 			</select>
 			</div>
 		</div>	
 		<div class="control-group">
-			<label class="control-label" for="aditionalInfo">Additional information</label>
+			<label class="control-label" for="aditionalInfo">附加消息</label>
 			<div class="controls">
 			  <textarea name="aditionalInfo" id="aditionalInfo" cols="26" rows="3">Additional information</textarea>
 			</div>
 		</div>
 		<div class="control-group">
-			<label class="control-label" for="phone">Home phone <sup>*</sup></label>
+			<label class="control-label" for="phone">家庭电话 <sup>*</sup></label>
 			<div class="controls">
-			  <input type="text"  name="phone" id="phone" placeholder="phone"/> <span>You must register at least one phone number</span>
+			  <input type="text"  name="phone" id="phone" placeholder="phone"/> <span>你必须填写一个电话号码</span>
 			</div>
 		</div>
 		
 		<div class="control-group">
-			<label class="control-label" for="mobile">Mobile Phone </label>
+			<label class="control-label" for="mobile">移动电话 </label>
 			<div class="controls">
 			  <input type="text"  name="mobile" id="mobile" placeholder="Mobile Phone"/> 
 			</div>
 		</div>
 		
-	<p><sup>*</sup>Required field	</p>
+	<p><sup>*</sup>必须填写	</p>
 	
 	<div class="control-group">
 			<div class="controls">
