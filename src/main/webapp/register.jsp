@@ -69,55 +69,9 @@
     <ul id="topMenu" class="nav pull-right">
 	 <li class=""><a href="special_offer.jsp">特价提供</a></li>
 	 <li class=""><a href="normal.jsp">交付</a></li>
-	 <li class=""><a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">登录</span></a>
-	<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3>登录</h3>
-		  </div>
-		  <div class="modal-body">
-			<form class="form-horizontal loginFrm">
-			  <div class="control-group">								
-				<input type="text" id="inputEmail" placeholder="邮箱">
-			  </div>
-			  <div class="control-group">
-				<input type="password" id="inputPassword" placeholder="密码">
-			  </div>
-			  <div class="control-group">
-				<label class="checkbox">
-				<input type="checkbox"> 记住我
-				</label>
-			  </div>
-			</form>		
-			<button type="submit" class="btn btn-success">登录</button>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
-		  </div>
-	</div>
+	 <li class=""><a href="login.jsp" role="button"  style="padding-right:0"><span class="btn btn-large btn-success">登录</span></a>
 	</li>
-	 <li class=""><a href="#regedit" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">注册</span></a>
-	 <div id="regedit" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="regedit" aria-hidden="false" >
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3>注册</h3>
-		  </div>
-		  <div class="modal-body">
-			<form class="form-horizontal loginFrm">
-			  <div class="control-group">								
-				<input type="text" id="inputEmail" placeholder="注销1">
-			  </div>
-			  <div class="control-group">
-				<input type="password" id="inputPassword" placeholder="注销2">
-			  </div>
-			  <div class="control-group">
-				<label class="checkbox">
-				<input type="checkbox"> 记住我
-				</label>
-			  </div>
-			</form>		
-			<button type="submit" class="btn btn-success">注册</button>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
-		  </div>
-	</div>
+	 <li class=""><a href="register.jsp" role="button"  style="padding-right:0"><span class="btn btn-large btn-success">注册</span></a>
 	</li>
     </ul>
   </div>
@@ -163,7 +117,17 @@
 			</li>
 			<li><a href="products.jsp">美妆/洗护/保健品</a></li>
 			<li><a href="products.jsp">百货/创意/DIY</a></li>
-			<li><a href="products.jsp">学习/点卡/激活码</a></li>
+			<li class="subMenu"><a>服装/外贸/原单</a>
+			<ul style="display:none">
+			<li><a href="products.jsp"><i class="icon-chevron-right"></i>男装</a></li>
+				<li><a href="products.jsp"><i class="icon-chevron-right"></i>女装</a></li>												
+				<li><a href="products.jsp"><i class="icon-chevron-right"></i>鞋</a></li>	
+				<li><a href="products.jsp"><i class="icon-chevron-right"></i>T恤</a></li>
+				<li><a href="products.jsp"><i class="icon-chevron-right"></i>内裤</a></li>												
+				<li><a href="products.jsp"><i class="icon-chevron-right"></i>内衣</a></li>												
+				<li><a href="products.jsp"><i class="icon-chevron-right"></i>裤子</a></li>			
+			</ul>
+			</li>
 		</ul>
 		<br/>
 		  <div class="thumbnail">

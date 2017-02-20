@@ -69,55 +69,9 @@
     <ul id="topMenu" class="nav pull-right">
 	 <li class=""><a href="special_offer.jsp">特价提供</a></li>
 	 <li class=""><a href="normal.jsp">交付</a></li>
-	 <li class=""><a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">登录</span></a>
-	<div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3>登录</h3>
-		  </div>
-		  <div class="modal-body">
-			<form class="form-horizontal loginFrm">
-			  <div class="control-group">								
-				<input type="text" id="inputEmail" placeholder="邮箱">
-			  </div>
-			  <div class="control-group">
-				<input type="password" id="inputPassword" placeholder="密码">
-			  </div>
-			  <div class="control-group">
-				<label class="checkbox">
-				<input type="checkbox"> 记住我
-				</label>
-			  </div>
-			</form>		
-			<button type="submit" class="btn btn-success">登录</button>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
-		  </div>
-	</div>
+	 <li class=""><a href="login.jsp" role="button"  style="padding-right:0"><span class="btn btn-large btn-success">登录</span></a>
 	</li>
-	 <li class=""><a href="#regedit" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">注册</span></a>
-	 <div id="regedit" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="regedit" aria-hidden="false" >
-		  <div class="modal-header">
-			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-			<h3>注册</h3>
-		  </div>
-		  <div class="modal-body">
-			<form class="form-horizontal loginFrm">
-			  <div class="control-group">								
-				<input type="text" id="inputEmail" placeholder="注销1">
-			  </div>
-			  <div class="control-group">
-				<input type="password" id="inputPassword" placeholder="注销2">
-			  </div>
-			  <div class="control-group">
-				<label class="checkbox">
-				<input type="checkbox"> 记住我
-				</label>
-			  </div>
-			</form>		
-			<button type="submit" class="btn btn-success">注册</button>
-			<button class="btn" data-dismiss="modal" aria-hidden="true">取消</button>
-		  </div>
-	</div>
+	 <li class=""><a href="register.jsp" role="button"  style="padding-right:0"><span class="btn btn-large btn-success">注册</span></a>
 	</li>
     </ul>
   </div>
@@ -198,24 +152,6 @@
 	<div class="row">
 		<div class="span4">
 			<div class="well">
-			<h5>创建一个编码</h5><br/>
-			输入你有邮箱地址用来创建编码.<br/><br/><br/>
-			<form action="register.jsp">
-			  <div class="control-group">
-				<label class="control-label" for="inputEmail0">邮箱地址</label>
-				<div class="controls">
-				  <input class="span3"  type="text" id="inputEmail0" placeholder="Email">
-				</div>
-			  </div>
-			  <div class="controls">
-			  <button type="submit" class="btn block">创建你的编码</button>
-			  </div>
-			</form>
-		</div>
-		</div>
-		<div class="span1"> &nbsp;</div>
-		<div class="span4">
-			<div class="well">
 			<h5>已经注册了?</h5>
 			<form>
 			  <div class="control-group">
@@ -234,6 +170,24 @@
 				<div class="controls">
 				  <button type="submit" class="btn">登录</button> <a href="forgetpass.jsp">忘记密码?</a>
 				</div>
+			  </div>
+			</form>
+		</div>
+		</div>
+		<div class="span1"> &nbsp;</div>
+		<div class="span4">
+			<div class="well">
+			<h5>创建一个编码</h5><br/>
+			输入你有邮箱地址用来创建编码.<br/><br/><br/>
+			<form action="register.jsp">
+			  <div class="control-group">
+				<label class="control-label" for="inputEmail0">邮箱地址</label>
+				<div class="controls">
+				  <input class="span3"  type="text" id="inputEmail0" placeholder="Email">
+				</div>
+			  </div>
+			  <div class="controls">
+			  <button type="submit" class="btn block">创建你的编码</button>
 			  </div>
 			</form>
 		</div>
