@@ -7,5 +7,5 @@ public interface UserService {
 	void register(User record);
 	User deleteUser(int userid);
 	User updateUser(int userid);
-	
+	User login(String uName,String uPwd);
 }

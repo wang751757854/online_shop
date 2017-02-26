@@ -15,16 +15,16 @@
     <result column="u_city" property="uCity" jdbcType="VARCHAR" />
     <result column="u_school" property="uSchool" jdbcType="VARCHAR" />
     <result column="u_code" property="uCode" jdbcType="VARCHAR" />
-    <result column="u_leavemsg" property="u_Leavemsg" jdbcType="VARCHAR" />
+    <result column="u_leavemsg" property="uLeavemsg" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
     u_id, u_name, u_pwd, u_phone, u_mail, u_address, u_sex, u_age, u_image, u_username, u_city, u_school, u_code, u_leavemsg
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="login" resultMap="BaseResultMap" >
     select 
     <include refid="Base_Column_List" />
     from os_user
-    where u_id = #{uId,jdbcType=INTEGER}
+    where u_name = #{uName} and u_pwd = #{uPwd}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from os_user

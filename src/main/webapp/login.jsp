@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootshop online Shopping cart</title>
+    <title>登录</title>
    <w:StyleHead />
   </head>
 <body>
@@ -89,17 +89,17 @@
 		<div class="span4">
 			<div class="well">
 			<h5>已经注册了?</h5>
-			<form>
+			<form action="login" >
 			  <div class="control-group">
-				<label class="control-label" for="inputEmail1">邮箱</label>
+				<label class="control-label" for="inputEmail1">用户名</label>
 				<div class="controls">
-				  <input class="span3"  type="text" id="inputEmail1" placeholder="Email">
+				  <input class="span3"  type="text" id="inputEmail1" placeholder="用户名" name="uName">
 				</div>
 			  </div>
 			  <div class="control-group">
 				<label class="control-label" for="inputPassword1">密码</label>
 				<div class="controls">
-				  <input type="password" class="span3"  id="inputPassword1" placeholder="Password">
+				  <input type="password" class="span3"  id="inputPassword1" placeholder="Password" name="uPwd">
 				</div>
 			  </div>
 			  <div class="control-group">

@@ -2,6 +2,8 @@ package com.shop.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.shop.entity.User;
 
 public interface UserMapper {
@@ -17,5 +19,5 @@ public interface UserMapper {
 
     int updateByPrimaryKey(User record);
     
-    List<User> login(String uName,String uPwd);
+    User login(@Param("uName") String uName,@Param("uPwd") String uPwd);
 }
