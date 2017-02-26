@@ -2,6 +2,9 @@ package com.shop.entity;
 
 import javax.persistence.Entity;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class User {
     private Integer uId;
 
@@ -20,6 +23,16 @@ public class User {
     private Integer uAge;
 
     private String uImage;
+    
+    private String uUsername;
+    
+    private String uCity;
+    
+    private String uSchool;
+    
+    private String uCode;
+    
+    private String uLeavemsg;
 
     public Integer getuId() {
         return uId;
@@ -92,4 +105,55 @@ public class User {
     public void setuImage(String uImage) {
         this.uImage = uImage == null ? null : uImage.trim();
     }
+
+	public String getuUsername() {
+		return uUsername;
+	}
+
+	public void setuUsername(String uUsername) {
+		this.uUsername = uUsername;
+	}
+	
+	
+	public String getuCity() {
+		return uCity;
+	}
+
+	public void setuCity(String uCity) {
+		this.uCity = uCity;
+	}
+	
+	public String getuSchool() {
+		return uSchool;
+	}
+
+	public void setuSchool(String uSchool) {
+		this.uSchool = uSchool;
+	}
+	
+	public String getuCode() {
+		return uCode;
+	}
+
+	public void setuCode(String uCode) {
+		this.uCode = uCode;
+	}
+
+	public String getuLeavemsg() {
+		return uLeavemsg;
+	}
+
+	public void setuLeavemsg(String uLeavemsg) {
+		this.uLeavemsg = uLeavemsg;
+	}
+
+	@Override
+	public String toString() {
+		return "User [uId=" + uId + ", uName=" + uName + ", uPwd=" + uPwd + ", uPhone=" + uPhone + ", uMail=" + uMail
+				+ ", uAddress=" + uAddress + ", uSex=" + uSex + ", uAge=" + uAge + ", uImage=" + uImage + ", uUsername="
+				+ uUsername + ", uCity=" + uCity + ", uSchool=" + uSchool + ", uCode=" + uCode + ", uLeavemsg="
+				+ uLeavemsg + "]";
+	}
+
+	
 }

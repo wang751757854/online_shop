@@ -3,5 +3,9 @@ package com.shop.service;
 import com.shop.entity.User;
 
 public interface UserService {
-	public User getUserById(int userid);
+	User getUserById(int userid);
+	void register(User record);
+	User deleteUser(int userid);
+	User updateUser(int userid);
+	
 }

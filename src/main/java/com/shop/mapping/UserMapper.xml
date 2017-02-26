@@ -11,9 +11,14 @@
     <result column="u_sex" property="uSex" jdbcType="VARCHAR" />
     <result column="u_age" property="uAge" jdbcType="INTEGER" />
     <result column="u_image" property="uImage" jdbcType="VARCHAR" />
+    <result column="u_username" property="uUsername" jdbcType="VARCHAR" />
+    <result column="u_city" property="uCity" jdbcType="VARCHAR" />
+    <result column="u_school" property="uSchool" jdbcType="VARCHAR" />
+    <result column="u_code" property="uCode" jdbcType="VARCHAR" />
+    <result column="u_leavemsg" property="u_Leavemsg" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    u_id, u_name, u_pwd, u_phone, u_mail, u_address, u_sex, u_age, u_image
+    u_id, u_name, u_pwd, u_phone, u_mail, u_address, u_sex, u_age, u_image, u_username, u_city, u_school, u_code, u_leavemsg
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -28,10 +33,12 @@
   <insert id="insert" parameterType="com.shop.entity.User" >
     insert into os_user (u_id, u_name, u_pwd, 
       u_phone, u_mail, u_address, 
-      u_sex, u_age, u_image)
+      u_sex, u_age, u_image, u_username, u_city, u_school, u_code, u_leavemsg)
     values (#{uId,jdbcType=INTEGER}, #{uName,jdbcType=VARCHAR}, #{uPwd,jdbcType=VARCHAR}, 
       #{uPhone,jdbcType=VARCHAR}, #{uMail,jdbcType=VARCHAR}, #{uAddress,jdbcType=VARCHAR}, 
-      #{uSex,jdbcType=VARCHAR}, #{uAge,jdbcType=INTEGER}, #{uImage,jdbcType=VARCHAR})
+      #{uSex,jdbcType=VARCHAR}, #{uAge,jdbcType=INTEGER}, #{uImage,jdbcType=VARCHAR},
+       #{uUsername,jdbcType=VARCHAR}, #{uCity,jdbcType=VARCHAR},
+       #{uSchool,jdbcType=VARCHAR}, #{uCode,jdbcType=VARCHAR}, #{uLeavemsg,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.shop.entity.User" >
     insert into os_user
@@ -63,6 +70,21 @@
       <if test="uImage != null" >
         u_image,
       </if>
+      <if test="uUsername != null" >
+        uUsername,
+      </if>
+      <if test="uCity != null" >
+        uCity,
+      </if>
+      <if test="uSchool != null" >
+        uSchool,
+      </if>
+      <if test="uCode != null" >
+        uCode,
+      </if>
+      <if test="uLeavemsg != null" >
+        uLeavemsg,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="uId != null" >
@@ -91,6 +113,21 @@
       </if>
       <if test="uImage != null" >
         #{uImage,jdbcType=VARCHAR},
+      </if>
+       <if test="uUsername != null" >
+        #{uUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="uCity != null" >
+        #{uCity,jdbcType=VARCHAR},
+      </if>
+       <if test="uSchool != null" >
+        #{uSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="uCode != null" >
+        #{uCode,jdbcType=VARCHAR},
+      </if>
+       <if test="uLeavemsg != null" >
+        #{uLeavemsg,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -121,6 +158,21 @@
       <if test="uImage != null" >
         u_image = #{uImage,jdbcType=VARCHAR},
       </if>
+      <if test="uUsername != null" >
+        u_username = #{uUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="uCity != null" >
+        u_city = #{uCity,jdbcType=VARCHAR},
+      </if>
+       <if test="uSchool != null" >
+        u_school = #{uSchool,jdbcType=VARCHAR},
+      </if>
+      <if test="uCode != null" >
+        u_Code = #{uCode,jdbcType=VARCHAR},
+      </if>
+       <if test="uLeavemsg != null" >
+        u_Leavemsg = #{uLeavemsg,jdbcType=VARCHAR},
+      </if>
     </set>
     where u_id = #{uId,jdbcType=INTEGER}
   </update>
@@ -133,7 +185,12 @@
       u_address = #{uAddress,jdbcType=VARCHAR},
       u_sex = #{uSex,jdbcType=VARCHAR},
       u_age = #{uAge,jdbcType=INTEGER},
-      u_image = #{uImage,jdbcType=VARCHAR}
+      u_image = #{uImage,jdbcType=VARCHAR},
+      u_username = #{uUsername,jdbcType=VARCHAR},
+      u_city = #{uCity,jdbcType=VARCHAR},
+      u_school = #{uSchool,jdbcType=VARCHAR},
+      u_code = #{uCode,jdbcType=VARCHAR},
+      u_leavemsg = #{uLeavemsg,jdbcType=VARCHAR}
     where u_id = #{uId,jdbcType=INTEGER}
   </update>
 </mapper>

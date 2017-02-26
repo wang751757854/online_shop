@@ -113,17 +113,17 @@
 		<div class="span1"> &nbsp;</div>
 		<div class="span4">
 			<div class="well">
-			<h5>创建一个编码</h5><br/>
-			输入你有邮箱地址用来创建编码.<br/><br/><br/>
+			<h5>现在注册</h5><br/>
+			请输入你的有效邮箱<br/><br/><br/>
 			<form action="register.jsp">
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail0">邮箱地址</label>
 				<div class="controls">
-				  <input class="span3"  type="text" id="inputEmail0" placeholder="Email">
+				  <input class="span3"  name="email" type="text" id="inputEmail0" placeholder="Email">
 				</div>
 			  </div>
 			  <div class="controls">
-			  <button type="submit" class="btn block">创建你的编码</button>
+			  <button type="submit" class="btn block">注册</button>
 			  </div>
 			</form>
 		</div>
