@@ -1,6 +1,9 @@
 package com.shop.controller;
 
 
+import java.util.List;
+
+import javax.json.JsonArray;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -10,14 +13,21 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.alibaba.fastjson.JSONArray;
+import com.shop.entity.Shop;
 import com.shop.entity.User;
+import com.shop.service.ShopService;
 import com.shop.service.UserService;
 @Controller
 public class UserController{
     @Autowired
     private UserService userService;
     @Autowired
+    private ShopService shopService;
+    @Autowired
     private User user;
+    @Autowired
+    private Shop shop;
 	Logger log = Logger.getLogger(UserController.class);
 	//	註冊
 	@RequestMapping("register")
@@ -47,5 +57,14 @@ public class UserController{
     public String logout(HttpSession session){
     	session.removeAttribute("user");
     	return "redirect:index.jsp";
+    }
+    @RequestMapping("showAllShop")
+    public String showAllShop(HttpSession session){
+    	List<Shop> shop = shopService.showAllShop();
+			if(shop.size()!=0){
+				log.info(shop.get(0).getsImage());
+				session.setAttribute("shop", shop);
+			}
+			return "index";
     }
 }

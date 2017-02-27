@@ -1,5 +1,7 @@
 package com.shop.dao;
 
+import java.util.List;
+
 import com.shop.entity.Shop;
 
 public interface ShopMapper {
@@ -14,4 +16,6 @@ public interface ShopMapper {
     int updateByPrimaryKeySelective(Shop record);
 
     int updateByPrimaryKey(Shop record);
+    
+    List<Shop> showAllShop();
 }

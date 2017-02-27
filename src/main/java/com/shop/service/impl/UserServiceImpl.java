@@ -24,8 +24,6 @@ public class UserServiceImpl implements UserService {
 		return null;
 	}
 	public User login(String uName, String uPwd) {
-		System.out.println(uName);
-		System.out.println(uPwd);
 		return userdao.login(uName, uPwd);
 	}
 

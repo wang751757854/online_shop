@@ -20,6 +20,11 @@
     s_id, s_int, s_name, s_price, s_kind, s_say, s_image, s_number, s_phone, s_school, 
     s_type, s_time, s_userid
   </sql>
+  <select id="showAllShop" resultMap="BaseResultMap">
+  select 
+    <include refid="Base_Column_List" />
+    from os_shop
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
