@@ -59,12 +59,13 @@ public class UserController{
     	return "redirect:index.jsp";
     }
     @RequestMapping("showAllShop")
-    public String showAllShop(HttpSession session){
+    public void showAllShop(HttpSession session){
     	List<Shop> shop = shopService.showAllShop();
 			if(shop.size()!=0){
-				log.info(shop.get(0).getsImage());
+				log.info("图片地址"+shop.get(0).getsImage());
 				session.setAttribute("shop", shop);
+			}else{
+				log.error("查询失败");
 			}
-			return "index";
     }
 }
