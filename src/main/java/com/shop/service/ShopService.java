@@ -6,4 +6,5 @@ import com.shop.entity.Shop;
 
 public interface ShopService {
 	List<Shop> showAllShop();
+	Shop lookShop(Integer sId);
 }

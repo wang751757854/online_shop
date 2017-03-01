@@ -39,10 +39,10 @@
 		class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"> 
 		<property name="supportedMediaTypes"> <list> <value>text/html;charset=UTF-8</value> 
 		</list> </property> </bean> -->
-	<!--使MVC支持静态资源 -->
+	<!--使MVC支持静态资源 --><!--配置在web.xml，交给tomcat的处理器解决，这样是性能最好的，而且会有提示  -->
 	<!--<mvc:resources location="/themes/" mapping="/themes/**" />
 	<mvc:resources location="/bootstrap/" mapping="/bootstrap/**" />-->
-	 <mvc:default-servlet-handler/> 
+	<mvc:default-servlet-handler/>
 	<!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

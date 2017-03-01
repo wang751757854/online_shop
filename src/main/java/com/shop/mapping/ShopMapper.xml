@@ -1,193 +1,253 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.shop.dao.ShopMapper" >
-  <resultMap id="BaseResultMap" type="com.shop.entity.Shop" >
-    <id column="s_id" property="sId" jdbcType="INTEGER" />
-    <result column="s_int" property="sInt" jdbcType="INTEGER" />
-    <result column="s_name" property="sName" jdbcType="VARCHAR" />
-    <result column="s_price" property="sPrice" jdbcType="VARCHAR" />
-    <result column="s_kind" property="sKind" jdbcType="VARCHAR" />
-    <result column="s_say" property="sSay" jdbcType="VARCHAR" />
-    <result column="s_image" property="sImage" jdbcType="VARCHAR" />
-    <result column="s_number" property="sNumber" jdbcType="INTEGER" />
-    <result column="s_phone" property="sPhone" jdbcType="VARCHAR" />
-    <result column="s_school" property="sSchool" jdbcType="VARCHAR" />
-    <result column="s_type" property="sType" jdbcType="VARCHAR" />
-    <result column="s_time" property="sTime" jdbcType="TIMESTAMP" />
-    <result column="s_userid" property="sUserid" jdbcType="INTEGER" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    s_id, s_int, s_name, s_price, s_kind, s_say, s_image, s_number, s_phone, s_school, 
-    s_type, s_time, s_userid
-  </sql>
-  <select id="showAllShop" resultMap="BaseResultMap">
-  select 
-    <include refid="Base_Column_List" />
-    from os_shop
-  </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from os_shop
-    where s_id = #{sId,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from os_shop
-    where s_id = #{sId,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.shop.entity.Shop" >
-    insert into os_shop (s_id, s_int, s_name, 
-      s_price, s_kind, s_say, 
-      s_image, s_number, s_phone, 
-      s_school, s_type, s_time, 
-      s_userid)
-    values (#{sId,jdbcType=INTEGER}, #{sInt,jdbcType=INTEGER}, #{sName,jdbcType=VARCHAR}, 
-      #{sPrice,jdbcType=VARCHAR}, #{sKind,jdbcType=VARCHAR}, #{sSay,jdbcType=VARCHAR}, 
-      #{sImage,jdbcType=VARCHAR}, #{sNumber,jdbcType=INTEGER}, #{sPhone,jdbcType=VARCHAR}, 
-      #{sSchool,jdbcType=VARCHAR}, #{sType,jdbcType=VARCHAR}, #{sTime,jdbcType=TIMESTAMP}, 
-      #{sUserid,jdbcType=INTEGER})
-  </insert>
-  <insert id="insertSelective" parameterType="com.shop.entity.Shop" >
-    insert into os_shop
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="sId != null" >
-        s_id,
-      </if>
-      <if test="sInt != null" >
-        s_int,
-      </if>
-      <if test="sName != null" >
-        s_name,
-      </if>
-      <if test="sPrice != null" >
-        s_price,
-      </if>
-      <if test="sKind != null" >
-        s_kind,
-      </if>
-      <if test="sSay != null" >
-        s_say,
-      </if>
-      <if test="sImage != null" >
-        s_image,
-      </if>
-      <if test="sNumber != null" >
-        s_number,
-      </if>
-      <if test="sPhone != null" >
-        s_phone,
-      </if>
-      <if test="sSchool != null" >
-        s_school,
-      </if>
-      <if test="sType != null" >
-        s_type,
-      </if>
-      <if test="sTime != null" >
-        s_time,
-      </if>
-      <if test="sUserid != null" >
-        s_userid,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="sId != null" >
-        #{sId,jdbcType=INTEGER},
-      </if>
-      <if test="sInt != null" >
-        #{sInt,jdbcType=INTEGER},
-      </if>
-      <if test="sName != null" >
-        #{sName,jdbcType=VARCHAR},
-      </if>
-      <if test="sPrice != null" >
-        #{sPrice,jdbcType=VARCHAR},
-      </if>
-      <if test="sKind != null" >
-        #{sKind,jdbcType=VARCHAR},
-      </if>
-      <if test="sSay != null" >
-        #{sSay,jdbcType=VARCHAR},
-      </if>
-      <if test="sImage != null" >
-        #{sImage,jdbcType=VARCHAR},
-      </if>
-      <if test="sNumber != null" >
-        #{sNumber,jdbcType=INTEGER},
-      </if>
-      <if test="sPhone != null" >
-        #{sPhone,jdbcType=VARCHAR},
-      </if>
-      <if test="sSchool != null" >
-        #{sSchool,jdbcType=VARCHAR},
-      </if>
-      <if test="sType != null" >
-        #{sType,jdbcType=VARCHAR},
-      </if>
-      <if test="sTime != null" >
-        #{sTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="sUserid != null" >
-        #{sUserid,jdbcType=INTEGER},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.shop.entity.Shop" >
-    update os_shop
-    <set >
-      <if test="sInt != null" >
-        s_int = #{sInt,jdbcType=INTEGER},
-      </if>
-      <if test="sName != null" >
-        s_name = #{sName,jdbcType=VARCHAR},
-      </if>
-      <if test="sPrice != null" >
-        s_price = #{sPrice,jdbcType=VARCHAR},
-      </if>
-      <if test="sKind != null" >
-        s_kind = #{sKind,jdbcType=VARCHAR},
-      </if>
-      <if test="sSay != null" >
-        s_say = #{sSay,jdbcType=VARCHAR},
-      </if>
-      <if test="sImage != null" >
-        s_image = #{sImage,jdbcType=VARCHAR},
-      </if>
-      <if test="sNumber != null" >
-        s_number = #{sNumber,jdbcType=INTEGER},
-      </if>
-      <if test="sPhone != null" >
-        s_phone = #{sPhone,jdbcType=VARCHAR},
-      </if>
-      <if test="sSchool != null" >
-        s_school = #{sSchool,jdbcType=VARCHAR},
-      </if>
-      <if test="sType != null" >
-        s_type = #{sType,jdbcType=VARCHAR},
-      </if>
-      <if test="sTime != null" >
-        s_time = #{sTime,jdbcType=TIMESTAMP},
-      </if>
-      <if test="sUserid != null" >
-        s_userid = #{sUserid,jdbcType=INTEGER},
-      </if>
-    </set>
-    where s_id = #{sId,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.shop.entity.Shop" >
-    update os_shop
-    set s_int = #{sInt,jdbcType=INTEGER},
-      s_name = #{sName,jdbcType=VARCHAR},
-      s_price = #{sPrice,jdbcType=VARCHAR},
-      s_kind = #{sKind,jdbcType=VARCHAR},
-      s_say = #{sSay,jdbcType=VARCHAR},
-      s_image = #{sImage,jdbcType=VARCHAR},
-      s_number = #{sNumber,jdbcType=INTEGER},
-      s_phone = #{sPhone,jdbcType=VARCHAR},
-      s_school = #{sSchool,jdbcType=VARCHAR},
-      s_type = #{sType,jdbcType=VARCHAR},
-      s_time = #{sTime,jdbcType=TIMESTAMP},
-      s_userid = #{sUserid,jdbcType=INTEGER}
-    where s_id = #{sId,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.shop.dao.ShopMapper">
+	<resultMap id="BaseResultMap" type="com.shop.entity.Shop">
+		<id column="s_id" property="sId" jdbcType="INTEGER" />
+		<result column="s_int" property="sInt" jdbcType="INTEGER" />
+		<result column="s_name" property="sName" jdbcType="VARCHAR" />
+		<result column="s_price" property="sPrice" jdbcType="VARCHAR" />
+		<result column="s_kind" property="sKind" jdbcType="VARCHAR" />
+		<result column="s_say" property="sSay" jdbcType="VARCHAR" />
+		<result column="s_image" property="sImage" jdbcType="VARCHAR" />
+		<result column="s_number" property="sNumber" jdbcType="INTEGER" />
+		<result column="s_phone" property="sPhone" jdbcType="VARCHAR" />
+		<result column="s_school" property="sSchool" jdbcType="VARCHAR" />
+		<result column="s_type" property="sType" jdbcType="VARCHAR" />
+		<result column="s_time" property="sTime" jdbcType="TIMESTAMP" />
+		<result column="s_userid" property="sUserid" jdbcType="INTEGER" />
+		<result column="s_brand" property="sBrand" jdbcType="VARCHAR" />
+		<result column="s_smallsay" property="sSmallsay" jdbcType="VARCHAR" />
+		<result column="s_image2" property="sImage2" jdbcType="VARCHAR" />
+		<result column="s_image3" property="sImage3" jdbcType="VARCHAR" />
+		<result column="s_image4" property="sImage4" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		s_id, s_int, s_name, s_price, s_kind, s_say, s_image, s_number, s_phone,
+		s_school,
+		s_type, s_time, s_userid,s_brand,s_smallsay, s_image2, s_image3, s_image4
+	</sql>
+	<select id="showAllShop" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from os_shop
+	</select>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from os_shop
+		where s_id = #{sId,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from os_shop
+		where s_id = #{sId,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.shop.entity.Shop">
+		insert into os_shop (s_id, s_int, s_name,
+		s_price, s_kind, s_say,
+		s_image, s_number, s_phone,
+		s_school, s_type, s_time,
+		s_userid,s_brand,s_smallsay)
+		values (#{sId,jdbcType=INTEGER}, #{sInt,jdbcType=INTEGER},
+		#{sName,jdbcType=VARCHAR},
+		#{sPrice,jdbcType=VARCHAR}, #{sKind,jdbcType=VARCHAR}, #{sSay,jdbcType=VARCHAR},
+		#{sImage,jdbcType=VARCHAR}, #{sNumber,jdbcType=INTEGER},
+		#{sPhone,jdbcType=VARCHAR},
+		#{sSchool,jdbcType=VARCHAR}, #{sType,jdbcType=VARCHAR}, #{sTime,jdbcType=TIMESTAMP},
+		#{sUserid,jdbcType=INTEGER}, #{sBrand,jdbcType=VARCHAR},#{sSmallsay,jdbcType=VARCHAR},
+		#{sImage2,jdbcType=VARCHAR},#{sImage3,jdbcType=VARCHAR},#{sImage4,jdbcType=VARCHAR})
+	</insert>
+	<insert id="insertSelective" parameterType="com.shop.entity.Shop">
+		insert into os_shop
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="sId != null">
+				s_id,
+			</if>
+			<if test="sInt != null">
+				s_int,
+			</if>
+			<if test="sName != null">
+				s_name,
+			</if>
+			<if test="sPrice != null">
+				s_price,
+			</if>
+			<if test="sKind != null">
+				s_kind,
+			</if>
+			<if test="sSay != null">
+				s_say,
+			</if>
+			<if test="sImage != null">
+				s_image,
+			</if>
+			<if test="sNumber != null">
+				s_number,
+			</if>
+			<if test="sPhone != null">
+				s_phone,
+			</if>
+			<if test="sSchool != null">
+				s_school,
+			</if>
+			<if test="sType != null">
+				s_type,
+			</if>
+			<if test="sTime != null">
+				s_time,
+			</if>
+			<if test="sUserid != null">
+				s_userid,
+			</if>
+			<if test="sBrand != null">
+				s_brand,
+			</if>
+			<if test="sSmallsay != null">
+				s_smallsay,
+			</if>
+			<if test="sImage2 != null">
+				s_image2,
+			</if>
+			<if test="sImage3 != null">
+				s_image3,
+			</if>
+			<if test="sImage4 != null">
+				s_image4,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="sId != null">
+				#{sId,jdbcType=INTEGER},
+			</if>
+			<if test="sInt != null">
+				#{sInt,jdbcType=INTEGER},
+			</if>
+			<if test="sName != null">
+				#{sName,jdbcType=VARCHAR},
+			</if>
+			<if test="sPrice != null">
+				#{sPrice,jdbcType=VARCHAR},
+			</if>
+			<if test="sKind != null">
+				#{sKind,jdbcType=VARCHAR},
+			</if>
+			<if test="sSay != null">
+				#{sSay,jdbcType=VARCHAR},
+			</if>
+			<if test="sImage != null">
+				#{sImage,jdbcType=VARCHAR},
+			</if>
+			<if test="sNumber != null">
+				#{sNumber,jdbcType=INTEGER},
+			</if>
+			<if test="sPhone != null">
+				#{sPhone,jdbcType=VARCHAR},
+			</if>
+			<if test="sSchool != null">
+				#{sSchool,jdbcType=VARCHAR},
+			</if>
+			<if test="sType != null">
+				#{sType,jdbcType=VARCHAR},
+			</if>
+			<if test="sTime != null">
+				#{sTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="sUserid != null">
+				#{sUserid,jdbcType=INTEGER},
+			</if>
+			<if test="sBrand != null">
+				#{sBrand,jdbcType=VARCHAR},
+			</if>
+			<if test="sSmallsay != null">
+				#{sSmallsay,jdbcType=VARCHAR},
+			</if>
+			<if test="sImage2 != null">
+				#{sImage2,jdbcType=VARCHAR},
+			</if>
+			<if test="sImage3 != null">
+				#{sImage3,jdbcType=VARCHAR},
+			</if>
+			<if test="sImage4 != null">
+				#{sImage4,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.shop.entity.Shop">
+		update os_shop
+		<set>
+			<if test="sInt != null">
+				s_int = #{sInt,jdbcType=INTEGER},
+			</if>
+			<if test="sName != null">
+				s_name = #{sName,jdbcType=VARCHAR},
+			</if>
+			<if test="sPrice != null">
+				s_price = #{sPrice,jdbcType=VARCHAR},
+			</if>
+			<if test="sKind != null">
+				s_kind = #{sKind,jdbcType=VARCHAR},
+			</if>
+			<if test="sSay != null">
+				s_say = #{sSay,jdbcType=VARCHAR},
+			</if>
+			<if test="sImage != null">
+				s_image = #{sImage,jdbcType=VARCHAR},
+			</if>
+			<if test="sNumber != null">
+				s_number = #{sNumber,jdbcType=INTEGER},
+			</if>
+			<if test="sPhone != null">
+				s_phone = #{sPhone,jdbcType=VARCHAR},
+			</if>
+			<if test="sSchool != null">
+				s_school = #{sSchool,jdbcType=VARCHAR},
+			</if>
+			<if test="sType != null">
+				s_type = #{sType,jdbcType=VARCHAR},
+			</if>
+			<if test="sTime != null">
+				s_time = #{sTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="sUserid != null">
+				s_userid = #{sUserid,jdbcType=INTEGER},
+			</if>
+			<if test="sTime != null">
+				s_brand = #{sBrand,jdbcType=VARCHAR},
+			</if>
+			<if test="sUserid != null">
+				s_smallsay = #{sSmallsay,jdbcType=VARCHAR},
+			</if>
+			<if test="sImage2 != null">
+				s_image2 = #{sImage2,jdbcType=VARCHAR},
+			</if>
+			<if test="sImage3 != null">
+				s_image3 = #{sImage3,jdbcType=VARCHAR},
+			</if>
+			<if test="sImage4 != null">
+				s_image4 = #{sImage4,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where s_id = #{sId,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.shop.entity.Shop">
+		update os_shop
+		set s_int = #{sInt,jdbcType=INTEGER},
+		s_name = #{sName,jdbcType=VARCHAR},
+		s_price = #{sPrice,jdbcType=VARCHAR},
+		s_kind = #{sKind,jdbcType=VARCHAR},
+		s_say = #{sSay,jdbcType=VARCHAR},
+		s_image = #{sImage,jdbcType=VARCHAR},
+		s_number = #{sNumber,jdbcType=INTEGER},
+		s_phone = #{sPhone,jdbcType=VARCHAR},
+		s_school = #{sSchool,jdbcType=VARCHAR},
+		s_type = #{sType,jdbcType=VARCHAR},
+		s_time = #{sTime,jdbcType=TIMESTAMP},
+		s_userid = #{sUserid,jdbcType=INTEGER},
+		s_brand = #{sBrand,jdbcType=VARCHAR},
+		s_smallsay = #{s_Smallsay,jdbcType=VARCHAR},
+		s_image2 = #{sImage2,jdbcType=VARCHAR},
+		s_image3 = #{sImage3,jdbcType=VARCHAR},
+		s_image4 = #{sImage4,jdbcType=VARCHAR}
+		where s_id = #{sId,jdbcType=INTEGER}
+	</update>
 </mapper>

@@ -15,8 +15,11 @@ public class ShopServiceImpl implements ShopService {
 	ShopMapper shopDao;
 
 	public List<Shop> showAllShop() {
-		// TODO Auto-generated method stub
 		return shopDao.showAllShop();
+	}
+
+	public Shop lookShop(Integer sId) {
+		return shopDao.selectByPrimaryKey(sId);
 	}
 
 }

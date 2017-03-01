@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootshop online Shopping cart</title>
+    <title>商品详情</title>
     <w:StyleHead />
   </head>
 <body>
@@ -85,20 +85,15 @@
     </ul>	
 	<div class="row">	  
 			<div id="gallery" class="span3">
-            <a href="themes/images/products/large/f1.jpg" title="Fujifilm FinePix S2950 Digital Camera">
-				<img src="themes/images/products/large/3.jpg" style="width:100%" alt="Fujifilm FinePix S2950 Digital Camera"/>
+            <a href="${requestScope.shopthing.getsImage() }" title="${requestScope.shopthing.getsName() }">
+				<img src="${requestScope.shopthing.getsImage() }" style="width:100%" alt="${requestScope.shopthing.getsName() }"/>
             </a>
 			<div id="differentview" class="moreOptopm carousel slide">
                 <div class="carousel-inner">
                   <div class="item active">
-                   <a href="themes/images/products/large/f1.jpg"> <img style="width:29%" src="themes/images/products/large/f1.jpg" alt=""/></a>
-                   <a href="themes/images/products/large/f2.jpg"> <img style="width:29%" src="themes/images/products/large/f2.jpg" alt=""/></a>
-                   <a href="themes/images/products/large/f3.jpg" > <img style="width:29%" src="themes/images/products/large/f3.jpg" alt=""/></a>
-                  </div>
-                  <div class="item">
-                   <a href="themes/images/products/large/f3.jpg" > <img style="width:29%" src="themes/images/products/large/f3.jpg" alt=""/></a>
-                   <a href="themes/images/products/large/f1.jpg"> <img style="width:29%" src="themes/images/products/large/f1.jpg" alt=""/></a>
-                   <a href="themes/images/products/large/f2.jpg"> <img style="width:29%" src="themes/images/products/large/f2.jpg" alt=""/></a>
+                   <a href="${requestScope.shopthing.getsImage2() }"> <img style="width:29%" src="${requestScope.shopthing.getsImage2() }" alt="${requestScope.shopthing.getsName() }"/></a>
+                   <a href="${requestScope.shopthing.getsImage3() }"> <img style="width:29%" src="${requestScope.shopthing.getsImage3() }" alt="${requestScope.shopthing.getsName() }"/></a>
+                   <a href="${requestScope.shopthing.getsImage4() }" > <img style="width:29%" src="${requestScope.shopthing.getsImage4() }" alt="${requestScope.shopthing.getsName() }"/></a>
                   </div>
                 </div>
               <!--  
@@ -119,7 +114,7 @@
 			</div>
 			</div>
 			<div class="span6">
-				<h3>富士FinePix S2950数码相机</h3>
+				<h3>${requestScope.shopthing.getsName()}</h3>
 				<small>- (14MP, 18x Optical Zoom) 3-inch LCD</small>
 				<hr class="soft"/>
 				<form class="form-horizontal qtyFrm">
@@ -149,9 +144,7 @@
 				</form>
 				<hr class="soft clr"/>
 				<p>
-				14百万像素。18倍光学变焦。3.0英寸液晶屏。全高清照片和1280×720p高清电影拍摄。ISO感光度iso6400降低决议。
-				自动对焦跟踪。运动全景模式。基于眨眼检测和笑脸拍摄模式的人脸检测技术。4 x AA电池不包括在内。宽110.2×81.4x73.4mm。
-				0.341kg重量（不包括电池和存储卡）。0.437kg重量（包括电池和存储卡）。	
+				${requestScope.shopthing.getsSmallsay() }
 				</p>
 				<a class="btn btn-small pull-right" href="#detail">更多细节</a>
 				<br class="clr"/>
@@ -171,10 +164,8 @@
 				<tbody>
 				<tr class="techSpecRow"><th colspan="2">产品细节</th></tr>
 				<tr class="techSpecRow"><td class="techSpecTD1">品牌: </td><td class="techSpecTD2">Fujifilm</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">模型:</td><td class="techSpecTD2">FinePix S2950HD</td></tr>
 				<tr class="techSpecRow"><td class="techSpecTD1">发布时间:</td><td class="techSpecTD2"> 2011-01-28</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">规模(大小):</td><td class="techSpecTD2"> 5.50" h x 5.50" w x 2.00" l, .75 pounds</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">显示屏尺寸:</td><td class="techSpecTD2">3</td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">尺码(大小、尺寸):</td><td class="techSpecTD2"> 5.50" h x 5.50" w x 2.00" l, .75 pounds</td></tr>
 				</tbody>
 				</table>
 				
