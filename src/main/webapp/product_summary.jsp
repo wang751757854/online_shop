@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Bootshop online Shopping cart</title>
+    <title>购物车页</title>
    <w:StyleHead />
   </head>
 <body>

@@ -26,11 +26,21 @@
 		s_school,
 		s_type, s_time, s_userid,s_brand,s_smallsay, s_image2, s_image3, s_image4
 	</sql>
+	<!--查看所有商品  -->
 	<select id="showAllShop" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
 		from os_shop
 	</select>
+	<!--相关产品，查询分类下的东东  -->
+	<select id="lookAbout" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from os_shop
+		where s_kind = #{sKind,jdbcType=VARCHAR}
+	</select>
+	<!--通过id查看商品详情  -->
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
 		parameterType="java.lang.Integer">
 		select

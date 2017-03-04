@@ -85,7 +85,7 @@
     </ul>	
 	<div class="row">	  
 			<div id="gallery" class="span3">
-            <a href="${requestScope.shopthing.getsImage() }" title="${requestScope.shopthing.getsName() }">
+            <a href="${requestScope.shopthing.getsImage() }">
 				<img src="${requestScope.shopthing.getsImage() }" style="width:100%" alt="${requestScope.shopthing.getsName() }"/>
             </a>
 			<div id="differentview" class="moreOptopm carousel slide">
@@ -101,51 +101,28 @@
               <a class="right carousel-control" href="#myCarousel" data-slide="next">›</a> 
 			  -->
               </div>
-			  
-			 <div class="btn-toolbar">
-			  <div class="btn-group">
-				<span class="btn"><i class="icon-envelope"></i></span>
-				<span class="btn" ><i class="icon-print"></i></span>
-				<span class="btn" ><i class="icon-zoom-in"></i></span>
-				<span class="btn" ><i class="icon-star"></i></span>
-				<span class="btn" ><i class=" icon-thumbs-up"></i></span>
-				<span class="btn" ><i class="icon-thumbs-down"></i></span>
-			  </div>
-			</div>
 			</div>
 			<div class="span6">
 				<h3>${requestScope.shopthing.getsName()}</h3>
-				<small>- (14MP, 18x Optical Zoom) 3-inch LCD</small>
 				<hr class="soft"/>
 				<form class="form-horizontal qtyFrm">
 				  <div class="control-group">
 					<label class="control-label"><span>$222.00</span></label>
 					<div class="controls">
-					<input type="number" class="span1" placeholder="Qty."/>
+					<input type="text" class="span1" placeholder="1件" readonly="readonly" />
 					  <button type="submit" class="btn btn-large btn-primary pull-right"> 添加到购物车<i class=" icon-shopping-cart"></i></button>
 					</div>
 				  </div>
 				</form>
 				
 				<hr class="soft"/>
-				<h4>100件库存</h4>
-				<form class="form-horizontal qtyFrm pull-right">
-				  <div class="control-group">
-					<label class="control-label"><span>颜色</span></label>
-					<div class="controls">
-					  <select class="span2">
-						  <option>黑色</option>
-						  <option>红色</option>
-						  <option>蓝色</option>
-						  <option>棕色</option>
-						</select>
-					</div>
-				  </div>
-				</form>
+				<h4 style="float: left">还剩${requestScope.shopthing.getsNumber()}件</h4>
+				<button type="submit" class="btn btn-large btn-primary pull-right"> 收藏<i class=" icon-shopping-cart"></i></button>
 				<hr class="soft clr"/>
 				<p>
 				${requestScope.shopthing.getsSmallsay() }
 				</p>
+				
 				<a class="btn btn-small pull-right" href="#detail">更多细节</a>
 				<br class="clr"/>
 			<a href="#" name="detail"></a>
@@ -163,66 +140,41 @@
                 <table class="table table-bordered">
 				<tbody>
 				<tr class="techSpecRow"><th colspan="2">产品细节</th></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">品牌: </td><td class="techSpecTD2">Fujifilm</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">发布时间:</td><td class="techSpecTD2"> 2011-01-28</td></tr>
-				<tr class="techSpecRow"><td class="techSpecTD1">尺码(大小、尺寸):</td><td class="techSpecTD2"> 5.50" h x 5.50" w x 2.00" l, .75 pounds</td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">品牌: </td><td class="techSpecTD2">${requestScope.shopthing.getsBrand() }</td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">发布时间:</td><td class="techSpecTD2">${requestScope.shopthing.getsTime() }</td></tr>
+				<tr class="techSpecRow"><td class="techSpecTD1">尺码(大小、尺寸):</td><td class="techSpecTD2">${requestScope.shopthing.getsInt() }</td></tr>
 				</tbody>
 				</table>
-				
-				<h5>产品特点</h5>
-				<p>
-14百万像素。18倍光学变焦。3.0英寸液晶屏。全高清照片和1280×720p高清电影拍摄。ISO感光度iso6400降低决议。自动对焦跟踪。运动全景模式。基于眨眼检测和笑脸拍摄模式的人脸检测技术。4 x AA电池不包括在内。宽110.2×81.4x73.4mm。0.341kg重量（不包括电池和存储卡）。0.437kg重量（包括电池和存储卡）。>
-ond363338 
-				</p>
-				<h4>编辑书评</h4>
-				<h5>制造商描述 </h5>
-				<p>
-一个慷慨的18x富士光学变焦镜头，真的s2950包一冲，特别是当符合其14像素传感器，3“LCD屏幕和720p高清电影拍摄（30fps）。 
-				</p>
-
-				<h5>富士18x电动变焦镜头</h5>
-				<p>
-一个令人印象深刻的s2950体育28mm–504mm *高精度富士光学变焦镜头。简单的操作与电动变焦杆，巨大的变焦范围意味着你可以捕捉所有细节，即使当你在相当远的距离。你甚至可以操作变焦在视频拍摄。不像一个笨重的单反相机，相机的变焦桥让你很好的通用性，没有携带一袋眼镜的麻烦。 
-				</p>
-				<h5>令人印象深刻的全景</h5>
-				<p>
-以其简单易用的全景拍摄模式中你可以得到创造性的s2950，但是基本技能，放心，你不会冒险拍摄风景或摇晃的视野不均匀。该相机使您能够采取三个连续拍摄与一个有用的工具，它会自动释放快门一旦图像完全对齐无缝拼接在一起拍摄相机。这是如此容易，结果令人印象深刻。 
-				</p>
-
-				<h5>清晰，清晰的镜头</h5>
-				<p>
-即使在最长的变焦设置或在最具挑战性的照明条件下，能产生的s2950清脆，干净的结果。其机械稳定的1 / 2“，3 14万像素的CCD传感器，和高ISO感光度设置，富士的双重图像稳定技术相结合以减少模糊效果都握手和主体运动提供卓越的照片。 
+				<p style="line-height: 30px;font-size: 15px">
+				${requestScope.shopthing.getsSay() }
 				</p>
               </div>
+              <a href="products.jsp" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> 继续购物 </a>
 		<div class="tab-pane fade" id="profile">
 		<div id="myTab" class="pull-right">
-		 <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
-		 <a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a>
+		<!--相关产品  -->
+		 <a href="#listView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-list"></i></span></a>
 		</div>
 		<br class="clr"/>
 		<hr class="soft"/>
 		<div class="tab-content">
-			<div class="tab-pane" id="listView">
+		<!--相关产品开始  -->
+			<div  class="tab-pane active" id="listView">
 				<div class="row">	  
 					<div class="span2">
-						<img src="themes/images/products/4.jpg" alt=""/>
+						<img src="${requestScope.aboutShop.get(1).getsImage() }" alt=""/>
 					</div>
 					<div class="span4">
-						<h3>新的|可用</h3>				
+						<h3>${requestScope.aboutShop.get(1).getsName() }</h3>				
 						<hr class="soft"/>
-						<h5>产品名称</h5>
-						<p>
-如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎 
-						</p>
-						<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
+						<p>${requestScope.aboutShop.get(1).getsSmallsay() }</p>
+						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(1).getsId()}">查看细节</a>
 						<br class="clr"/>
 					</div>
 					<div class="span3 alignR">
 					<form class="form-horizontal qtyFrm">
-					<h3> $222.00</h3>
+					<h3> ${requestScope.aboutShop.get(1).getsPrice() }元</h3>
 					<label class="checkbox">
-						<input type="checkbox">  增加了产品的比较
 					</label><br/>
 					<div class="btn-group">
 					  <a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
@@ -234,24 +186,21 @@ ond363338
 			<hr class="soft"/>
 			<div class="row">	  
 					<div class="span2">
-						<img src="themes/images/products/5.jpg" alt=""/>
+						<img src="${requestScope.aboutShop.get(2).getsImage() }" alt=""/>
 					</div>
 					<div class="span4">
-						<h3>新的|可用</h3>				
+						<h3>${requestScope.aboutShop.get(2).getsName() }</h3>				
 						<hr class="soft"/>
-						<h5>产品名称</h5>
 						<p>
-						如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎 
+						${requestScope.aboutShop.get(2).getsSmallsay() }
 						</p>
-						<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
+						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(2).getsId()}">查看细节</a>
 						<br class="clr"/>
 					</div>
 					<div class="span3 alignR">
 					<form class="form-horizontal qtyFrm">
-						<h3> $222.00</h3>
+						<h3>${requestScope.aboutShop.get(2).getsPrice() }元</h3>
 						<label class="checkbox">
-						<input type="checkbox">  增加了产品的比较
 						</label><br/>
 						<div class="btn-group">
 						<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
@@ -263,24 +212,21 @@ ond363338
 			<hr class="soft"/>
 			<div class="row">	  
 					<div class="span2">
-					<img src="themes/images/products/6.jpg" alt=""/>
+					<img src="${requestScope.aboutShop.get(3).getsImage() }" alt=""/>
 					</div>
 					<div class="span4">
-						<h3>新的|可用</h3>				
+						<h3>${requestScope.aboutShop.get(3).getsName() }</h3>				
 						<hr class="soft"/>
-						<h5>产品名称</h5>
 						<p>
-						如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎 
+						${requestScope.aboutShop.get(3).getsSmallsay() }
 						</p>
-						<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
+						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(3).getsId()}">查看细节</a>
 						<br class="clr"/>
 					</div>
 					<div class="span3 alignR">
 					<form class="form-horizontal qtyFrm">
-					<h3> $222.00</h3>
+					<h3>${requestScope.aboutShop.get(3).getsPrice() }元</h3>
 					<label class="checkbox">
-						<input type="checkbox">  增加了产品的比较
 					</label><br/>
 				<div class="btn-group">
 				  <a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
@@ -292,24 +238,21 @@ ond363338
 			<hr class="soft"/>
 			<div class="row">	  
 					<div class="span2">
-					<img src="themes/images/products/7.jpg" alt=""/>
+					<img src="${requestScope.aboutShop.get(4).getsImage() }" alt=""/>
 					</div>
 					<div class="span4">
-						<h3>新的|可用</h3>				
+						<h3>${requestScope.aboutShop.get(4).getsName() }</h3>				
 						<hr class="soft"/>
-						<h5>产品名称</h5>
 						<p>
-						如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎 
+						${requestScope.aboutShop.get(4).getsSmallsay() }
 						</p>
-						<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
+						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(4).getsId()}">查看细节</a>
 						<br class="clr"/>
 					</div>
 					<div class="span3 alignR">
 						<form class="form-horizontal qtyFrm">
-						<h3> $222.00</h3>
+						<h3>${requestScope.aboutShop.get(4).getsPrice() }元</h3>
 						<label class="checkbox">
-						<input type="checkbox">  增加了产品的比较
 						</label><br/>
 						<div class="btn-group">
 						<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
@@ -322,24 +265,21 @@ ond363338
 			<hr class="soft"/>
 			<div class="row">	  
 					<div class="span2">
-					<img src="themes/images/products/8.jpg" alt=""/>
+					<img src="${requestScope.aboutShop.get(5).getsImage() }" alt=""/>
 					</div>
 					<div class="span4">
-						<h3>新的|可用</h3>				
+						<h3>${requestScope.aboutShop.get(5).getsName() }</h3>				
 						<hr class="soft"/>
-						<h5>产品名称</h5>
 						<p>
-						如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎 
+						${requestScope.aboutShop.get(5).getsSmallsay() }
 						</p>
-						<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
+						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(5).getsId()}">查看细节</a>
 						<br class="clr"/>
 					</div>
 					<div class="span3 alignR">
 						<form class="form-horizontal qtyFrm">
-						<h3> $222.00</h3>
+						<h3>${requestScope.aboutShop.get(5).getsPrice() }元</h3>
 						<label class="checkbox">
-						<input type="checkbox">  增加了产品的比较
 						</label><br/>
 						<div class="btn-group">
 						<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
@@ -351,24 +291,21 @@ ond363338
 			<hr class="soft"/>
 				<div class="row">	  
 					<div class="span2">
-					<img src="themes/images/products/9.jpg" alt=""/>
+					<img src="${requestScope.aboutShop.get(6).getsImage() }" alt=""/>
 					</div>
 					<div class="span4">
-						<h3>新的|可用</h3>				
+						<h3>${requestScope.aboutShop.get(6).getsName() }</h3>				
 						<hr class="soft"/>
-						<h5>产品名称</h5>
 						<p>
-						如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎 
+						${requestScope.aboutShop.get(6).getsSmallsay() }
 						</p>
-						<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
+						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(6).getsId()}">查看细节</a>
 						<br class="clr"/>
 					</div>
 					<div class="span3 alignR">
 						<form class="form-horizontal qtyFrm">
-						<h3> $222.00</h3>
+						<h3> ${requestScope.aboutShop.get(6).getsPrice() }</h3>
 						<label class="checkbox">
-						<input type="checkbox">  增加了产品的比较
 						</label><br/>
 						<div class="btn-group">
 						<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
@@ -379,83 +316,6 @@ ond363338
 			</div>
 			<hr class="soft"/>
 		</div>
-			<div class="tab-pane active" id="blockView">
-				<ul class="thumbnails">
-					<li class="span3">
-					  <div class="thumbnail">
-						<a href="product_details.jsp"><img src="themes/images/products/10.jpg" alt=""/></a>
-						<div class="caption">
-						  <h5>修剪 &amp; 尾部修理</h5>
-						  <p> 
-							乱数假文只是虚拟文本。
-						  </p>
-						  <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-						</div>
-					  </div>
-					</li>
-					<li class="span3">
-					  <div class="thumbnail">
-						<a href="product_details.jsp"><img src="themes/images/products/11.jpg" alt=""/></a>
-						<div class="caption">
-						  <h5>修剪 &amp; 尾部修理</h5>
-						  <p> 
-							乱数假文只是虚拟文本。
-						  </p>
-						  <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-						</div>
-					  </div>
-					</li>
-					<li class="span3">
-					  <div class="thumbnail">
-						<a href="product_details.jsp"><img src="themes/images/products/12.jpg" alt=""/></a>
-						<div class="caption">
-						  <h5>修剪 &amp; 尾部修理</h5>
-						  <p> 
-							乱数假文只是虚拟文本。
-						  </p>
-						   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-						</div>
-					  </div>
-					</li>
-					<li class="span3">
-					  <div class="thumbnail">
-						<a href="product_details.jsp"><img src="themes/images/products/13.jpg" alt=""/></a>
-						<div class="caption">
-						  <h5>修剪 &amp; 尾部修理</h5>
-						  <p> 
-							乱数假文只是虚拟文本。
-						  </p>
-						   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-						</div>
-					  </div>
-					</li>
-					<li class="span3">
-					  <div class="thumbnail">
-						<a href="product_details.jsp"><img src="themes/images/products/1.jpg" alt=""/></a>
-						<div class="caption">
-						  <h5>修剪 &amp; 尾部修理</h5>
-						  <p> 
-							乱数假文只是虚拟文本。
-						  </p>
-						   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-						</div>
-					  </div>
-					</li>
-					<li class="span3">
-					  <div class="thumbnail">
-						<a href="product_details.jsp"><img src="themes/images/products/2.jpg" alt=""/></a>
-						<div class="caption">
-						  <h5>修剪 &amp; 尾部修理</h5>
-						  <p> 
-							乱数假文只是虚拟文本。
-						  </p>
-						   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-						</div>
-					  </div>
-					</li>
-				  </ul>
-			<hr class="soft"/>
-			</div>
 		</div>
 				<br class="clr">
 					 </div>

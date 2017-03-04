@@ -22,4 +22,9 @@ public class ShopServiceImpl implements ShopService {
 		return shopDao.selectByPrimaryKey(sId);
 	}
 
+	public List<Shop> lookAbout(String sKind) {
+		// TODO Auto-generated method stub
+		return shopDao.lookAbout(sKind);
+	}
+
 }

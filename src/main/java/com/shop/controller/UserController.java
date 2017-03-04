@@ -1,25 +1,17 @@
 package com.shop.controller;
 
 
-import java.sql.ResultSet;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
-import javax.json.JsonArray;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONArray;
 import com.shop.entity.Shop;
 import com.shop.entity.User;
 import com.shop.service.ShopService;
@@ -67,6 +59,11 @@ public class UserController{
     @RequestMapping("lookShop")
     public String lookShop(@RequestParam(value="sId") Integer sId,HttpServletRequest request){
     	Shop shopthing = shopService.lookShop(sId);
+    	List<Shop> aboutShop = shopService.lookAbout(shopthing.getsKind());
+    	log.info("第一个id是"+aboutShop.get(1).getsId());
+    	log.info("第一个名字是"+aboutShop.get(1).getsName());
+    	log.info("第一个图片地址是"+aboutShop.get(1).getsImage());
+    	request.setAttribute("aboutShop", aboutShop);
     	request.setAttribute("shopthing", shopthing);
     	log.info("查看的名字是"+shopthing.getsName());
     	log.info("shopthing的图片地址"+shopthing.getsImage());

@@ -18,4 +18,6 @@ public interface ShopMapper {
     int updateByPrimaryKey(Shop record);
     
     List<Shop> showAllShop();
+    
+    List<Shop> lookAbout(String sKind);
 }
