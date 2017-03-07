@@ -1,54 +1,53 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="w" tagdir="/WEB-INF/tags" %>
-<%-- 
- <%@ taglib prefix="w" tagdir="/WEB-INF/tags"%> 
- <%@ taglib prefix="s" uri="/struts-tags"%> 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- --%>
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Bootshop online Shopping cart</title>
-   <w:StyleHead />
+    <title>用户信息</title>
+    <w:StyleHead />
   </head>
 <body>
+<!-- <script type="text/javascript">
+	function updateOne(){
+	$("#spa1").replaceWith("<form action='123'/>")
+	$("#userr").replaceWith("<input type='text' value='"+$('#userr').text()+"' id='why' />")
+	$("#sexx").replaceWith("<input type='text' value='"+$('#sexx').text()+"'/>")
+	$("#agee").replaceWith("<input type='text' value='"+$('#agee').text()+"'/>")
+	$("#phonee").replaceWith("<input type='text' value='"+$('#phonee').text()+"'/>")
+	$("#addresss").replaceWith("<input type='text' value='"+$('#addresss').text()+"'/>")
+	$("#usernamee").replaceWith("<input type='text' value='"+$('#usernamee').text()+"'/>")
+	$("#cityy").replaceWith("<input type='text' value='"+$('#cityy').text()+"'/>")
+	$("#schooll").replaceWith("<input type='text' value='"+$('#schooll').text()+"'/>")
+	$("#codee").replaceWith("<input type='text' value='"+$('#codee').text()+"'/>")
+	$("#updat").replaceWith("<input type='submit' value='提交' />")
+	$("#spa2").replaceWith("</form>")
+		}
+</script> -->
 <w:StyleLeft />
 <div id="mainBody">
 	<div class="container">
 	<div class="row">
 	<w:StyleTopppp />
-	<div class="span9">
+	<div class="span9" id="mainCol">
     <ul class="breadcrumb">
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
-		<li class="active">Forget password?</li>
+		<li class="active">Page Title</li>
     </ul>
-	<h3> 忘记密码?</h3>	
-	<hr class="soft"/>
-	
-	<div class="row">
-		<div class="span9" style="min-height:900px">
-			<div class="well">
-			<h5>重置你的密码</h5><br/>
-			请输入你的邮箱地址. 一个验证码将发送给你。一旦您收到了验证码，您将能够为您的帐户选择一个新的密码。.<br/><br/><br/>
-			<form>
-			  <div class="control-group">
-				<label class="control-label" for="inputEmail1">邮箱地址</label>
-				<div class="controls">
-				  <input class="span3"  type="text" id="inputEmail1" placeholder="Email">
-				</div>
-			  </div>
-			  <div class="controls">
-			  <button type="submit" class="btn block">提交</button>
-			  </div>
-			</form>
-		</div>
-		</div>
-	</div>	
-	
+    
 </div>
-</div>
-</div>
+<span id="spa2"></span>
+<p>用户名：<span id="userr">${sessionScope.user.uName}</span></p>
+<p>性别：<span  id="sexx">${sessionScope.user.uSex}</p>
+<p>年龄：<span id="agee">${sessionScope.user.uAge}</p>
+<p>电话：<span id="phonee">${sessionScope.user.uPhone}</p>
+<p>邮箱：<span id="addresss">${sessionScope.user.uAddress}</p>
+<p>收货名称：<span id="usernamee">${sessionScope.user.uUsername}</p>
+<p>城市：<span id="cityy">${sessionScope.user.uCity}</p>
+<p>学校：<span id="schooll">${sessionScope.user.uSchool}</p>
+<p>邮编：<span id="codee">${sessionScope.user.uCode}</p><br>
+<a href="update.jsp"><input type="button" value="修改"></button></a>
+<span id="spa1"></span>
+</div></div>
 </div>
 	<div  id="footerSection">
 	<div class="container">

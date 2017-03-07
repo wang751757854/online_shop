@@ -27,4 +27,9 @@ public class ShopServiceImpl implements ShopService {
 		return shopDao.lookAbout(sKind);
 	}
 
+	public List<Shop> lookKindShop(String kind) {
+		// TODO Auto-generated method stub
+		return shopDao.lookKindShop(kind);
+	}
+
 }

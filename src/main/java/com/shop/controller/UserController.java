@@ -86,4 +86,33 @@ public class UserController{
 				log.error("查询失败");
 			}
     }
+	@RequestMapping("lookKindShop")
+	public String lookKindShop(@RequestParam(value="kind") String kind,HttpServletRequest request){
+		List<Shop> kinShop = shopService.lookKindShop(kind);
+		log.info(kinShop);
+		request.setAttribute("kindShop", kinShop);
+		return "products";
+	}
+	@RequestMapping("lookUserInfo")
+	public String lookUserInfo(){
+		return "userinfo";
+	}
+	@RequestMapping("orderBuy")
+	public String orderBuy(){
+		
+		return "";
+	}
+	@RequestMapping("shopCar")
+	public String shopCar(){
+		
+		return "";
+	}
+	@RequestMapping("updateUser")
+	public String updateUser(User u,HttpSession session){
+		log.info(u);
+		this.userService.updateUser(u);
+		user = this.userService.userinfo(u.getuId());
+		session.setAttribute("user",user);
+		return "userinfo";
+	}
 }

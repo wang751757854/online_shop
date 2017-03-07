@@ -17,66 +17,7 @@
 <div id="mainBody">
 	<div class="container">
 	<div class="row">
-	<div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart" href="product_summary.jsp"><img src="themes/images/ico-cart.png" alt="cart">在你的购物车有3件商品 <span class="badge badge-warning pull-right">$155.00</span></a></div>
-		<ul id="sideManu" class="nav nav-tabs nav-stacked">
-			<li class="subMenu open"><a>图书/数码/手机</a>
-				<ul>
-				<li><a class="active" href="products.jsp"><i class="icon-chevron-right"></i>菜刀</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>碗</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>筷子</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>电炒锅</a></li>
-				</ul>
-			</li>
-			<li class="subMenu"><a>美食/零食/水果</a>
-			<ul style="display:none">
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>男装</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>女装</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>鞋</a></li>	
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>T恤</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>内裤</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>内衣</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>裤子</a></li>												
-			</ul>
-			</li>
-			<li class="subMenu"><a>游戏/动漫/竞技</a>
-				<ul style="display:none">
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>电竞椅</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>键盘</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>鼠标</a></li>	
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>书包</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>机械键盘</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>散热扇</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>充电器</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>树莓派</a></li>												
-			</ul>
-			</li>
-			<li><a href="products.jsp">美妆/洗护/保健品</a></li>
-			<li><a href="products.jsp">百货/创意/DIY</a></li>
-			<li><a href="products.jsp">学习/点卡/激活码</a></li>
-		</ul>
-		<br/>
-		  <div class="thumbnail">
-			<img src="themes/images/products/panasonic.jpg" alt="Bootshop panasonoc New camera"/>
-			<div class="caption">
-			  <h5>相机</h5>
-				<h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
-			</div>
-		  </div><br/>
-			<div class="thumbnail">
-				<img src="themes/images/products/kindle.png" title="Bootshop New Kindel" alt="Bootshop Kindel">
-				<div class="caption">
-				  <h5>亚马逊商品</h5>
-				    <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
-				</div>
-			  </div><br/>
-			<div class="thumbnail">
-				<img src="themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
-				<div class="caption">
-				  <h5>支付方式</h5>
-				</div>
-			  </div>
-	</div>
+	<w:StyleTopppp />
 	<div class="span9">
     <ul class="breadcrumb">
     <li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
@@ -107,7 +48,7 @@
 				<hr class="soft"/>
 				<form class="form-horizontal qtyFrm">
 				  <div class="control-group">
-					<label class="control-label"><span>$222.00</span></label>
+					<label class="control-label"><span>${requestScope.shopthing.getsPrice()}元</span></label>
 					<div class="controls">
 					<input type="text" class="span1" placeholder="1件" readonly="readonly" />
 					  <button type="submit" class="btn btn-large btn-primary pull-right"> 添加到购物车<i class=" icon-shopping-cart"></i></button>
@@ -149,7 +90,7 @@
 				${requestScope.shopthing.getsSay() }
 				</p>
               </div>
-              <a href="products.jsp" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> 继续购物 </a>
+              <a href="index.jsp" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> 继续购物 </a>
 		<div class="tab-pane fade" id="profile">
 		<div id="myTab" class="pull-right">
 		<!--相关产品  -->
@@ -291,20 +232,20 @@
 			<hr class="soft"/>
 				<div class="row">	  
 					<div class="span2">
-					<img src="${requestScope.aboutShop.get(6).getsImage() }" alt=""/>
+					<img src="${requestScope.aboutShop.get(0).getsImage() }" alt=""/>
 					</div>
 					<div class="span4">
-						<h3>${requestScope.aboutShop.get(6).getsName() }</h3>				
+						<h3>${requestScope.aboutShop.get(0).getsName() }</h3>				
 						<hr class="soft"/>
 						<p>
-						${requestScope.aboutShop.get(6).getsSmallsay() }
+						${requestScope.aboutShop.get(0).getsSmallsay() }
 						</p>
-						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(6).getsId()}">查看细节</a>
+						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(0).getsId()}">查看细节</a>
 						<br class="clr"/>
 					</div>
 					<div class="span3 alignR">
 						<form class="form-horizontal qtyFrm">
-						<h3> ${requestScope.aboutShop.get(6).getsPrice() }</h3>
+						<h3> ${requestScope.aboutShop.get(0).getsPrice() }</h3>
 						<label class="checkbox">
 						</label><br/>
 						<div class="btn-group">
@@ -315,7 +256,7 @@
 					</div>
 			</div>
 			<hr class="soft"/>
-		</div>
+		</div> 
 		</div>
 				<br class="clr">
 					 </div>

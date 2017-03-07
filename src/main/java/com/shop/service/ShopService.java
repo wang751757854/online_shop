@@ -8,4 +8,5 @@ public interface ShopService {
 	List<Shop> showAllShop();
 	Shop lookShop(Integer sId);
 	List<Shop> lookAbout(String sKind);
+	List<Shop> lookKindShop(String kind);
 }

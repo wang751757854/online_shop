@@ -26,6 +26,12 @@
     from os_user
     where u_name = #{uName} and u_pwd = #{uPwd}
   </select>
+  <select id="userinfo" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from os_user
+    where u_id = #{uId}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from os_user
     where u_id = #{uId,jdbcType=INTEGER}
@@ -131,7 +137,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.shop.entity.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.shop.entity.User">
     update os_user
     <set >
       <if test="uName != null" >

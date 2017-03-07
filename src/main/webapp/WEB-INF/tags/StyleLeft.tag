@@ -13,9 +13,9 @@
 		<span class="caret"></span>
 	</button>
 	<ul class="dropdown-menu" role="menu">
-		<li><a href="#">查看个人信息</a></li>
-		<li><a href="#">已买订单</a></li>
-		<li><a href="#">购物车</a></li>
+		<li><a href="lookUserInfo">查看个人信息</a></li>
+		<li><a href="orderBuy.jsp">已买订单</a></li>
+		<li><a href="shopCar.jsp">购物车</a></li>
 		<li class="divider"></li>
 		<li><a href="logout">注销</a></li>
 	</ul>
@@ -43,18 +43,25 @@
 		<form class="form-inline navbar-search" method="post" action="products.jsp" >
 		<input id="srchFld" class="srchTxt" type="text" />
 		  <select class="srchTxt">
-			<option>所有</option>
-			<option>衣服</option>
-			<option>食物和饮料</option>
-			<option>健康和美丽</option>
-			<option>运动和休闲</option>
-			<option>书和娱乐</option>
+			<option>教育</option>
+			<option>文艺</option>
+			<option>生活</option>
+			<option>科技</option>
+			<option>休闲零食</option>
+			<option>糖果</option>
+			<option>蜜饯果干</option>
+			<option>蛋糕饼干</option>
+			<option>饮料</option>
+			<option>面部护肤</option>
+			<option>洗发护发</option>
+			<option>口腔护理</option>
+			<option>家居清洁</option>
 		</select> 
 		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
     </form>
     <ul id="topMenu" class="nav pull-right">
-	 <li class=""><a href="special_offer.jsp">特价提供</a></li>
-	 <li class=""><a href="normal.jsp">交付</a></li>
+	 <li class=""><a href="special_offer.jsp">所有商品</a></li>
+	 <li class=""><a href="lookUserInfo">个人信息</a></li>
 	 <c:choose>
 		<c:when test="${sessionScope.user!=null}">
 			<li><a href="logout" role="button"  style="padding-right:0">注销</a></li>

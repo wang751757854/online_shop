@@ -1,4 +1,5 @@
 <%@ tag pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <div id="carouselBlk">
 	<div id="myCarousel" class="carousel slide">
 		<div class="carousel-inner">
@@ -7,6 +8,10 @@
 			<a href="product_details.jsp?id=${sessionScope.shop.get(0).getsId()}"><img src="${sessionScope.shop.get(0).getsImage() }" alt="" id="one"/></a>
 		  </div>
 		  </div>
+		  <c:forEach items="">
+		  
+		  
+		  </c:forEach>
 		  <div class="item">
 		  <div class="container">
 			<a href="product_details.jsp?id=${sessionScope.shop.get(1).getsId()}"><img src="${sessionScope.shop.get(1).getsImage() }" alt="" id="two"/></a>

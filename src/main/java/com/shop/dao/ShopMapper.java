@@ -20,4 +20,6 @@ public interface ShopMapper {
     List<Shop> showAllShop();
     
     List<Shop> lookAbout(String sKind);
+    
+    List<Shop> lookKindShop(String kindShop);
 }

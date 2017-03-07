@@ -30,10 +30,18 @@
 	<select id="showAllShop" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
-		from os_shop
+		from os_shop limit 0,40
 	</select>
 	<!--相关产品，查询分类下的东东  -->
 	<select id="lookAbout" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from os_shop
+		where s_kind = #{sKind,jdbcType=VARCHAR} limit 0,6
+	</select>
+	<!--通过分类查看所有商品  -->
+	<select id="lookKindShop" resultMap="BaseResultMap"
 		parameterType="java.lang.String">
 		select
 		<include refid="Base_Column_List" />

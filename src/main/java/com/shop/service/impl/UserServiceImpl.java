@@ -20,11 +20,14 @@ public class UserServiceImpl implements UserService {
 	public User deleteUser(int userid) {
 		return null;
 	}
-	public User updateUser(int userid) {
-		return null;
-	}
 	public User login(String uName, String uPwd) {
 		return userdao.login(uName, uPwd);
+	}
+	public void updateUser(User record) {
+		this.userdao.updateByPrimaryKeySelective(record);
+	}
+	public User userinfo(int uId) {
+		return this.userdao.userinfo(uId);
 	}
 
 }

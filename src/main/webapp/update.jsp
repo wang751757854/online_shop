@@ -1,16 +1,10 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="w" tagdir="/WEB-INF/tags" %>
-<%-- 
- <%@ taglib prefix="w" tagdir="/WEB-INF/tags"%> 
- <%@ taglib prefix="s" uri="/struts-tags"%> 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- --%>
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Bootshop online Shopping cart</title>
-   <w:StyleHead />
+    <title>修改用户信息</title>
+    <w:StyleHead />
   </head>
 <body>
 <w:StyleLeft />
@@ -18,37 +12,27 @@
 	<div class="container">
 	<div class="row">
 	<w:StyleTopppp />
-	<div class="span9">
+	<div class="span9" id="mainCol">
     <ul class="breadcrumb">
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
-		<li class="active">Forget password?</li>
+		<li class="active">Page Title</li>
     </ul>
-	<h3> 忘记密码?</h3>	
-	<hr class="soft"/>
-	
-	<div class="row">
-		<div class="span9" style="min-height:900px">
-			<div class="well">
-			<h5>重置你的密码</h5><br/>
-			请输入你的邮箱地址. 一个验证码将发送给你。一旦您收到了验证码，您将能够为您的帐户选择一个新的密码。.<br/><br/><br/>
-			<form>
-			  <div class="control-group">
-				<label class="control-label" for="inputEmail1">邮箱地址</label>
-				<div class="controls">
-				  <input class="span3"  type="text" id="inputEmail1" placeholder="Email">
-				</div>
-			  </div>
-			  <div class="controls">
-			  <button type="submit" class="btn block">提交</button>
-			  </div>
-			</form>
-		</div>
-		</div>
-	</div>	
-	
+    
 </div>
-</div>
-</div>
+<form action="updateUser">
+<input type="hidden" value="${sessionScope.user.uId}" name="uId"/>
+<p>用户名：<input type="text" value="${sessionScope.user.uName}" style="height:30px;line-height: 30px" name="uName" /> 
+<p>性别：<input type="text" value="${sessionScope.user.uSex}" style="height:30px;line-height: 30px" name="uSex" /> 
+<p>年龄：<input type="text" value="${sessionScope.user.uAge}" style="height:30px;line-height: 30px" name="uAge" /> 
+<p>电话：<input type="text" value="${sessionScope.user.uPhone}" style="height:30px;line-height: 30px" name="uPhone" /> 
+<p>邮箱：<input type="text" value="${sessionScope.user.uAddress}" style="height:30px;line-height: 30px"  name="uAddress" /> 
+<p>收货名称：<input type="text" value="${sessionScope.user.uUsername}" style="height:30px;line-height: 30px" name="uUsername" /> 
+<p>城市：<input type="text" value="${sessionScope.user.uCity}" style="height:30px;line-height: 30px"  name="uCity" /> 
+<p>学校：<input type="text" value="${sessionScope.user.uSchool}" style="height:30px;line-height: 30px" name="uSchool" /> 
+<p>邮编：<input type="text" value="${sessionScope.user.uCode}" style="height:30px;line-height: 30px"  name="uCode" /> <br>
+<input type="submit" value="提交"></button>
+</form>
+</div></div>
 </div>
 	<div  id="footerSection">
 	<div class="container">

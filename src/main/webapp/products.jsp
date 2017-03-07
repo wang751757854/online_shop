@@ -1,13 +1,7 @@
-<%@page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 	<%@ taglib prefix="w" tagdir="/WEB-INF/tags" %>
-<%-- 
- <%@ taglib prefix="w" tagdir="/WEB-INF/tags"%> 
- <%@ taglib prefix="s" uri="/struts-tags"%> 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- --%>
-<!DOCTYPE html>
-<html lang="en">
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html>
   <head>
     <title>所有产品</title>
     <w:StyleHead />
@@ -17,66 +11,7 @@
 <div id="mainBody">
 	<div class="container">
 	<div class="row">
-	<div id="sidebar" class="span3">
-		<div class="well well-small"><a id="myCart" href="product_summary.jsp"><img src="themes/images/ico-cart.png" alt="cart">在你的购物车有3件商品 <span class="badge badge-warning pull-right">$155.00</span></a></div>
-		<ul id="sideManu" class="nav nav-tabs nav-stacked">
-			<li class="subMenu open"><a>图书/数码/手机</a>
-				<ul>
-				<li><a class="active" href="products.jsp"><i class="icon-chevron-right"></i>菜刀</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>碗</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>筷子</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>电炒锅</a></li>
-				</ul>
-			</li>
-			<li class="subMenu"><a>美食/零食/水果</a>
-			<ul style="display:none">
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>男装</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>女装</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>鞋</a></li>	
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>T恤</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>内裤</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>内衣</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>裤子</a></li>												
-			</ul>
-			</li>
-			<li class="subMenu"><a>游戏/动漫/竞技</a>
-				<ul style="display:none">
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>电竞椅</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>键盘</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>鼠标</a></li>	
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>书包</a></li>
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>机械键盘</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>散热扇</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>充电器</a></li>												
-				<li><a href="products.jsp"><i class="icon-chevron-right"></i>树莓派</a></li>												
-			</ul>
-			</li>
-			<li><a href="products.jsp">美妆/洗护/保健品</a></li>
-			<li><a href="products.jsp">百货/创意/DIY</a></li>
-			<li><a href="products.jsp">学习/点卡/激活码</a></li>
-		</ul>
-		<br/>
-		  <div class="thumbnail">
-			<img src="themes/images/products/panasonic.jpg" alt="Bootshop panasonoc New camera"/>
-			<div class="caption">
-			  <h5>相机</h5>
-				<h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
-			</div>
-		  </div><br/>
-			<div class="thumbnail">
-				<img src="themes/images/products/kindle.png" title="Bootshop New Kindel" alt="Bootshop Kindel">
-				<div class="caption">
-				  <h5>亚马逊商品</h5>
-				    <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">$222.00</a></h4>
-				</div>
-			  </div><br/>
-			<div class="thumbnail">
-				<img src="themes/images/payment_methods.png" title="Bootshop Payment Methods" alt="Payments Methods">
-				<div class="caption">
-				  <h5>支付方式</h5>
-				</div>
-			  </div>
-	</div>
+	<w:StyleTopppp />
 	<div class="span9">
     <ul class="breadcrumb">
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
@@ -84,17 +19,12 @@
     </ul>
 	<h3>产品名称<small class="pull-right"> 40个产品是可用的 </small></h3>	
 	<hr class="soft"/>
-	<p>
-如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系--这就是为什么我们的产品如此受欢迎，我们在全国各地拥有大量忠实客户的原因。 
-	</p>
 	<hr class="soft"/>
 	<form class="form-horizontal span6">
 		<div class="control-group">
 		  <label class="control-label alignL">排序方式</label>
 			<select>
-              <option>产品展厅  名字         A - Z</option>
-              <option>产品展厅  名字        Z - A</option>
-              <option>产品展厅       Stoke</option>
+              <option>销量最好</option>
               <option>价格最低</option>
             </select>
 		</div>
@@ -109,28 +39,25 @@
 	<div class="tab-pane" id="listView">
 		<div class="row">	  
 			<div class="span2">
-				<img src="themes/images/products/3.jpg" alt=""/>
+				<img src="${requestScope.kindShop.get(0).getsImage() }" alt=""/>
 			</div>
 			<div class="span4">
-				<h3>新的|可用</h3>				
+				<h3>${requestScope.kindShop.get(0).getsName() }</h3>				
 				<hr class="soft"/>
-				<h5>产品名称</h5>
+				<h5>${requestScope.kindShop.get(0).getsSmallsay() }</h5>
 				<p>
-				如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎
+				${requestScope.kindShop.get(0).getsSay() }
 				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看详细信息</a>
+				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(0).getsId() }">查看详细信息</a>
 				<br class="clr"/>
 			</div>
 			<div class="span3 alignR">
 			<form class="form-horizontal qtyFrm">
-			<h3> $140.00</h3>
-			<label class="checkbox">
-				<input type="checkbox">  增加了产品的比较
-			</label><br/>
+			<h3>${requestScope.kindShop.get(0).getsPrice() }</h3>
+			<br/>
 			
-			  <a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-			  <a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+			  <a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
+			  <a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 			
 				</form>
 			</div>
@@ -138,28 +65,25 @@
 		<hr class="soft"/>
 		<div class="row">	  
 			<div class="span2">
-				<img src="themes/images/products/1.jpg" alt=""/>
+				<img src="${requestScope.kindShop.get(1).getsImage() }" alt=""/>
 			</div>
 			<div class="span4">
-				<h3>新的|可用</h3>				
+				<h3>${requestScope.kindShop.get(1).getsName() }</h3>				
 				<hr class="soft"/>
-				<h5>产品名称</h5>
+				<h5>${requestScope.kindShop.get(1).getsSmallsay() }</h5>
 				<p>
-				如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎
+				${requestScope.kindShop.get(1).getsSay() }
 				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看详细信息</a>
+				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(1).getsId() }">查看详细信息</a>
 				<br class="clr"/>
 			</div>
 			<div class="span3 alignR">
 			<form class="form-horizontal qtyFrm">
-				<h3> $140.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  增加了产品的比较
-				</label><br/>
+				<h3>${requestScope.kindShop.get(1).getsPrice() }元</h3>
+				<br/>
 				
-				<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+				<a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
+				<a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 				
 			</form>
 			</div>
@@ -167,28 +91,25 @@
 		<hr class="soft"/>
 		<div class="row">	  
 			<div class="span2">
-				<img src="themes/images/products/3.jpg" alt=""/>
+				<img src="${requestScope.kindShop.get(2).getsImage() }" alt=""/>
 			</div>
 			<div class="span4">
-				<h3>新的|可用</h3>				
+				<h3>${requestScope.kindShop.get(2).getsName() }</h3>				
 				<hr class="soft"/>
-				<h5>产品名称</h5>
+				<h5>${requestScope.kindShop.get(2).getsSmallsay() }</h5>
 				<p>
-				如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎
+				${requestScope.kindShop.get(2).getsSay() }
 				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看详细信息</a>
+				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(2).getsId() }">查看详细信息</a>
 				<br class="clr"/>
 			</div>
 			<div class="span3 alignR">
 			<form class="form-horizontal qtyFrm">
-				<h3> $140.00</h3>
-				<label class="checkbox">
-					<input type="checkbox">  增加了产品的比较
-				</label><br/>
+				<h3>${requestScope.kindShop.get(2).getsPrice() }元</h3>
+				<br/>
 				
-				  <a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				  <a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+				  <a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
+				  <a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 				
 			</form>
 			</div>
@@ -196,28 +117,25 @@
 		<hr class="soft"/>
 		<div class="row">	  
 			<div class="span2">
-				<img src="themes/images/products/3.jpg" alt=""/>
+				<img src="${requestScope.kindShop.get(3).getsImage() }" alt=""/>
 			</div>
 			<div class="span4">
-				<h3>新的|可用</h3>				
+				<h3>${requestScope.kindShop.get(3).getsName() }</h3>				
 				<hr class="soft"/>
-				<h5>产品名称</h5>
+				<h5>${requestScope.kindShop.get(3).getsSmallsay() }</h5>
 				<p>
-				如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎
+				${requestScope.kindShop.get(3).getsSay() }
 				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看详细信息</a>
+				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(3).getsId() }">查看详细信息</a>
 				<br class="clr"/>
 			</div>
 			<div class="span3 alignR">
 				<form class="form-horizontal qtyFrm">
-				<h3> $140.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  增加了产品的比较
-				</label><br/>
+				<h3>${requestScope.kindShop.get(3).getsPrice() }元</h3>
+				<br/>
 				
-				<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+				<a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
+				<a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 				
 				</form>
 			</div>
@@ -226,55 +144,49 @@
 		<hr class="soft"/>
 		<div class="row">	  
 			<div class="span2">
-				<img src="themes/images/products/3.jpg" alt=""/>
+				<img src="${requestScope.kindShop.get(4).getsImage() }" alt=""/>
 			</div>
 			<div class="span4">
-				<h3>新的|可用</h3>				
+				<h3>${requestScope.kindShop.get(4).getsName() }</h3>				
 				<hr class="soft"/>
-				<h5>产品名称</h5>
+				<h5>${requestScope.kindShop.get(4).getsSmallsay() }</h5>
 				<p>
-				如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎
+				${requestScope.kindShop.get(4).getsSay() }
 				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看详细信息</a>
+				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(4).getsId() }">查看详细信息</a>
 				<br class="clr"/>
 			</div>
 			<div class="span3 alignR">
 				<form class="form-horizontal qtyFrm">
-				<h3> $140.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  增加了产品的比较
-				</label><br/>
-				<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+				<h3> ${requestScope.kindShop.get(4).getsPrice() }元</h3>
+				<br/>
+				<a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
+				<a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 				</form>
 			</div>
 		</div>
 		<hr class="soft"/>
 		<div class="row">	  
 			<div class="span2">
-				<img src="themes/images/products/3.jpg" alt=""/>
+				<img src="${requestScope.kindShop.get(5).getsImage() }" alt=""/>
 			</div>
 			<div class="span4">
-				<h3>新的|可用</h3>				
+				<h3>${requestScope.kindShop.get(5).getsName() }</h3>				
 				<hr class="soft"/>
-				<h5>产品名称</h5>
+				<h5>${requestScope.kindShop.get(5).getsSmallsay() }</h5>
 				<p>
-				如今内衣行业是最成功的商业领域之一，我们总是与最新的时尚潮流保持联系—
-这就是为什么我们的产品如此受欢迎
+				${requestScope.kindShop.get(5).getsSay() }
 				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看详细信息</a>
+				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(5).getsId() }">查看详细信息</a>
 				<br class="clr"/>
 			</div>
 			<div class="span3 alignR">
 				<form class="form-horizontal qtyFrm">
-				<h3> $140.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  增加了产品的比较
-				</label><br/>
+				<h3> ${requestScope.kindShop.get(5).getsPrice() }元</h3>
+				<br/>
 				
-				<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
+				<a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
+				<a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 				
 				</form>
 			</div>
@@ -286,73 +198,57 @@
 		<ul class="thumbnails">
 			<li class="span3">
 			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/3.jpg" alt=""/></a>
+				<a href="lookShop?sId=${requestScope.kindShop.get(0).getsId() }"><img src="${requestScope.kindShop.get(0).getsImage() }" alt=""/></a>
 				<div class="caption">
-				  <h5>修剪 &amp; 尾部</h5>
-				  <p> 
-					我是段。点击这里
-				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+				  <h5>${requestScope.kindShop.get(0).getsName() }</h5>
+				   <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(0).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
 				</div>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/3.jpg" alt=""/></a>
+				<a href="lookShop?sId=${requestScope.kindShop.get(1).getsId() }"><img src="${requestScope.kindShop.get(1).getsImage() }" alt=""/></a>
 				<div class="caption">
-				  <h5>修剪 &amp; 尾部</h5>
-				  <p> 
-					我是段。点击这里
-				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+				  <h5>${requestScope.kindShop.get(1).getsName() }</h5>
+				  
+				   <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(1).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
 				</div>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/3.jpg" alt=""/></a>
+				<a href="lookShop?sId=${requestScope.kindShop.get(2).getsId() }"><img src="${requestScope.kindShop.get(2).getsImage() }" alt=""/></a>
 				<div class="caption">
-				  <h5>修剪 &amp; 尾部</h5>
-				  <p> 
-					我是段。点击这里
-				  </p>
-				    <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+				  <h5>${requestScope.kindShop.get(2).getsName() }</h5>
+				  
+				    <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(2).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
 				</div>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/3.jpg" alt=""/></a>
+				<a href="lookShop?sId=${requestScope.kindShop.get(3).getsId() }"><img src="${requestScope.kindShop.get(3).getsImage() }" alt=""/></a>
 				<div class="caption">
-				  <h5>修剪 &amp; 尾部</h5>
-				  <p> 
-					我是段。点击这里
-				  </p>
-				    <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+				  <h5>${requestScope.kindShop.get(3).getsName() }</h5>
+				    <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(3).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
 				</div>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/3.jpg" alt=""/></a>
+				<a href="lookShop?sId=${requestScope.kindShop.get(4).getsId() }"><img src="${requestScope.kindShop.get(4).getsImage() }" alt=""/></a>
 				<div class="caption">
-				  <h5>修剪 &amp; 尾部</h5>
-				  <p> 
-					我是段。点击这里
-				  </p>
-				    <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+				  <h5>${requestScope.kindShop.get(4).getsName() }</h5>
+				    <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(4).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
 				</div>
 			  </div>
 			</li>
 			<li class="span3">
 			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/3.jpg" alt=""/></a>
+				<a href="lookShop?sId=${requestScope.kindShop.get(5).getsId() }"><img src="${requestScope.kindShop.get(5).getsImage() }" alt=""/></a>
 				<div class="caption">
-				  <h5>修剪 &amp; 尾部</h5>
-				  <p> 
-					我是段。点击这里
-				  </p>
-				    <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+				  <h5>${requestScope.kindShop.get(5).getsName() }</h5>
+				    <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(5).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
 				</div>
 			  </div>
 			</li>
@@ -360,7 +256,6 @@
 	<hr class="soft"/>
 	</div>
 </div>
-
 	<a href="compair.jsp" class="btn btn-large pull-right">康普艾产品</a>
 	<div class="pagination">
 			<ul>
@@ -413,7 +308,7 @@
 			 </div> 
 		 </div>
 		<p class="pull-right">&copy; online_shop</p>
-	</div><!-- Container End -->
+	</div>
 	</div>
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>

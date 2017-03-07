@@ -1,6 +1,5 @@
 package com.shop.dao;
 
-import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -8,6 +7,8 @@ import com.shop.entity.User;
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer uId);
+    
+    User userinfo(Integer uId);
 
     int insert(User record);
 
