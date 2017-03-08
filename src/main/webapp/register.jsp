@@ -1,13 +1,7 @@
 ﻿<%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="w" tagdir="/WEB-INF/tags"%>
-<%-- 
- <%@ taglib prefix="w" tagdir="/WEB-INF/tags"%> 
- <%@ taglib prefix="s" uri="/struts-tags"%> 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- --%>
-<!DOCTYPE html>
-<html lang="zh">
+<html>
 <head>
 <title>注册</title>
 <w:StyleHead />

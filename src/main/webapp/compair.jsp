@@ -1,19 +1,14 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	 <%@ taglib prefix="w" tagdir="/WEB-INF/tags"%>
-<%-- 
- <%@ taglib prefix="s" uri="/struts-tags"%> 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- --%>
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <title>Bootshop online Shopping cart</title>
     <w:StyleHead />
   </head>
 <body>
 <w:StyleLeft />
-<div id="carouselBlk">
+<div id="carouselBlk"> 
 	<div id="myCarousel" class="carousel slide">
 		<div class="carousel-inner">
 		  <div class="item active">

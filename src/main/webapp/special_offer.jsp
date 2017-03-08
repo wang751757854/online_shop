@@ -1,15 +1,9 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="w" tagdir="/WEB-INF/tags" %>
-<%-- 
- <%@ taglib prefix="w" tagdir="/WEB-INF/tags"%> 
- <%@ taglib prefix="s" uri="/struts-tags"%> 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
- --%>
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Bootshop online Shopping cart</title>
+    <title>所有商品</title>
     <w:StyleHead />
   </head>
 <body>
@@ -18,6 +12,8 @@
 	<div class="container">
 	<div class="row">
 	<w:StyleTopppp />
+	</div>
+	</div>
 	<div class="span9">
     <ul class="breadcrumb">
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
@@ -333,7 +329,6 @@
 	</div>
 <br class="clr"/>
 </div>
-</div></div>
 </div>
 	<div  id="footerSection">
 	<div class="container">
@@ -372,12 +367,6 @@
 		<p class="pull-right">&copy; online_shop</p>
 	</div><!-- Container End -->
 	</div>
-	<script src="themes/js/jquery.js" type="text/javascript"></script>
-	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="themes/js/google-code-prettify/prettify.js"></script>
-	
-	<script src="themes/js/bootshop.js"></script>
-    <script src="themes/js/jquery.lightbox-0.5.js"></script>
 <span id="themesBtn"></span>
 </body>
 </html>

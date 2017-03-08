@@ -14,7 +14,7 @@
 							</ul></li>
 						<li class="subMenu"><a>美食/零食/水果</a>
 							<ul style="display: none">
-								<li><a href="lookKindShop?kind=休闲零食"><i
+								<li><a  href="lookKindShop?kind=休闲零食"><i
 										class="icon-chevron-right"></i>休闲零食</a></li>
 								<li><a href="lookKindShop?kind=糖果"><i
 										class="icon-chevron-right"></i>糖果</a></li>
