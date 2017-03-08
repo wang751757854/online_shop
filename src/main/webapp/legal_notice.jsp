@@ -12,8 +12,6 @@
 	<div class="container">
 	<div class="row">
 	<w:StyleTopppp />
-	</div>
-	</div>
 	<div class="span9">
     <ul class="breadcrumb">
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
@@ -127,12 +125,6 @@ faucibus egestas lectus consectetur。整数自由色彩，大非和简历，腾
 		<p class="pull-right">&copy; online_shop</p>
 	</div><!-- Container End -->
 	</div>
-	<script src="themes/js/jquery.js" type="text/javascript"></script>
-	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
-	<script src="themes/js/google-code-prettify/prettify.js"></script>
-	
-	<script src="themes/js/bootshop.js"></script>
-    <script src="themes/js/jquery.lightbox-0.5.js"></script>
 <span id="themesBtn"></span>
 </body>
 </html>

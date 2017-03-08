@@ -1,9 +1,9 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="w" tagdir="/WEB-INF/tags" %>
-<html>
+<html lang="en">
   <head>
-    <title>所有商品</title>
+    <title>Bootshop online Shopping cart</title>
     <w:StyleHead />
   </head>
 <body>
@@ -12,8 +12,6 @@
 	<div class="container">
 	<div class="row">
 	<w:StyleTopppp />
-	</div>
-	</div>
 	<div class="span9">
     <ul class="breadcrumb">
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
@@ -329,6 +327,7 @@
 	</div>
 <br class="clr"/>
 </div>
+</div></div>
 </div>
 	<div  id="footerSection">
 	<div class="container">
