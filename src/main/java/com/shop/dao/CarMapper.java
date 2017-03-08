@@ -1,5 +1,7 @@
 package com.shop.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.shop.entity.Car;
 
 public interface CarMapper {
@@ -14,4 +16,6 @@ public interface CarMapper {
     int updateByPrimaryKeySelective(Car record);
 
     int updateByPrimaryKey(Car record);
+    
+    int inserShopCar(@Param("cUsername") String cUsername,@Param("cShopid") Integer cShopid);
 }

@@ -7,6 +7,36 @@
     <w:StyleHead />
   </head>
 <body>
+<input type="hidden" value="${sessionScope.user.uName}" />
+<script type="text/javascript">
+function one(sId){
+	var uName = $("input:hidden").val()
+	$.ajax({
+		url : "shopCar",
+		data :{"uName":uName,"sId":sId},
+		type : "post",
+		dataType:"json",
+		 success : function(data) {
+			 if(data.msg=="true"){
+			toastr.options = {  
+			        positionClass: "toast-why-center",   
+			        timeOut: "1000",  
+			        extendedTimeOut: "1000",   
+			    };  
+			    toastr.success("加入购物车成功");
+				 }
+			 else{
+				 toastr.options = {  
+					        positionClass: "toast-why-center",   
+					        timeOut: "1000",  
+					        extendedTimeOut: "1000",   
+					    };  
+					    toastr.error("加入购物车失败！请先登录");
+				 }
+				}
+	});
+	}
+</script>
 <w:StyleLeft />
 <div id="mainBody">
 	<div class="container">
@@ -57,10 +87,7 @@
 			<form class="form-horizontal qtyFrm">
 				<h3>${ks.sPrice}元</h3>
 				<br/>
-				
-				<a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				
+				 <button type="button" onclick="one(${ks.sId})" class="btn btn-large btn-primary">添加 到<i class=" icon-shopping-cart"></i></button> 
 			</form>
 			</div>
 		</div>
@@ -75,7 +102,7 @@
 				<a href="lookShop?sId=${kkss.sId}"><img src="${kkss.sImage }" alt=""/></a>
 				<div class="caption">
 				  <h5>${kkss.sName }</h5>
-				   <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${kkss.sId }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;${kkss.sPrice }元</a></h4>
+				   <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${kkss.sId }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">${kkss.sPrice }元</a></h4>
 				</div>
 			  </div>
 			</li>

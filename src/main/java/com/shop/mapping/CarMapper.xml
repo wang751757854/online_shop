@@ -15,6 +15,13 @@
     from os_car
     where c_id = #{cId,jdbcType=INTEGER}
   </select>
+  <!--插入购物车  -->
+  <insert id="inserShopCar" parameterType="com.shop.entity.Car" >
+    insert into os_car (c_username, c_shopid
+      )
+    values (#{cUsername,jdbcType=VARCHAR}, #{cShopid,jdbcType=INTEGER}
+      )
+  </insert>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from os_car
     where c_id = #{cId,jdbcType=INTEGER}

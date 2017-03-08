@@ -1,19 +1,29 @@
 package com.shop.controller;
 
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.fileupload.servlet.ServletRequestContext;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.alibaba.fastjson.JSONObject;
+import com.shop.entity.Car;
 import com.shop.entity.Shop;
 import com.shop.entity.User;
+import com.shop.service.CarService;
 import com.shop.service.ShopService;
 import com.shop.service.UserService;
 @Controller
@@ -23,9 +33,13 @@ public class UserController{
     @Autowired
     private ShopService shopService;
     @Autowired
+    private CarService carService;
+    @Autowired
     private User user;
     @Autowired
     private Shop shop;
+    @Autowired
+    private Car car;
 	Logger log = Logger.getLogger(UserController.class);
 	//	註冊
 	@RequestMapping("register")
@@ -97,10 +111,20 @@ public class UserController{
 		
 		return "";
 	}
+	@ResponseBody
 	@RequestMapping("shopCar")
-	public String shopCar(){
-		
-		return "";
+	public Map<String, Object> shopCar(@RequestParam("uName") String uName,
+			@RequestParam("sId") Integer sId) {
+		Map<String, Object> modelMap = new HashMap<String, Object>();
+		if(!(uName.equals("")) && !(sId.equals(""))){
+			this.carService.ShopCar(uName, sId);
+			log.info("添加购物车成功");
+			modelMap.put("msg", "true");
+		}else{
+			log.info("添加购物车失败");
+			modelMap.put("msg", "false");
+		}
+		return modelMap;
 	}
 	@RequestMapping("updateUser")
 	public String updateUser(User u,HttpSession session){
