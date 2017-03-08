@@ -6,7 +6,7 @@
 		  <c:forEach items="${sessionScope.shop }" var="s" begin="0" end="5">
 		  <div class="item">
 		  <div class="container">
-			<a href="lookShop?id=${s.sId}"><img src="${s.sImage }" alt="" id="two"/></a>
+			<a href="lookShop?sId=${s.sId}"><img src="${s.sImage }" alt="" id="two"/></a>
 		  </div>
 		  </div>
 		  </c:forEach>

@@ -60,13 +60,8 @@ public class UserController{
     public String lookShop(@RequestParam(value="sId") Integer sId,HttpServletRequest request){
     	Shop shopthing = shopService.lookShop(sId);
     	List<Shop> aboutShop = shopService.lookAbout(shopthing.getsKind());
-    	log.info("第一个id是"+aboutShop.get(1).getsId());
-    	log.info("第一个名字是"+aboutShop.get(1).getsName());
-    	log.info("第一个图片地址是"+aboutShop.get(1).getsImage());
     	request.setAttribute("aboutShop", aboutShop);
     	request.setAttribute("shopthing", shopthing);
-    	log.info("查看的名字是"+shopthing.getsName());
-    	log.info("shopthing的图片地址"+shopthing.getsImage());
     	return "product_details";
     }
 	@RequestMapping("showAllShop")

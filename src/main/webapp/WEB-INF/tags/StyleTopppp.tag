@@ -25,7 +25,7 @@
 								<li><a href="lookKindShop?kind=饮料"><i
 										class="icon-chevron-right"></i>饮料</a></li>
 							</ul></li>
-						<li class="subMenu"><a>美妆/洗护/清洁</a>
+						<li class="subMenu"><a>美妆/清洁/服装</a>
 							<ul style="display: none">
 								<li><a href="lookKindShop?kind=面部护肤"><i
 										class="icon-chevron-right"></i>面部护肤</a></li>
@@ -35,6 +35,8 @@
 										class="icon-chevron-right"></i>口腔护理</a></li>
 								<li><a href="lookKindShop?kind=家居清洁"><i
 										class="icon-chevron-right"></i>家居清洁</a></li>
+										<li><a href="lookKindShop?kind=服装"><i
+										class="icon-chevron-right"></i>服装</a></li>
 							</ul></li>
 					</ul>
 					<br />

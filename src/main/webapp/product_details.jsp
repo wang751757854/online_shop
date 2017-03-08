@@ -1,6 +1,7 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="w" tagdir="/WEB-INF/tags" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
   <head>
     <title>商品详情</title>
@@ -95,46 +96,24 @@
 		<div class="tab-content">
 		<!--相关产品开始  -->
 			<div  class="tab-pane active" id="listView">
-				<div class="row">	  
-					<div class="span2">
-						<img src="${requestScope.aboutShop.get(1).getsImage() }" alt=""/>
-					</div>
-					<div class="span4">
-						<h3>${requestScope.aboutShop.get(1).getsName() }</h3>				
-						<hr class="soft"/>
-						<p>${requestScope.aboutShop.get(1).getsSmallsay() }</p>
-						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(1).getsId()}">查看细节</a>
-						<br class="clr"/>
-					</div>
-					<div class="span3 alignR">
-					<form class="form-horizontal qtyFrm">
-					<h3> ${requestScope.aboutShop.get(1).getsPrice() }元</h3>
-					<label class="checkbox">
-					</label><br/>
-					<div class="btn-group">
-					  <a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
-					  <a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-					 </div>
-						</form>
-					</div>
-			</div>
+			<c:forEach items="${requestScope.aboutShop }" var="as" begin="1" end="5">
 			<hr class="soft"/>
 			<div class="row">	  
 					<div class="span2">
-						<img src="${requestScope.aboutShop.get(2).getsImage() }" alt=""/>
+						<img src="${as.sImage }" alt=""/>
 					</div>
 					<div class="span4">
-						<h3>${requestScope.aboutShop.get(2).getsName() }</h3>				
+						<h3>${as.sName }</h3>				
 						<hr class="soft"/>
 						<p>
-						${requestScope.aboutShop.get(2).getsSmallsay() }
+						${as.sSmallsay }
 						</p>
-						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(2).getsId()}">查看细节</a>
+						<a class="btn btn-small pull-right" href="lookShop?sId=${as.sId}">查看细节</a>
 						<br class="clr"/>
 					</div>
 					<div class="span3 alignR">
 					<form class="form-horizontal qtyFrm">
-						<h3>${requestScope.aboutShop.get(2).getsPrice() }元</h3>
+						<h3>${as.sPrice}元</h3>
 						<label class="checkbox">
 						</label><br/>
 						<div class="btn-group">
@@ -144,111 +123,7 @@
 					</form>
 					</div>
 			</div>
-			<hr class="soft"/>
-			<div class="row">	  
-					<div class="span2">
-					<img src="${requestScope.aboutShop.get(3).getsImage() }" alt=""/>
-					</div>
-					<div class="span4">
-						<h3>${requestScope.aboutShop.get(3).getsName() }</h3>				
-						<hr class="soft"/>
-						<p>
-						${requestScope.aboutShop.get(3).getsSmallsay() }
-						</p>
-						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(3).getsId()}">查看细节</a>
-						<br class="clr"/>
-					</div>
-					<div class="span3 alignR">
-					<form class="form-horizontal qtyFrm">
-					<h3>${requestScope.aboutShop.get(3).getsPrice() }元</h3>
-					<label class="checkbox">
-					</label><br/>
-				<div class="btn-group">
-				  <a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
-				  <a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				 </div>
-						</form>
-					</div>
-			</div>
-			<hr class="soft"/>
-			<div class="row">	  
-					<div class="span2">
-					<img src="${requestScope.aboutShop.get(4).getsImage() }" alt=""/>
-					</div>
-					<div class="span4">
-						<h3>${requestScope.aboutShop.get(4).getsName() }</h3>				
-						<hr class="soft"/>
-						<p>
-						${requestScope.aboutShop.get(4).getsSmallsay() }
-						</p>
-						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(4).getsId()}">查看细节</a>
-						<br class="clr"/>
-					</div>
-					<div class="span3 alignR">
-						<form class="form-horizontal qtyFrm">
-						<h3>${requestScope.aboutShop.get(4).getsPrice() }元</h3>
-						<label class="checkbox">
-						</label><br/>
-						<div class="btn-group">
-						<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
-						<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-						</div>
-						</form>
-					</div>
-			</div>
-			
-			<hr class="soft"/>
-			<div class="row">	  
-					<div class="span2">
-					<img src="${requestScope.aboutShop.get(5).getsImage() }" alt=""/>
-					</div>
-					<div class="span4">
-						<h3>${requestScope.aboutShop.get(5).getsName() }</h3>				
-						<hr class="soft"/>
-						<p>
-						${requestScope.aboutShop.get(5).getsSmallsay() }
-						</p>
-						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(5).getsId()}">查看细节</a>
-						<br class="clr"/>
-					</div>
-					<div class="span3 alignR">
-						<form class="form-horizontal qtyFrm">
-						<h3>${requestScope.aboutShop.get(5).getsPrice() }元</h3>
-						<label class="checkbox">
-						</label><br/>
-						<div class="btn-group">
-						<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
-						<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-						</div>
-						</form>
-					</div>
-			</div>
-			<hr class="soft"/>
-				<div class="row">	  
-					<div class="span2">
-					<img src="${requestScope.aboutShop.get(0).getsImage() }" alt=""/>
-					</div>
-					<div class="span4">
-						<h3>${requestScope.aboutShop.get(0).getsName() }</h3>				
-						<hr class="soft"/>
-						<p>
-						${requestScope.aboutShop.get(0).getsSmallsay() }
-						</p>
-						<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.aboutShop.get(0).getsId()}">查看细节</a>
-						<br class="clr"/>
-					</div>
-					<div class="span3 alignR">
-						<form class="form-horizontal qtyFrm">
-						<h3> ${requestScope.aboutShop.get(0).getsPrice() }</h3>
-						<label class="checkbox">
-						</label><br/>
-						<div class="btn-group">
-						<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
-						<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-						</div>
-						</form>
-					</div>
-			</div>
+			</c:forEach>
 			<hr class="soft"/>
 		</div> 
 		</div>

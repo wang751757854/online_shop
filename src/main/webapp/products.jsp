@@ -37,49 +37,25 @@
 <br class="clr"/>
 <div class="tab-content">
 	<div class="tab-pane" id="listView">
-		<div class="row">	  
-			<div class="span2">
-				<img src="${requestScope.kindShop.get(0).getsImage() }" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>${requestScope.kindShop.get(0).getsName() }</h3>				
-				<hr class="soft"/>
-				<h5>${requestScope.kindShop.get(0).getsSmallsay() }</h5>
-				<p>
-				${requestScope.kindShop.get(0).getsSay() }
-				</p>
-				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(0).getsId() }">查看详细信息</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-			<form class="form-horizontal qtyFrm">
-			<h3>${requestScope.kindShop.get(0).getsPrice() }</h3>
-			<br/>
-			
-			  <a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-			  <a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-			
-				</form>
-			</div>
-		</div>
+	<c:forEach begin="0" end="5" items="${requestScope.kindShop}" var="ks">
 		<hr class="soft"/>
 		<div class="row">	  
 			<div class="span2">
-				<img src="${requestScope.kindShop.get(1).getsImage() }" alt=""/>
+				<img src="${ks.sImage}" alt=""/>
 			</div>
 			<div class="span4">
-				<h3>${requestScope.kindShop.get(1).getsName() }</h3>				
+				<h3>${ks.sName}</h3>				
 				<hr class="soft"/>
-				<h5>${requestScope.kindShop.get(1).getsSmallsay() }</h5>
+				<h5>${ks.sSmallsay }</h5>
 				<p>
-				${requestScope.kindShop.get(1).getsSay() }
+				${ks.sSay }
 				</p>
-				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(1).getsId() }">查看详细信息</a>
+				<a class="btn btn-small pull-right" href="lookShop?sId=${ks.sId}">查看详细信息</a>
 				<br class="clr"/>
 			</div>
 			<div class="span3 alignR">
 			<form class="form-horizontal qtyFrm">
-				<h3>${requestScope.kindShop.get(1).getsPrice() }元</h3>
+				<h3>${ks.sPrice}元</h3>
 				<br/>
 				
 				<a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
@@ -88,170 +64,22 @@
 			</form>
 			</div>
 		</div>
-		<hr class="soft"/>
-		<div class="row">	  
-			<div class="span2">
-				<img src="${requestScope.kindShop.get(2).getsImage() }" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>${requestScope.kindShop.get(2).getsName() }</h3>				
-				<hr class="soft"/>
-				<h5>${requestScope.kindShop.get(2).getsSmallsay() }</h5>
-				<p>
-				${requestScope.kindShop.get(2).getsSay() }
-				</p>
-				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(2).getsId() }">查看详细信息</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-			<form class="form-horizontal qtyFrm">
-				<h3>${requestScope.kindShop.get(2).getsPrice() }元</h3>
-				<br/>
-				
-				  <a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				  <a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				
-			</form>
-			</div>
-		</div>
-		<hr class="soft"/>
-		<div class="row">	  
-			<div class="span2">
-				<img src="${requestScope.kindShop.get(3).getsImage() }" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>${requestScope.kindShop.get(3).getsName() }</h3>				
-				<hr class="soft"/>
-				<h5>${requestScope.kindShop.get(3).getsSmallsay() }</h5>
-				<p>
-				${requestScope.kindShop.get(3).getsSay() }
-				</p>
-				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(3).getsId() }">查看详细信息</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-				<form class="form-horizontal qtyFrm">
-				<h3>${requestScope.kindShop.get(3).getsPrice() }元</h3>
-				<br/>
-				
-				<a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				
-				</form>
-			</div>
-		</div>
-	
-		<hr class="soft"/>
-		<div class="row">	  
-			<div class="span2">
-				<img src="${requestScope.kindShop.get(4).getsImage() }" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>${requestScope.kindShop.get(4).getsName() }</h3>				
-				<hr class="soft"/>
-				<h5>${requestScope.kindShop.get(4).getsSmallsay() }</h5>
-				<p>
-				${requestScope.kindShop.get(4).getsSay() }
-				</p>
-				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(4).getsId() }">查看详细信息</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-				<form class="form-horizontal qtyFrm">
-				<h3> ${requestScope.kindShop.get(4).getsPrice() }元</h3>
-				<br/>
-				<a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				</form>
-			</div>
-		</div>
-		<hr class="soft"/>
-		<div class="row">	  
-			<div class="span2">
-				<img src="${requestScope.kindShop.get(5).getsImage() }" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>${requestScope.kindShop.get(5).getsName() }</h3>				
-				<hr class="soft"/>
-				<h5>${requestScope.kindShop.get(5).getsSmallsay() }</h5>
-				<p>
-				${requestScope.kindShop.get(5).getsSay() }
-				</p>
-				<a class="btn btn-small pull-right" href="lookShop?sId=${requestScope.kindShop.get(5).getsId() }">查看详细信息</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-				<form class="form-horizontal qtyFrm">
-				<h3> ${requestScope.kindShop.get(5).getsPrice() }元</h3>
-				<br/>
-				
-				<a href="#" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="#" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				
-				</form>
-			</div>
-		</div>
-		<hr class="soft"/>
+		</c:forEach>
 	</div>
 
 	<div class="tab-pane  active" id="blockView">
 		<ul class="thumbnails">
+		<c:forEach begin="0" end="5" items="${requestScope.kindShop}" var="kkss">
 			<li class="span3">
 			  <div class="thumbnail">
-				<a href="lookShop?sId=${requestScope.kindShop.get(0).getsId() }"><img src="${requestScope.kindShop.get(0).getsImage() }" alt=""/></a>
+				<a href="lookShop?sId=${kkss.sId}"><img src="${kkss.sImage }" alt=""/></a>
 				<div class="caption">
-				  <h5>${requestScope.kindShop.get(0).getsName() }</h5>
-				   <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(0).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
+				  <h5>${kkss.sName }</h5>
+				   <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${kkss.sId }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;${kkss.sPrice }元</a></h4>
 				</div>
 			  </div>
 			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="lookShop?sId=${requestScope.kindShop.get(1).getsId() }"><img src="${requestScope.kindShop.get(1).getsImage() }" alt=""/></a>
-				<div class="caption">
-				  <h5>${requestScope.kindShop.get(1).getsName() }</h5>
-				  
-				   <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(1).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="lookShop?sId=${requestScope.kindShop.get(2).getsId() }"><img src="${requestScope.kindShop.get(2).getsImage() }" alt=""/></a>
-				<div class="caption">
-				  <h5>${requestScope.kindShop.get(2).getsName() }</h5>
-				  
-				    <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(2).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="lookShop?sId=${requestScope.kindShop.get(3).getsId() }"><img src="${requestScope.kindShop.get(3).getsImage() }" alt=""/></a>
-				<div class="caption">
-				  <h5>${requestScope.kindShop.get(3).getsName() }</h5>
-				    <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(3).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="lookShop?sId=${requestScope.kindShop.get(4).getsId() }"><img src="${requestScope.kindShop.get(4).getsImage() }" alt=""/></a>
-				<div class="caption">
-				  <h5>${requestScope.kindShop.get(4).getsName() }</h5>
-				    <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(4).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="lookShop?sId=${requestScope.kindShop.get(5).getsId() }"><img src="${requestScope.kindShop.get(5).getsImage() }" alt=""/></a>
-				<div class="caption">
-				  <h5>${requestScope.kindShop.get(5).getsName() }</h5>
-				    <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${requestScope.kindShop.get(5).getsId() }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-				</div>
-			  </div>
-			</li>
+			</c:forEach>
 		  </ul>
 	<hr class="soft"/>
 	</div>
