@@ -52,8 +52,7 @@
 				</form>
 				
 				<hr class="soft"/>
-				<h4 style="float: left">还剩${requestScope.shopthing.getsNumber()}件</h4>
-				<button type="submit" class="btn btn-large btn-primary pull-right"> 收藏<i class=" icon-shopping-cart"></i></button>
+				<h4 style="float: right">还剩${requestScope.shopthing.getsNumber()}件</h4>
 				<hr class="soft clr"/>
 				<p>
 				${requestScope.shopthing.getsSmallsay() }

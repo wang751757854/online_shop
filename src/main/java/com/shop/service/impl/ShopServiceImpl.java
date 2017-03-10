@@ -14,10 +14,6 @@ public class ShopServiceImpl implements ShopService {
 	@Autowired
 	ShopMapper shopDao;
 
-	public List<Shop> showAllShop() {
-		return shopDao.showAllShop();
-	}
-
 	public Shop lookShop(Integer sId) {
 		return shopDao.selectByPrimaryKey(sId);
 	}
@@ -30,6 +26,11 @@ public class ShopServiceImpl implements ShopService {
 	public List<Shop> lookKindShop(String kind) {
 		// TODO Auto-generated method stub
 		return shopDao.lookKindShop(kind);
+	}
+
+	public void showAllShop() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

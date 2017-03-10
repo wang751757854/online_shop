@@ -102,7 +102,9 @@ function one(sId){
 				<a href="lookShop?sId=${kkss.sId}"><img src="${kkss.sImage }" alt=""/></a>
 				<div class="caption">
 				  <h5>${kkss.sName }</h5>
-				   <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${kkss.sId }"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">${kkss.sPrice }元</a></h4>
+				   <h4 style="text-align:center"><a class="btn" href="lookShop?sId=${kkss.sId }"> <i class="icon-zoom-in"></i></a> 
+				    <button type="button" onclick="one(${kkss.sId})"  class="btn btn-primary">添加到 <i class="icon-shopping-cart"></i></button>
+				    <a href="#">${kkss.sPrice }元</a></h4>
 				</div>
 			  </div>
 			</li>

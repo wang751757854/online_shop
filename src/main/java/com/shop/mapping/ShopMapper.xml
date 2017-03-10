@@ -30,7 +30,10 @@
 	<select id="showAllShop" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
-		from os_shop limit 0,40
+		from os_shop limit #{startPos},#{pageSize}
+	</select>
+	<select id="getProductsCount" resultType="long">  
+ 	 select count(*) from os_shop  
 	</select>
 	<!--相关产品，查询分类下的东东  -->
 	<select id="lookAbout" resultMap="BaseResultMap"
