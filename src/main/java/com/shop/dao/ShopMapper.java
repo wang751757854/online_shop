@@ -1,5 +1,6 @@
 package com.shop.dao;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.shop.entity.Shop;
@@ -22,4 +23,20 @@ public interface ShopMapper {
     List<Shop> lookAbout(String sKind);
     
     List<Shop> lookKindShop(String kindShop);
+    /**
+     * 查询所有物品数据
+     * @return
+     */
+    List<Shop> selectAllThings();
+    /**
+     * 查询物品记录总数
+     * @return
+     */
+    int selectCount();
+    /**
+     * 分页操作，调用findByPage limit分页方法
+     * @param map
+     * @return
+     */
+    List<Shop> findByPage(HashMap<String,Object> map);
 }

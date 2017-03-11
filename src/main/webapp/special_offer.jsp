@@ -1,9 +1,10 @@
 <%@page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib prefix="w" tagdir="/WEB-INF/tags" %>
-<html lang="en">
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html>
   <head>
-    <title>Bootshop online Shopping cart</title>
+    <title>所有商品</title>
     <w:StyleHead />
   </head>
 <body>
@@ -29,73 +30,46 @@
 		</div>
 	  </form>
 	<div id="myTab" class="pull-right">
-	 <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
-	 <a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a>
+	 <a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a> 
 	</div>
 <br class="clr"/>
 <div class="tab-content">
-	<div class="tab-pane" id="listView">
-	<hr class="soft"/>
-	<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/b2.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>新的|可用</h3>				
-				<hr class="soft"/>
-				<h5>产品名称</h5>
-				<p>
-				乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16…
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-			<form class="form-horizontal qtyFrm">
-				<h3> $110.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  添加产品到康普艾
-				</label><br/>
-				<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-			</form>
-			</div>
-	</div>
-	
-	<hr class="soft"/>
-	</div>
 
-	<div class="tab-pane  active" id="blockView">
+	 <div class="tab-pane  active" id="blockView">
 		<ul class="thumbnails">
+		<c:forEach items="${requestScope.pagemsg.lists}" var="liu">
 			<li class="span3">
 			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/b1.jpg" alt=""/></a>
+				<a href="product_details.jsp"><img src="${liu.sImage }" alt=""/></a>
 				<div class="caption">
-				  <h5>修理 &amp; 尾部</h5>
+				  <h5>${liu.sName}</h5>
 				  <p> 
-					乱数假文只是虚拟文本。
+					${liu.sSmallsay }
 				  </p>
-				  <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;110.00</a></h4>
+				  <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;${liu.sPrice }元</a></h4>
 				</div>
 			  </div>
 			</li>
+			</c:forEach>
 		  </ul>
-
-
 	<hr class="soft"/>
 	</div>
 </div>
 <a href="compair.jsp" class="btn btn-large pull-right">康普艾产品</a>
 	<div class="pagination">
-		<ul>
-		<li><a href="#">&lsaquo;</a></li>
-		<li><a href="#">1</a></li>
-		<li><a href="#">2</a></li>
-		<li><a href="#">3</a></li>
-		<li><a href="#">4</a></li>
-		<li><a href="#">...</a></li>
-		<li><a href="#">&rsaquo;</a></li>
-		</ul>
+		 <span>第${requestScope.pagemsg.currPage }/ ${requestScope.pagemsg.totalPage}页</span>&nbsp;&nbsp;
+   <span>总记录数：${requestScope.pagemsg.totalCount }&nbsp;&nbsp;每页显示:${requestScope.pagemsg.pageSize}</span>&nbsp;&nbsp;
+   <span>
+       <c:if test="${requestScope.pagemsg.currPage != 1}">
+           <a href="${pageContext.request.contextPath }/AllThings?currentPage=1">[首页]</a>&nbsp;&nbsp;
+           <a href="${pageContext.request.contextPath }/AllThings?currentPage=${requestScope.pagemsg.currPage-1}">[上一页]</a>&nbsp;&nbsp;
+       </c:if>
+       
+       <c:if test="${requestScope.pagemsg.currPage != requestScope.pagemsg.totalPage}">
+           <a href="${pageContext.request.contextPath }/AllThings?currentPage=${requestScope.pagemsg.currPage+1}">[下一页]</a>&nbsp;&nbsp;
+           <a href="${pageContext.request.contextPath }/AllThings?currentPage=${requestScope.pagemsg.totalPage}">[尾页]</a>&nbsp;&nbsp;
+       </c:if>
+   </span>
 	</div>
 <br class="clr"/>
 </div>

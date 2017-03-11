@@ -1,11 +1,13 @@
 package com.shop.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.shop.dao.ShopMapper;
+import com.shop.entity.PageBean;
 import com.shop.entity.Shop;
 import com.shop.service.ShopService;
 @Service
@@ -30,6 +32,45 @@ public class ShopServiceImpl implements ShopService {
 	public List<Shop> lookKindShop(String kind) {
 		// TODO Auto-generated method stub
 		return shopDao.lookKindShop(kind);
+	}
+
+	public List<Shop> selectAllThings() {
+		// TODO Auto-generated method stub
+		return shopDao.selectAllThings();
+	}
+
+	public int selectCount() {
+		// TODO Auto-generated method stub
+		return shopDao.selectCount();
+	}
+
+	public PageBean<Shop> findByPage(int currentPage) {
+		HashMap<String,Object> map = new HashMap<String,Object>();
+		PageBean<Shop> pageBean = new PageBean<Shop>();
+		
+	    //封装当前页数
+        pageBean.setCurrPage(currentPage);
+        
+		//每页显示的数据
+		int pageSize=6;
+		pageBean.setPageSize(pageSize);
+		
+		//封装总记录数
+		int totalCount = shopDao.selectCount();
+		pageBean.setTotalCount(totalCount);
+		
+		//封装总页数
+		double tc = totalCount;
+        Double num =Math.ceil(tc/pageSize);//向上取整
+        pageBean.setTotalPage(num.intValue());
+      
+		map.put("start",(currentPage-1)*pageSize);
+		map.put("size", pageBean.getPageSize());
+		//封装每页显示的数据
+		List<Shop> lists = shopDao.findByPage(map);
+		pageBean.setLists(lists);
+		
+		return pageBean;
 	}
 
 }

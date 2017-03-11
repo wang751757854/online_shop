@@ -25,10 +25,8 @@
 			<a href="login.jsp">请登录后操作</a>
 		</c:otherwise>
 	</c:choose>
-		<a href="product_summary.jsp"><span>or</span></a>
-		<a href="product_summary.jsp"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i>我的收藏</span> </a> 
 		<a href="product_summary.jsp"><span class="">or</span></a>
-		<a href="product_summary.jsp"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i>3件商品在你的gouwuche</span> </a> 
+		<a href="product_summary.jsp"><span class="btn btn-mini btn-primary"><i class="icon-shopping-cart icon-white"></i>我的购物车</span> </a> 
 	</div>
 	</div>
 </div>
@@ -60,7 +58,7 @@
 		  <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
     </form>
     <ul id="topMenu" class="nav pull-right">
-	 <li class=""><a href="special_offer.jsp">所有商品</a></li>
+	 <li class=""><a href="AllThings">所有商品</a></li>
 	 <li class=""><a href="lookUserInfo">个人信息</a></li>
 	 <c:choose>
 		<c:when test="${sessionScope.user!=null}">

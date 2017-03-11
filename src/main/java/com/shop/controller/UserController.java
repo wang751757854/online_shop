@@ -15,6 +15,7 @@ import org.apache.commons.fileupload.servlet.ServletRequestContext;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -133,6 +134,13 @@ public class UserController{
 		user = this.userService.userinfo(u.getuId());
 		session.setAttribute("user",user);
 		return "userinfo";
+	}
+	@RequestMapping("AllThings")
+	public String AllThings(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage
+			,Model model){
+		model.addAttribute("pagemsg", shopService.findByPage(currentPage));//回显分页数据
+		log.info(shopService.findByPage(currentPage).getLists());
+		return "special_offer";
 	}
 //	算绩点
 	@ResponseBody

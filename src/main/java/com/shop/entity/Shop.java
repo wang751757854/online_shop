@@ -202,6 +202,30 @@ public class Shop implements Serializable{
 				+ "]";
 	}
 
+	public Shop(Integer sId, Integer sInt, String sName, String sPrice, String sKind, String sSay, String sImage,
+			Integer sNumber, String sPhone, String sSchool, String sType, Date sTime, Integer sUserid, String sBrand,
+			String sSmallsay, String sImage2, String sImage3, String sImage4) {
+		super();
+		this.sId = sId;
+		this.sInt = sInt;
+		this.sName = sName;
+		this.sPrice = sPrice;
+		this.sKind = sKind;
+		this.sSay = sSay;
+		this.sImage = sImage;
+		this.sNumber = sNumber;
+		this.sPhone = sPhone;
+		this.sSchool = sSchool;
+		this.sType = sType;
+		this.sTime = sTime;
+		this.sUserid = sUserid;
+		this.sBrand = sBrand;
+		this.sSmallsay = sSmallsay;
+		this.sImage2 = sImage2;
+		this.sImage3 = sImage3;
+		this.sImage4 = sImage4;
+	}
+	public Shop(){};
 
     
 }
