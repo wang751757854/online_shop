@@ -17,15 +17,13 @@
 		<li><a href="index.jsp">Home</a> <span class="divider">/</span></li>
 		<li class="active">Special offers</li>
     </ul>
-	<h4> 20%的折扣优惠<small class="pull-right"> 40个产品是可用的 </small></h4>	
+	<h4> 全部商品<small class="pull-right"> 40个产品是可用的 </small></h4>	
 	<hr class="soft"/>
 	<form class="form-horizontal span6">
 		<div class="control-group">
 		  <label class="control-label alignL">排序方式 </label>
 			<select>
-              <option>产品展厅   名字    A - Z</option>
-              <option>产品展厅   名字    Z - A</option>
-              <option>产品展厅 Stoke</option>
+              <option>销量最好</option>
               <option>价格最低</option>
             </select>
 		</div>
@@ -37,31 +35,6 @@
 <br class="clr"/>
 <div class="tab-content">
 	<div class="tab-pane" id="listView">
-		<div class="row">	  
-			<div class="span2">
-			<img src="themes/images/products/b1.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>新的|可用</h3>				
-				<hr class="soft"/>
-				<h5>产品名称</h5>
-				<p>
-				乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16…
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-			<form class="form-horizontal qtyFrm">
-			<h3> $110.00</h3>
-			<label class="checkbox">
-				<input type="checkbox">  添加产品到康普艾
-			</label><br/>
-			  <a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-			  <a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				</form>
-			</div>
-	</div>
 	<hr class="soft"/>
 	<div class="row">	  
 			<div class="span2">
@@ -88,112 +61,7 @@
 			</form>
 			</div>
 	</div>
-	<hr class="soft"/>
-	<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/b3.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>新的|可用</h3>				
-				<hr class="soft"/>
-				<h5>产品名称</h5>
-				<p>
-				乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16…
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-			<form class="form-horizontal qtyFrm">
-			<h3> $110.00</h3>
-			<label class="checkbox">
-			<input type="checkbox">  添加产品到康普艾
-			</label><br/>
-			  <a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-			  <a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-			</form>
-			</div>
-	</div>
-	<hr class="soft"/>
-	<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/b4.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>新的|可用</h3>				
-				<hr class="soft"/>
-				<h5>产品名称</h5>
-				<p>
-				乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16…
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-				<form class="form-horizontal qtyFrm">
-				<h3> $110.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  添加产品到康普艾
-				</label><br/>
-				<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				</form>
-			</div>
-	</div>
 	
-	<hr class="soft"/>
-	<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/6.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>新的|可用</h3>				
-				<hr class="soft"/>
-				<h5>产品名称</h5>
-				<p>
-				乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16…
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-				<form class="form-horizontal qtyFrm">
-				<h3> $222.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  添加产品到康普艾
-				</label><br/>
-				<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				</form>
-			</div>
-	</div>
-	<hr class="soft"/>
-		<div class="row">	  
-			<div class="span2">
-				<img src="themes/images/products/7.jpg" alt=""/>
-			</div>
-			<div class="span4">
-				<h3>新的|可用</h3>				
-				<hr class="soft"/>
-				<h5>产品名称</h5>
-				<p>
-				
-				乱数假文只是印刷排版业虚拟文本。乱数假文一直是行业的标准虚拟文本自从16…
-				</p>
-				<a class="btn btn-small pull-right" href="product_details.jsp">查看细节</a>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-				<form class="form-horizontal qtyFrm">
-				<h3> $222.00</h3>
-				<label class="checkbox">
-				<input type="checkbox">  添加产品到康普艾
-				</label><br/>
-				<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加到 <i class=" icon-shopping-cart"></i></a>
-				<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
-				</form>
-			</div>
-		</div>
 	<hr class="soft"/>
 	</div>
 
@@ -208,102 +76,6 @@
 					乱数假文只是虚拟文本。
 				  </p>
 				  <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;110.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/b2.jpg" alt=""/></a>
-				<div class="caption">
-				  <h5>修理 &amp; 尾部</h5>
-				  <p> 
-					乱数假文只是虚拟文本。
-				  </p>
-				  <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;110.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/b3.jpg" alt=""/></a>
-				<div class="caption">
-				  <h5>修理 &amp; 尾部</h5>
-				  <p> 
-					乱数假文只是虚拟文本。
-				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;110.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/b4.jpg" alt=""/></a>
-				<div class="caption">
-				  <h5>修理 &amp; 尾部</h5>
-				  <p> 
-					乱数假文只是虚拟文本。
-				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;110.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/9.jpg" alt=""/></a>
-				<div class="caption">
-				  <h5>修理 &amp; 尾部</h5>
-				  <p> 
-					乱数假文只是虚拟文本。
-				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/4.jpg" alt=""/></a>
-				<div class="caption">
-				  <h5>修理 &amp; 尾部</h5>
-				  <p> 
-					乱数假文只是虚拟文本。
-				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/6.jpg" alt=""/></a>
-				<div class="caption">
-				  <h5>修理 &amp; 尾部</h5>
-				  <p> 
-					乱数假文只是虚拟文本。
-				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/7.jpg" alt=""/></a>
-				<div class="caption">
-				  <h5>修理 &amp; 尾部</h5>
-				  <p> 
-					乱数假文只是虚拟文本。
-				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
-				</div>
-			  </div>
-			</li>
-			<li class="span3">
-			  <div class="thumbnail">
-				<a href="product_details.jsp"><img src="themes/images/products/8.jpg" alt=""/></a>
-				<div class="caption">
-				  <h5>修理 &amp; 尾部</h5>
-				  <p> 
-					乱数假文只是虚拟文本。
-				  </p>
-				   <h4 style="text-align:center"><a class="btn" href="product_details.jsp"> <i class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到 <i class="icon-shopping-cart"></i></a> <a class="btn btn-primary" href="#">&euro;222.00</a></h4>
 				</div>
 			  </div>
 			</li>

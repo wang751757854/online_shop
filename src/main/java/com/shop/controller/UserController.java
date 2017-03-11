@@ -1,25 +1,24 @@
 package com.shop.controller;
 
 
-
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-
+import org.apache.commons.fileupload.servlet.ServletRequestContext;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.shop.entity.Car;
 import com.shop.entity.Shop;
@@ -79,23 +78,23 @@ public class UserController{
     	request.setAttribute("shopthing", shopthing);
     	return "product_details";
     }
-	/*@RequestMapping("showAllShop")
+	@RequestMapping("showAllShop")
     public void showAllShop(HttpSession session){
     	List<Shop> shop = shopService.showAllShop();
     	log.info(shop);
-    	Map map = new HashMap();
+ /*   	Map map = new HashMap();
     	map.put(shop.get(0).getsName(), shop.get(0));
     	map.put(shop.get(1).getsName(), shop.get(1));
 //    	转成json
     	JSONObject json = JSONObject.fromObject(map);  
     	response.getWriter().print(json.toString());//  
-			if(shop.size()!=0){
+*/			if(shop.size()!=0){
 				log.info("图片地址"+shop.get(0).getsImage());
 				session.setAttribute("shop", shop);
 			}else{
 				log.error("查询失败");
 			}
-    }*/
+    }
 	@RequestMapping("lookKindShop")
 	public String lookKindShop(@RequestParam(value="kind") String kind,HttpServletRequest request){
 		List<Shop> kinShop = shopService.lookKindShop(kind);
