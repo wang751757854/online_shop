@@ -73,4 +73,9 @@ public class ShopServiceImpl implements ShopService {
 		return pageBean;
 	}
 
+	public List<Shop> selectShop(String theSelect, String selectOne) {
+		
+		return shopDao.selectShop(theSelect, selectOne);
+	}
+
 }

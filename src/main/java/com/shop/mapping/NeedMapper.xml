@@ -11,6 +11,12 @@
   <sql id="Base_Column_List" >
     n_id, n_name, n_price, n_username, n_time
   </sql>
+  <!--查询所有求购信息  -->
+  <select id="lookAllNeed" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from os_need
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

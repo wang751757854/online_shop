@@ -3,6 +3,8 @@ package com.shop.dao;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.shop.entity.Shop;
 
 public interface ShopMapper {
@@ -23,6 +25,8 @@ public interface ShopMapper {
     List<Shop> lookAbout(String sKind);
     
     List<Shop> lookKindShop(String kindShop);
+    
+    List<Shop> selectShop(@Param("sName") String sName,@Param("sKind") String sKind);
     /**
      * 查询所有物品数据
      * @return

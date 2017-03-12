@@ -47,6 +47,15 @@
 	<select id="selectCount" resultType="int">
 		select count(*) from os_shop
 	</select>
+	<!-- 搜索商品,模糊查询 -->
+	<select id="selectShop" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from os_shop where
+	    s_name like CONCAT('%','${sName}','%' )  
+		and
+		s_kind = #{sKind,jdbcType=VARCHAR}
+	</select>
 	<!--查看所有商品  -->
 	<select id="showAllShop" resultMap="BaseResultMap">
 		select

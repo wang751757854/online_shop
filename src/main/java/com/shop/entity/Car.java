@@ -1,5 +1,7 @@
 package com.shop.entity;
 
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,6 +11,8 @@ public class Car {
     private String cUsername;
 
     private Integer cShopid;
+    
+    private List<Shop> shop;
 
     public Integer getcId() {
         return cId;
@@ -33,4 +37,19 @@ public class Car {
     public void setcShopid(Integer cShopid) {
         this.cShopid = cShopid;
     }
+
+	public List<Shop> getShop() {
+		return shop;
+	}
+
+	public void setShop(List<Shop> shop) {
+		this.shop = shop;
+	}
+
+	@Override
+	public String toString() {
+		return "Car [cId=" + cId + ", cUsername=" + cUsername + ", cShopid=" + cShopid + ", shop=" + shop + "]";
+	}
+	
+    
 }

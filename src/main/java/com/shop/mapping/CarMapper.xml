@@ -6,9 +6,44 @@
     <result column="c_username" property="cUsername" jdbcType="VARCHAR" />
     <result column="c_shopid" property="cShopid" jdbcType="INTEGER" />
   </resultMap>
+  <resultMap type="com.shop.entity.Car" id="GlBaseResultMap">
+   <id column="c_id" property="cId" jdbcType="INTEGER" />
+    <result column="c_username" property="cUsername" jdbcType="VARCHAR" />
+    <result column="c_shopid" property="cShopid" jdbcType="INTEGER" />
+    <collection property="shop" ofType="com.shop.entity.Shop">
+    <id column="s_id" property="sId" jdbcType="INTEGER" />
+		<result column="s_int" property="sInt" jdbcType="INTEGER" />
+		<result column="s_name" property="sName" jdbcType="VARCHAR" />
+		<result column="s_price" property="sPrice" jdbcType="VARCHAR" />
+		<result column="s_kind" property="sKind" jdbcType="VARCHAR" />
+		<result column="s_say" property="sSay" jdbcType="VARCHAR" />
+		<result column="s_image" property="sImage" jdbcType="VARCHAR" />
+		<result column="s_number" property="sNumber" jdbcType="INTEGER" />
+		<result column="s_phone" property="sPhone" jdbcType="VARCHAR" />
+		<result column="s_school" property="sSchool" jdbcType="VARCHAR" />
+		<result column="s_type" property="sType" jdbcType="VARCHAR" />
+		<result column="s_time" property="sTime" jdbcType="TIMESTAMP" />
+		<result column="s_userid" property="sUserid" jdbcType="INTEGER" />
+		<result column="s_brand" property="sBrand" jdbcType="VARCHAR" />
+		<result column="s_smallsay" property="sSmallsay" jdbcType="VARCHAR" />
+		<result column="s_image2" property="sImage2" jdbcType="VARCHAR" />
+		<result column="s_image3" property="sImage3" jdbcType="VARCHAR" />
+		<result column="s_image4" property="sImage4" jdbcType="VARCHAR" />
+    </collection>
+  </resultMap>
   <sql id="Base_Column_List" >
     c_id, c_username, c_shopid
   </sql>
+  <!--关联查询，一对多  -->
+  <select id="getShopOfCar" resultMap="GlBaseResultMap">
+	select s_id, s_int, s_name, s_price, s_kind, s_say, s_image, s_number, s_phone,
+		s_school,
+		s_type, s_time, s_userid,s_brand,s_smallsay, s_image2, s_image3, s_image4, c_id, c_username, c_shopid
+		from
+		os_shop,os_car
+		where
+		c_username = #{cUsername,jdbcType=VARCHAR} and s_id = c_shopid
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
