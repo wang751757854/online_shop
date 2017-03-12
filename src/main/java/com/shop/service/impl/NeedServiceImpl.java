@@ -17,5 +17,9 @@ public class NeedServiceImpl implements NeedService {
 	public List<Need> lookNeed() {
 		return needDao.lookAllNeed();
 	}
+
+	public void insert(Need need) {
+		this.needDao.insert(need);
+	}
 	
 }

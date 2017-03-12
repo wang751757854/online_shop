@@ -42,6 +42,8 @@ public class UserController{
     private Shop shop;
     @Autowired
     private Car car;
+    @Autowired
+    private Need need;
 	Logger log = Logger.getLogger(UserController.class);
 	//	註冊
 	@RequestMapping("register")
@@ -133,12 +135,19 @@ public class UserController{
 	@RequestMapping("myShopCar")
 	public String myShopCar(@RequestParam("cUsername") String cUsername,HttpServletRequest request){
 		log.info(cUsername);
-		List<Car> car = carService.lookMyCar(cUsername);
-		log.info(car);
-		request.setAttribute("lookMyCar", car);
+		List<Car> lookMyCar = carService.lookMyCar(cUsername);
+		log.info(lookMyCar);
+		request.setAttribute("lookMyCar", lookMyCar);
 		return "lookmycar";
 	}
-	
+//	发布求购信息
+	@RequestMapping("GiveNeed")
+	public String GiveNeed(Need need,HttpServletRequest request){
+		this.needService.insert(need);
+		List<Need> needs = needService.lookNeed();
+		request.setAttribute("needs",needs);
+		return "lookneed";
+	}
 	@RequestMapping("updateUser")
 	public String updateUser(User u,HttpSession session){
 		log.info(u);
