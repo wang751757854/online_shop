@@ -66,7 +66,7 @@
 								<label class="control-label" for="inputFname1">商品名称<sup>*</sup></label>
 								<div class="controls">
 									<input type="text" id="inputFname1" placeholder="请输入"
-										name="sName">
+										name="sName" maxlength="15">
 								</div>
 							</div>
 							<div class="control-group">
