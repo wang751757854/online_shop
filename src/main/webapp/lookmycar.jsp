@@ -7,36 +7,6 @@
     <w:StyleHead />
   </head>
 <body>
-<input type="hidden" value="${sessionScope.user.uName}" />
-<script type="text/javascript">
-function one(sId){
-	var uName = $("input:hidden").val()
-	$.ajax({
-		url : "shopCar",
-		data :{"uName":uName,"sId":sId},
-		type : "post",
-		dataType:"json",
-		 success : function(data) {
-			 if(data.msg=="true"){
-			toastr.options = {  
-			        positionClass: "toast-why-center",   
-			        timeOut: "1000",  
-			        extendedTimeOut: "1000",   
-			    };  
-			    toastr.success("加入购物车成功");
-				 }
-			 else{
-				 toastr.options = {  
-					        positionClass: "toast-why-center",   
-					        timeOut: "1000",  
-					        extendedTimeOut: "1000",   
-					    };  
-					    toastr.error("加入购物车失败！请先登录");
-				 }
-				}
-	});
-	}
-</script>
 <w:StyleLeft />
 <div id="mainBody">
 	<div class="container">
@@ -61,45 +31,25 @@ function one(sId){
 	  </form>
 	  
 <div id="myTab" class="pull-right">
- <a href="#listView" data-toggle="tab"><span class="btn btn-large"><i class="icon-list"></i></span></a>
  <a href="#blockView" data-toggle="tab"><span class="btn btn-large btn-primary"><i class="icon-th-large"></i></span></a>
 </div>
 <br class="clr"/>
 <div class="tab-content">
-	<div class="tab-pane" id="listView">
-	<c:forEach begin="0" end="5" items="${requestScope.lookMyCar}" var="lm">
-		<hr class="soft"/>
-		<div class="row">	  
-			<div class="span4">
-				<h3>${lm.shop.get(0).sSay}</h3>				
-				<hr class="soft"/>
-				<p>
-				${lm.shop.get(0).sSmallsay }
-				</p>
-				<br class="clr"/>
-			</div>
-			<div class="span3 alignR">
-			<form class="form-horizontal qtyFrm">
-				 <h3>${lm.shop.get(0).sPrice}元</h3>
-				<br/>
-			</form>
-			</div>
-		</div>
-		</c:forEach>
-	</div>
-
 	<div class="tab-pane  active" id="blockView">
 		<ul class="thumbnails">
 		<c:forEach begin="0" end="5" items="${requestScope.lookMyCar}" var="llmm">
 			<li class="span3">
 			  <div class="thumbnail">
 				<div class="caption">
-				   <h5>${llmm.shop.get(0).sName}</h5> 
+			<img alt="" src="${llmm.shop.get(0).sImage }">
+					   <h5>${llmm.shop.get(0).sName}</h5> 
 				  <p>
 				 ${llmm.shop.get(0).sSmallsay } 
 				</p>
 				   <h4 style="text-align:center">
 				     <a href="#">${llmm.shop.get(0).sPrice }元</a></h4> 
+				     <a href="" style="margin-left: 30px">查看</a>
+				     <a href="" style="float: right;margin-right: 30px">删除</a>  
 				</div>
 			  </div>
 			</li>
