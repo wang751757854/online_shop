@@ -78,4 +78,8 @@ public class ShopServiceImpl implements ShopService {
 		return shopDao.selectShop(theSelect, selectOne);
 	}
 
+	public void insert(Shop shop) {
+		this.shopDao.insert(shop);
+	}
+
 }

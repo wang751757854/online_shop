@@ -23,7 +23,7 @@
 		<result column="s_school" property="sSchool" jdbcType="VARCHAR" />
 		<result column="s_type" property="sType" jdbcType="VARCHAR" />
 		<result column="s_time" property="sTime" jdbcType="TIMESTAMP" />
-		<result column="s_userid" property="sUserid" jdbcType="INTEGER" />
+		<result column="s_username" property="sUsername" jdbcType="VARCHAR" />
 		<result column="s_brand" property="sBrand" jdbcType="VARCHAR" />
 		<result column="s_smallsay" property="sSmallsay" jdbcType="VARCHAR" />
 		<result column="s_image2" property="sImage2" jdbcType="VARCHAR" />
@@ -38,7 +38,7 @@
   <select id="getShopOfCar" resultMap="GlBaseResultMap">
 	select s_id, s_int, s_name, s_price, s_kind, s_say, s_image, s_number, s_phone,
 		s_school,
-		s_type, s_time, s_userid,s_brand,s_smallsay, s_image2, s_image3, s_image4, c_id, c_username, c_shopid
+		s_type, s_time, s_username,s_brand,s_smallsay, s_image2, s_image3, s_image4, c_id, c_username, c_shopid
 		from
 		os_shop,os_car
 		where

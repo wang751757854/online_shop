@@ -20,6 +20,7 @@
     <link rel="apple-touch-icon-precomposed" href="themes/images/ico/apple-touch-icon-57-precomposed.png">
 	<style type="text/css" id="enject"></style>
 	<script src="themes/js/jquery.js" type="text/javascript"></script>
+	<script src="themes/js/ajaxfileupload.js" type="text/javascript"></script>
 	<script src="themes/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="themes/js/google-code-prettify/prettify.js"></script>
 	<script src="themes/js/bootshop.js"></script>

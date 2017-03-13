@@ -14,4 +14,5 @@ public interface ShopService {
     int selectCount();
     PageBean<Shop> findByPage(int currentPage);
     List<Shop> selectShop(String theSelect,String selectOne);
+    void insert(Shop shop);
 }

@@ -14,7 +14,7 @@
 		<result column="s_school" property="sSchool" jdbcType="VARCHAR" />
 		<result column="s_type" property="sType" jdbcType="VARCHAR" />
 		<result column="s_time" property="sTime" jdbcType="TIMESTAMP" />
-		<result column="s_userid" property="sUserid" jdbcType="INTEGER" />
+		<result column="s_username" property="sUsername" jdbcType="VARCHAR" />
 		<result column="s_brand" property="sBrand" jdbcType="VARCHAR" />
 		<result column="s_smallsay" property="sSmallsay" jdbcType="VARCHAR" />
 		<result column="s_image2" property="sImage2" jdbcType="VARCHAR" />
@@ -24,7 +24,7 @@
 	<sql id="Base_Column_List">
 		s_id, s_int, s_name, s_price, s_kind, s_say, s_image, s_number, s_phone,
 		s_school,
-		s_type, s_time, s_userid,s_brand,s_smallsay, s_image2, s_image3, s_image4
+		s_type, s_time, s_username,s_brand,s_smallsay, s_image2, s_image3, s_image4
 	</sql>
 	<!-- 根据分页数据start 和size查询数据 -->
 	<select id="findByPage" parameterType="Map" resultMap="BaseResultMap">
@@ -90,19 +90,20 @@
 		delete from os_shop
 		where s_id = #{sId,jdbcType=INTEGER}
 	</delete>
+	<!--发布商品  -->
 	<insert id="insert" parameterType="com.shop.entity.Shop">
 		insert into os_shop (s_id, s_int, s_name,
 		s_price, s_kind, s_say,
 		s_image, s_number, s_phone,
 		s_school, s_type, s_time,
-		s_userid,s_brand,s_smallsay)
+		s_username,s_brand,s_smallsay,s_image2,s_image3,s_image4)
 		values (#{sId,jdbcType=INTEGER}, #{sInt,jdbcType=INTEGER},
 		#{sName,jdbcType=VARCHAR},
 		#{sPrice,jdbcType=VARCHAR}, #{sKind,jdbcType=VARCHAR}, #{sSay,jdbcType=VARCHAR},
 		#{sImage,jdbcType=VARCHAR}, #{sNumber,jdbcType=INTEGER},
 		#{sPhone,jdbcType=VARCHAR},
 		#{sSchool,jdbcType=VARCHAR}, #{sType,jdbcType=VARCHAR}, #{sTime,jdbcType=TIMESTAMP},
-		#{sUserid,jdbcType=INTEGER}, #{sBrand,jdbcType=VARCHAR},#{sSmallsay,jdbcType=VARCHAR},
+		#{sUsername,jdbcType=VARCHAR}, #{sBrand,jdbcType=VARCHAR},#{sSmallsay,jdbcType=VARCHAR},
 		#{sImage2,jdbcType=VARCHAR},#{sImage3,jdbcType=VARCHAR},#{sImage4,jdbcType=VARCHAR})
 	</insert>
 	<insert id="insertSelective" parameterType="com.shop.entity.Shop">
@@ -144,8 +145,8 @@
 			<if test="sTime != null">
 				s_time,
 			</if>
-			<if test="sUserid != null">
-				s_userid,
+			<if test="sUsername != null">
+				s_username,
 			</if>
 			<if test="sBrand != null">
 				s_brand,
@@ -200,8 +201,8 @@
 			<if test="sTime != null">
 				#{sTime,jdbcType=TIMESTAMP},
 			</if>
-			<if test="sUserid != null">
-				#{sUserid,jdbcType=INTEGER},
+			<if test="sUsername != null">
+				#{sUsername,jdbcType=VARCHAR},
 			</if>
 			<if test="sBrand != null">
 				#{sBrand,jdbcType=VARCHAR},
@@ -256,13 +257,13 @@
 			<if test="sTime != null">
 				s_time = #{sTime,jdbcType=TIMESTAMP},
 			</if>
-			<if test="sUserid != null">
-				s_userid = #{sUserid,jdbcType=INTEGER},
+			<if test="sUsername != null">
+				s_username = #{sUsername,jdbcType=VARCHAR},
 			</if>
 			<if test="sTime != null">
 				s_brand = #{sBrand,jdbcType=VARCHAR},
 			</if>
-			<if test="sUserid != null">
+			<if test="sSmallsay != null">
 				s_smallsay = #{sSmallsay,jdbcType=VARCHAR},
 			</if>
 			<if test="sImage2 != null">
@@ -290,7 +291,7 @@
 		s_school = #{sSchool,jdbcType=VARCHAR},
 		s_type = #{sType,jdbcType=VARCHAR},
 		s_time = #{sTime,jdbcType=TIMESTAMP},
-		s_userid = #{sUserid,jdbcType=INTEGER},
+		s_username = #{sUsername,jdbcType=VARCHAR},
 		s_brand = #{sBrand,jdbcType=VARCHAR},
 		s_smallsay = #{s_Smallsay,jdbcType=VARCHAR},
 		s_image2 = #{sImage2,jdbcType=VARCHAR},

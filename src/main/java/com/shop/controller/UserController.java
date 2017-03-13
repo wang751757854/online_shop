@@ -1,7 +1,9 @@
 package com.shop.controller;
 
 
+import java.io.File;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +18,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.alibaba.fastjson.JSONObject;
 import com.shop.entity.Car;
@@ -132,6 +135,7 @@ public class UserController{
 		}
 		return modelMap;
 	}
+//	查看购物车
 	@RequestMapping("myShopCar")
 	public String myShopCar(@RequestParam("cUsername") String cUsername,HttpServletRequest request){
 		log.info(cUsername);
@@ -148,6 +152,35 @@ public class UserController{
 		request.setAttribute("needs",needs);
 		return "lookneed";
 	}
+//	发布商品
+	@RequestMapping("GiveShop")
+	public String GiveShop(Shop shop){
+		this.shopService.insert(shop);
+		return "lookmycar";
+	}
+//	上传图片处理
+	@RequestMapping("uploadPic")  
+	@ResponseBody  
+	public Map<String,Object> uploadPic(@RequestParam(value = "file", required = false) MultipartFile file,HttpServletRequest request) throws Exception {  
+	    String path = "themes/images"; 
+	    log.info(path);
+	    String fileName = file.getOriginalFilename();  
+	    String fileNameStr = (new Date().getTime())+"__"+fileName;  
+	    File targetFile = new File(path, fileNameStr);  
+	    Map<String,Object> mf = new HashMap<String, Object>();
+	    if(!targetFile.exists()){  
+	        targetFile.mkdirs();  
+	    }  
+	    //保存  
+	    try {
+	        file.transferTo(targetFile);  
+	        mf.put("mfpath",path);
+	        mf.put("mfname",fileNameStr);
+	    } catch (Exception e) {  
+	        e.printStackTrace();
+	    }  
+	    return mf;  
+	}  
 	@RequestMapping("updateUser")
 	public String updateUser(User u,HttpSession session){
 		log.info(u);
