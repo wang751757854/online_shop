@@ -28,13 +28,13 @@
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail1">用户名</label>
 				<div class="controls">
-				  <input class="span3"  type="text" id="inputEmail1" placeholder="用户名" name="uName">
+				  <input class="span3"  type="text" id="inputEmail1" placeholder="用户名" name="uName" style="height: 30px">
 				</div>
 			  </div>
 			  <div class="control-group">
 				<label class="control-label" for="inputPassword1">密码</label>
 				<div class="controls">
-				  <input type="password" class="span3"  id="inputPassword1" placeholder="Password" name="uPwd">
+				  <input type="password" class="span3"  id="inputPassword1" placeholder="Password" name="uPwd" style="height: 30px">
 				</div>
 			  </div>
 			  <div class="control-group">
@@ -54,7 +54,7 @@
 			  <div class="control-group">
 				<label class="control-label" for="inputEmail0">邮箱地址</label>
 				<div class="controls">
-				  <input class="span3"  name="email" type="text" id="inputEmail0" placeholder="Email">
+				  <input class="span3"  name="email" type="text" id="inputEmail0" placeholder="Email" style="height: 30px">
 				</div>
 			  </div>
 			  <div class="controls">

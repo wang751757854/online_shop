@@ -7,26 +7,34 @@
 <w:StyleHead />
 </head>
 <body>
-<script type="text/javascript">
-function ajaxFileUpload() {  
-    $.ajaxFileUpload({  
-        url: "uploadPic", //服务器端请求地址  
-        secureuri: false, //是否需要安全协议，一般设置为false  
-        fileElementId: 'uploadFile', //文件上传域的ID  
-        dataType: 'json', //返回值类型 一般设置为json  
-        enctype:'multipart/form-data',//注意一定要有该参数  
-        success: function (data)  //服务器成功响应处理函数  
-        {  
-            $("#inputt").val(data.mfpath+data.mfname)
-            alert("上传成功")
-        },  
-        error: function (data)//服务器响应失败处理函数  
-        {  
-            alert("上传失败");
-        }
-    })  
-}  
-</script>
+	<script type="text/javascript">
+		function ajaxFileUpload() {
+			$
+					.ajaxFileUpload({
+						url : "uploadPic", //服务器端请求地址  
+						secureuri : false, //是否需要安全协议，一般设置为false  
+						fileElementId : 'uploadFile', //文件上传域的ID  
+						dataType : 'json', //返回值类型 一般设置为json  
+						enctype : 'multipart/form-data',//注意一定要有该参数  
+						success : function(data) //服务器成功响应处理函数  
+						{
+							$("#one").val(data.mfpath +data.mfname)
+							$("#two").val(data.mfpath +data.mfname)
+							$("#three").val(data.mfpath +data.mfname)
+							$("#four").val(data.mfpath +data.mfname)
+							$("#uploadFile")
+									.attr("style", "position: absolute");
+							$("#uploadFile")
+									.after(
+											'<p style="width: 173px;background-color: #f5f5f5;position: relative;left: 75px;font-size: 20px;color:green">OK</p>');
+						},
+						error : function(data)//服务器响应失败处理函数  
+						{
+							alert("上传失败");
+						}
+					})
+		}
+	</script>
 	<w:StyleLeft />
 	<div id="mainBody">
 		<div class="container">
@@ -44,14 +52,15 @@ function ajaxFileUpload() {
 					</ul>
 					<h3>发布商品</h3>
 					<div class="well">
-					<div class="control-group">
-								<label class="control-label" for="inputFname1">商品图片<sup>*</sup></label>
-								<div class="controls">
-									<input type="file" id="uploadFile" 
-										name="file" onchange="ajaxFileUpload()" />
-								</div>
+						<div class="control-group">
+							<label class="control-label" for="inputFname1">商品图片1<sup>*</sup></label>
+							<div class="controls">
+								<input type="file" id="uploadFile" name="file"
+									onchange="ajaxFileUpload()" />
 							</div>
-						<form class="form-horizontal" action="GiveShop" enctype="multipart/form-data">
+						</div>
+						<form class="form-horizontal" action="GiveShop"
+							enctype="multipart/form-data">
 							<h4>请填写信息</h4>
 							<div class="control-group">
 								<label class="control-label" for="inputFname1">商品名称<sup>*</sup></label>
@@ -64,13 +73,13 @@ function ajaxFileUpload() {
 								<label class="control-label" for="inputFname1">商品价格<sup>*</sup></label>
 								<div class="controls">
 									<input type="text" id="inputFname1" placeholder="请输入"
-										name="sPrice">元</input>
+										name="sPrice" style="width: 78px">元</input>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputFname1">商品类别<sup>*</sup></label>
 								<div class="controls">
-									<select class="srchTxt"	name="sKind">
+									<select class="srchTxt" name="sKind">
 										<option value="教育">教育</option>
 										<option value="文艺">文艺</option>
 										<option value="生活">生活</option>
@@ -97,7 +106,8 @@ function ajaxFileUpload() {
 							<div class="control-group">
 								<label class="control-label" for="inputFname1">商品数量<sup>*</sup></label>
 								<div class="controls">
-									<input type="text" id="inputFname1" placeholder="请输入" name="sNumber">件/双/个</input>
+									<input type="text" id="inputFname1" placeholder="请输入"
+										name="sNumber">件/双/个</input>
 								</div>
 							</div>
 							<div class="control-group">
@@ -135,38 +145,22 @@ function ajaxFileUpload() {
 										name="sSmallsay">
 								</div>
 							</div>
-							<input type="hidden" id="inputt" name="sImage"/>
+							<input type="hidden" id="one" name="sImage" />
+							<input type="hidden" id="two" name="sImage2" />
+							<input type="hidden" id="three" name="sImage3" />
+							<input type="hidden" id="four" name="sImage4" />
 							<div class="control-group">
 								<label class="control-label" for="inputFname1">发布人<sup>*</sup></label>
 								<div class="controls">
-									<input type="hidden" value="${sessionScope.user.uName }" name="sUsername">
-								</div>
-							</div>
-							<div class="control-group">
-								<label class="control-label" for="inputFname1">图片2<sup>*</sup></label>
-								<div class="controls">
-									<input type="text" id="inputFname1" placeholder="请输入"
-										name="sImage2">
-								</div>
-							</div><div class="control-group">
-								<label class="control-label" for="inputFname1">图片3<sup>*</sup></label>
-								<div class="controls">
-									<input type="text" id="inputFname1" placeholder="请输入"
-										name="sImage3">
-								</div>
-							</div><div class="control-group">
-								<label class="control-label" for="inputFname1">图片4<sup>*</sup></label>
-								<div class="controls">
-									<input type="text" id="inputFname1" placeholder="请输入"
-										name="sImage4">
+									<input type="text" value="${sessionScope.user.uName }"
+										name="sUsername" readonly="readonly">
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls">
 									<input type="hidden" name="email_create" value="1"> <input
 										type="hidden" name="is_new_customer" value="1"> <input
-										class="btn btn-large btn-success" type="submit"
-										value="发布" />
+										class="btn btn-large btn-success" type="submit" value="发布" />
 								</div>
 							</div>
 						</form>

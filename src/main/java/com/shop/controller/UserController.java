@@ -162,8 +162,8 @@ public class UserController{
 	@RequestMapping("uploadPic")  
 	@ResponseBody  
 	public Map<String,Object> uploadPic(@RequestParam(value = "file", required = false) MultipartFile file,HttpServletRequest request) throws Exception {  
-	    String path = "themes/images"; 
-	    log.info(path);
+	    String path = "D:/Development/MyWorkSpace/online_shop/src/main/webapp/themes/images"; 
+	    String pathTwo = "themes/images/";
 	    String fileName = file.getOriginalFilename();  
 	    String fileNameStr = (new Date().getTime())+"__"+fileName;  
 	    File targetFile = new File(path, fileNameStr);  
@@ -174,8 +174,9 @@ public class UserController{
 	    //保存  
 	    try {
 	        file.transferTo(targetFile);  
-	        mf.put("mfpath",path);
+	        mf.put("mfpath",pathTwo);
 	        mf.put("mfname",fileNameStr);
+	        log.info(path+"/"+fileNameStr);
 	    } catch (Exception e) {  
 	        e.printStackTrace();
 	    }  
