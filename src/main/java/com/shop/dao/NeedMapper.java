@@ -2,6 +2,8 @@ package com.shop.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.shop.entity.Need;
 
 public interface NeedMapper {
@@ -19,4 +21,10 @@ public interface NeedMapper {
     int updateByPrimaryKeySelective(Need record);
 
     int updateByPrimaryKey(Need record);
+    
+    List<Need> myNeedThings(String cUsername);
+    
+    int deleteMyNeed(@Param("nUsername") String nUsername,@Param("nId") Integer nId);
+    
+    int EditNeed(Need need);
 }

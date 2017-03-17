@@ -57,9 +57,9 @@
     values (#{cUsername,jdbcType=VARCHAR}, #{cShopid,jdbcType=INTEGER}
       )
   </insert>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByUsername">
     delete from os_car
-    where c_id = #{cId,jdbcType=INTEGER}
+    where c_username = #{cUsername,jdbcType=VARCHAR} and c_shopid = #{cShopid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.shop.entity.Car" >
     insert into os_car (c_id, c_username, c_shopid

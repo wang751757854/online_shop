@@ -8,6 +8,36 @@
     <w:StyleHead />
   </head>
 <body>
+<input type="hidden" value="${sessionScope.user.uName }">
+<script type="text/javascript">
+function one(sId){
+	var uName = $("input:hidden").val()
+	$.ajax({
+		url : "shopCar",
+		data :{"uName":uName,"sId":sId},
+		type : "post",
+		dataType:"json",
+		 success : function(data) {
+			 if(data.msg=="true"){
+			toastr.options = {  
+			        positionClass: "toast-why-center",   
+			        timeOut: "1000",  
+			        extendedTimeOut: "1000",   
+			    };  
+			    toastr.success("加入购物车成功");
+				 }
+			 else{
+				 toastr.options = {  
+					        positionClass: "toast-why-center",   
+					        timeOut: "1000",  
+					        extendedTimeOut: "1000",   
+					    };  
+					    toastr.error("加入购物车失败！请先登录");
+				 }
+				}
+	});
+	}
+</script>
 <w:StyleLeft />
 <div id="mainBody">
 	<div class="container">
@@ -46,13 +76,15 @@
 					<label class="control-label"><span>${requestScope.shopthing.getsPrice()}元</span></label>
 					<div class="controls">
 					<input type="text" class="span1" placeholder="1件" readonly="readonly" />
-					  <button type="submit" class="btn btn-large btn-primary pull-right"> 添加到购物车<i class=" icon-shopping-cart"></i></button>
+					  <button type="button" onclick="one(${requestScope.shopthing.getsId()})" class="btn btn-large btn-primary  pull-right">添加 到<i class=" icon-shopping-cart"></i></button> 
 					</div>
 				  </div>
 				</form>
 				
 				<hr class="soft"/>
-				<h4 style="float: right">还剩${requestScope.shopthing.getsNumber()}件</h4>
+				<h4>还剩${requestScope.shopthing.getsNumber()}件
+				<a href="#"><button type="button" class="btn btn-large btn-primary  pull-right"><span style="color: #fff">购买</span></button> </a>
+				</h4>
 				<hr class="soft clr"/>
 				<p>
 				${requestScope.shopthing.getsSmallsay() }
@@ -116,7 +148,7 @@
 						<label class="checkbox">
 						</label><br/>
 						<div class="btn-group">
-						<a href="product_details.jsp" class="btn btn-large btn-primary"> 添加 <i class=" icon-shopping-cart"></i></a>
+						<button type="button" onclick="one(${requestScope.shopthing.getsId()})" class="btn btn-large btn-primary  pull-right">添加 到<i class=" icon-shopping-cart"></i></button> 
 						<a href="product_details.jsp" class="btn btn-large"><i class="icon-zoom-in"></i></a>
 						</div>
 					</form>

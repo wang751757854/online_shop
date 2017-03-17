@@ -1,6 +1,8 @@
 package com.shop.controller;
 
 
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
@@ -72,11 +74,13 @@ public class UserController{
 		}
     	return "404";
     }
+//    注销
     @RequestMapping("logout")
     public String logout(HttpSession session){
     	session.removeAttribute("user");
     	return "redirect:index.jsp";
     }
+//    查看商品详情
     @RequestMapping("lookShop")
     public String lookShop(@RequestParam(value="sId") Integer sId,HttpServletRequest request){
     	Shop shopthing = shopService.lookShop(sId);
@@ -85,6 +89,7 @@ public class UserController{
     	request.setAttribute("shopthing", shopthing);
     	return "product_details";
     }
+//    显示所有商品
 	@RequestMapping("showAllShop")
     public void showAllShop(HttpSession session){
     	List<Shop> shop = shopService.showAllShop();
@@ -96,14 +101,53 @@ public class UserController{
 				log.error("查询失败");
 			}
     }
-	
+//	从购物车中删除物品
+	@RequestMapping("deleteMyCar")
+	public String deleteMyCar(@RequestParam("cUsername") String cUsername,@RequestParam("cShopid") Integer cShopid,
+			HttpServletRequest request){
+		this.carService.deleteMyCar(cUsername,cShopid);
+		List<Car> lookMyCar = carService.lookMyCar(cUsername);
+		request.setAttribute("lookMyCar", lookMyCar);
+		return "lookmycar";
+	}
+//	查看我的商品
+	@RequestMapping("myShopThings")
+	public String myShopThings(@RequestParam("sUsername") String sUsername,
+			HttpServletRequest request){
+		List<Shop> myshop = shopService.myShopThings(sUsername);
+		request.setAttribute("myShopThings",myshop);
+		return "myShopThings";
+	}
+//	删除发布的商品
+	@RequestMapping("deleteMyshop")
+	public String deleteMyshop(@RequestParam("sUsername") String sUsername,
+			@RequestParam("sId") Integer sId){
+		shopService.deleteMyhop(sUsername, sId);
+		log.info("删除 成功");
+		return "myShopThings";
+	}
+//	删除我的求购信息
+	@RequestMapping("deleteMyNeed")
+	public String deleteMyNeed(@RequestParam("nUsername") String nUsername,@RequestParam("nId") Integer nId){
+		needService.deleteMyNeed(nUsername, nId);
+		return "myNeedThings";
+	}
+//	查看额我的求购
+	@RequestMapping("myNeedThings")
+	public String myNeedThings(@RequestParam("nUsername") String nUsername,
+			HttpServletRequest request){
+		List<Need> myNeed = needService.myNeedThings(nUsername);
+		request.setAttribute("myNeedThings",myNeed);
+		return "myNeedThings";
+	}
+//	查看所有求购信息
 	@RequestMapping("lookNeed")
 	public String lookNeed(HttpServletRequest request){
 		List<Need> needs = needService.lookNeed();
 		request.setAttribute("needs",needs);
 		return "lookneed";
 	}
-	
+//	相关产品
 	@RequestMapping("lookKindShop")
 	public String lookKindShop(@RequestParam(value="kind") String kind,HttpServletRequest request){
 		List<Shop> kinShop = shopService.lookKindShop(kind);
@@ -111,15 +155,18 @@ public class UserController{
 		request.setAttribute("kindShop", kinShop);
 		return "products";
 	}
+//	查看用户信息
 	@RequestMapping("lookUserInfo")
 	public String lookUserInfo(){
 		return "userinfo";
 	}
+//	我的订单
 	@RequestMapping("orderBuy")
 	public String orderBuy(){
 		
 		return "";
 	}
+//	添加购物车
 	@ResponseBody
 	@RequestMapping("shopCar")
 	public Map<String, Object> shopCar(@RequestParam("uName") String uName,
@@ -182,6 +229,7 @@ public class UserController{
 	    }  
 	    return mf;  
 	}  
+//	修改用户信息
 	@RequestMapping("updateUser")
 	public String updateUser(User u,HttpSession session){
 		log.info(u);
@@ -190,6 +238,37 @@ public class UserController{
 		session.setAttribute("user",user);
 		return "userinfo";
 	}
+//	修改发布的商品的jsp
+	@RequestMapping("editmyshop")
+	public String editmyshop(@RequestParam("sId") Integer sId,HttpServletRequest request){
+		Shop sh = shopService.lookShop(sId);
+		request.setAttribute("edit",sh);
+		return "editmyshop";
+	}
+//	修改商品Controller
+	@RequestMapping("EditShop")
+	public String EditShop(Shop shop){
+		this.shopService.EditShop(shop);
+		return "myShopThings";
+	}
+//	修改求购信息的jsp
+	@RequestMapping("editmyneed")
+	public String editmyneed(@RequestParam("nId") Integer nId,
+			@RequestParam("nPrice") String nPrice,@RequestParam("nName")String nName,
+			HttpServletRequest request){
+		request.setAttribute("nId",nId);
+		request.setAttribute("nPrice",nPrice);
+		request.setAttribute("nName",nName);
+		return "editmyneed";
+	}
+//	修改求购信息的Sontroller
+	@RequestMapping("EditNeed")
+	public String EditNeed(Need need){
+		this.needService.EditNeed(need);
+		log.info("修改求购信息成功");
+		return "lookneed";
+	}
+//	分页
 	@RequestMapping("AllThings")
 	public String AllThings(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage
 			,Model model){
@@ -197,6 +276,7 @@ public class UserController{
 		log.info(shopService.findByPage(currentPage).getLists());
 		return "special_offer";
 	}
+//	分页
 	@RequestMapping("selectShop")
 	public String selectShop(@RequestParam(value="theSelect") String theSelect,
 			@RequestParam(value="selectOne") String selectOne,HttpServletRequest request){

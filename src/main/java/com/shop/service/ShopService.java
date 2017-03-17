@@ -15,4 +15,7 @@ public interface ShopService {
     PageBean<Shop> findByPage(int currentPage);
     List<Shop> selectShop(String theSelect,String selectOne);
     void insert(Shop shop);
+    List<Shop> myShopThings(String sUsername);
+    void deleteMyhop(String sUsername,Integer sId);
+    void EditShop(Shop shop);
 }

@@ -17,6 +17,13 @@
     <include refid="Base_Column_List" />
     from os_need
   </select>
+  <!--查看我的求购信息  -->
+  <select id="myNeedThings" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select 
+    <include refid="Base_Column_List" />
+    from os_need
+    where n_username = #{nUsername,jdbcType=VARCHAR}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -26,6 +33,11 @@
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from os_need
     where n_id = #{nId,jdbcType=INTEGER}
+  </delete>
+  <!--删除我的求购信息  -->
+   <delete id="deleteMyNeed">
+    delete from os_need
+    where n_username = #{nUsername,jdbcType=VARCHAR} and n_id = #{nId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.shop.entity.Need" >
     insert into os_need (n_id, n_name, n_price, 
@@ -89,6 +101,15 @@
     where n_id = #{nId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.shop.entity.Need" >
+    update os_need
+    set n_name = #{nName,jdbcType=VARCHAR},
+      n_price = #{nPrice,jdbcType=VARCHAR},
+      n_username = #{nUsername,jdbcType=VARCHAR},
+      n_time = #{nTime,jdbcType=TIMESTAMP}
+    where n_id = #{nId,jdbcType=INTEGER}
+  </update>
+  <!--修改求购信息  -->
+  <update id="EditNeed" parameterType="com.shop.entity.Need" >
     update os_need
     set n_name = #{nName,jdbcType=VARCHAR},
       n_price = #{nPrice,jdbcType=VARCHAR},

@@ -82,4 +82,19 @@ public class ShopServiceImpl implements ShopService {
 		this.shopDao.insert(shop);
 	}
 
+	public List<Shop> myShopThings(String sUsername) {
+		// TODO Auto-generated method stub
+		return shopDao.myShopThings(sUsername);
+	}
+
+	@Override
+	public void deleteMyhop(String sUsername, Integer sId) {
+		shopDao.deleteMyshop(sUsername, sId);
+	}
+
+	@Override
+	public void EditShop(Shop shop) {
+		this.shopDao.EditShop(shop);
+	}
+
 }

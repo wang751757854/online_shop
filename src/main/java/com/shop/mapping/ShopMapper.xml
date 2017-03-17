@@ -35,12 +35,17 @@
 			limit #{start},#{size}
 		</if>
 	</select>
-
+	<!--查看我的商品信息  -->
+	<select id="myShopThings" resultMap="BaseResultMap"	parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from os_shop where s_username = #{sUsername,jdbcType=VARCHAR}
+	</select>
 	<!--查询所有物品数据 -->
 	<select id="selectAllThings" resultType="com.shop.entity.Shop">
 		select
 		<include refid="Base_Column_List" />
-		from os_shop
+		from os_shop 
 	</select>
 
 	<!-- 查询物品记录总数 -->
@@ -89,6 +94,11 @@
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
 		delete from os_shop
 		where s_id = #{sId,jdbcType=INTEGER}
+	</delete>
+	<!--删除我发布的商品  -->
+	<delete id="deleteMyshop">
+		delete from os_shop
+		where s_username = #{sUsername,jdbcType=VARCHAR} and s_id = #{sId,jdbcType=INTEGER}
 	</delete>
 	<!--发布商品  -->
 	<insert id="insert" parameterType="com.shop.entity.Shop">
@@ -221,7 +231,7 @@
 			</if>
 		</trim>
 	</insert>
-	<update id="updateByPrimaryKeySelective" parameterType="com.shop.entity.Shop">
+	<update id="EditShop" parameterType="com.shop.entity.Shop">
 		update os_shop
 		<set>
 			<if test="sInt != null">

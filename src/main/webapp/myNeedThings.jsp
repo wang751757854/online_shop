@@ -3,7 +3,7 @@
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
   <head>
-    <title>查看我的购物车</title>
+    <title>管理我的求购信息</title>
     <w:StyleHead />
   </head>
 <body>
@@ -37,19 +37,17 @@
 <div class="tab-content">
 	<div class="tab-pane  active" id="blockView">
 		<ul class="thumbnails">
-		<c:forEach begin="0" end="5" items="${requestScope.lookMyCar}" var="llmm">
+		<c:forEach begin="0" end="5" items="${requestScope.myNeedThings}" var="mnt">
 			<li class="span3">
 			  <div class="thumbnail">
 				<div class="caption">
-			<img alt="" src="${llmm.shop.get(0).sImage }">
-					   <h5>${llmm.shop.get(0).sName}</h5> 
+					   <h5>${mnt.nName}</h5> 
 				  <p>
-				 ${llmm.shop.get(0).sSmallsay } 
 				</p>
 				   <h4 style="text-align:center">
-				     <a href="#">${llmm.shop.get(0).sPrice }元</a></h4> 
-				     <a href="" style="margin-left: 30px">查看</a>
-				     <a href="deleteMyCar?cUsername=${sessionScope.user.uName }&cShopid=${llmm.shop.get(0).sId}" style="float: right;margin-right: 30px">删除</a>  
+				     <a href="#">${mnt.nPrice}元</a></h4> 
+				     <a href="editmyneed?nId=${mnt.nId }&nPrice=${mnt.nPrice}&nName=${mnt.nName}" style="margin-left: 30px">编辑</a>
+				     <a href="deleteMyNeed?nUsername=${sessionScope.user.uName }&nId=${mnt.nId}" style="float: right;margin-right: 30px">删除</a>  
 				</div>
 			  </div>
 			</li>
@@ -58,7 +56,7 @@
 	<hr class="soft"/>
 	</div>
 </div>
-	<a href="compair.jsp" class="pull-right"><span class="btn btn-large btn-primary">去结算</span></a>
+	<a href="GiveNeed.jsp" class="pull-right"><span class="btn btn-large btn-primary">发布</span></a>
 	<div class="pagination">
 			<ul>
 			<li><a href="#">&lsaquo;</a></li>

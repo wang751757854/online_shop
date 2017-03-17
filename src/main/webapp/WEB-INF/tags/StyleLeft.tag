@@ -15,8 +15,8 @@
 	<ul class="dropdown-menu" role="menu">
 		<li><a href="lookUserInfo">查看个人信息</a></li>
 		<li><a href="orderBuy.jsp">已买订单</a></li>
-		<li><a href="GiveShop.jsp">发布商品</a></li>
-		<li><a href="GiveNeed.jsp">发布求购信息</a></li>
+		<li><a href="myShopThings?sUsername=${sessionScope.user.uName }">我的商品</a></li>
+		<li><a href="myNeedThings?nUsername=${sessionScope.user.uName }">我的求购信息</a></li>
 		<li class="divider"></li>
 		<li><a href="logout">注销</a></li>
 	</ul>

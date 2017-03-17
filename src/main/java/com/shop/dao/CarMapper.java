@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import com.shop.entity.Car;
 
 public interface CarMapper {
-    int deleteByPrimaryKey(Integer cId);
+    int deleteByUsername(@Param("cUsername") String cUsername,@Param("cShopid") Integer cShopid);
 
     int insert(Car record);
 

@@ -20,5 +20,8 @@ public class CarServiceImpl implements CarService {
 	public List<Car> lookMyCar(String cUsername) {
 		return this.carDao.getShopOfCar(cUsername);
 	}
+	public void deleteMyCar(String cUsername,Integer cShopid) {
+		this.carDao.deleteByUsername(cUsername,cShopid);
+	}
 
 }

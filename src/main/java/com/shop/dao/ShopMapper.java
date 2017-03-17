@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
+import com.shop.entity.Need;
 import com.shop.entity.Shop;
 
 public interface ShopMapper {
@@ -17,6 +18,9 @@ public interface ShopMapper {
     Shop selectByPrimaryKey(Integer sId);
 
     int updateByPrimaryKeySelective(Shop record);
+    
+//    修改我发布的商品
+    int EditShop(Shop shop);
 
     int updateByPrimaryKey(Shop record);
     
@@ -43,4 +47,8 @@ public interface ShopMapper {
      * @return
      */
     List<Shop> findByPage(HashMap<String,Object> map);
+//    查看我的商品信息
+    List<Shop> myShopThings(String sUsername);
+    
+    int deleteMyshop(@Param("sUsername") String sUsername,@Param("sId") Integer sId);
 }
