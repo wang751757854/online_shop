@@ -3,6 +3,7 @@ package online_shop;
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
+import org.junit.Ignore;
 //import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,6 @@ import com.shop.service.UserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)  //表示继承了SpringJUnit4ClassRunner类
 @ContextConfiguration(locations = {"classpath:spring-mybatis.xml"})
-
 public class Test {
     private static Logger logger = Logger.getLogger(Test.class);
 //  private ApplicationContext ac = null;

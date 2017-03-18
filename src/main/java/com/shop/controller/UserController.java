@@ -261,7 +261,7 @@ public class UserController{
 		request.setAttribute("nName",nName);
 		return "editmyneed";
 	}
-//	修改求购信息的Sontroller
+//	修改求购信息的Controller
 	@RequestMapping("EditNeed")
 	public String EditNeed(Need need){
 		this.needService.EditNeed(need);
