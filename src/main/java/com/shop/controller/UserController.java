@@ -26,11 +26,13 @@ import com.shop.entity.Car;
 import com.shop.entity.Need;
 import com.shop.entity.Order;
 import com.shop.entity.Shop;
+import com.shop.entity.Talk;
 import com.shop.entity.User;
 import com.shop.service.CarService;
 import com.shop.service.NeedService;
 import com.shop.service.OrderService;
 import com.shop.service.ShopService;
+import com.shop.service.TalkService;
 import com.shop.service.UserService;
 @Controller
 public class UserController{
@@ -45,6 +47,8 @@ public class UserController{
     @Autowired
     private OrderService orderService;
     @Autowired
+    private TalkService talkService;
+    @Autowired
     private User user;
     @Autowired
     private Shop shop;
@@ -54,6 +58,8 @@ public class UserController{
     private Need need;
     @Autowired
     private Order order;
+    @Autowired
+    private Talk talk;
 	Logger log = Logger.getLogger(UserController.class);
 	//	註冊
 	@RequestMapping("register")
@@ -177,9 +183,24 @@ public class UserController{
 	@RequestMapping("ordershop")
 	public String ordershop(Order order){
 		orderService.insertOrder(order);
-		return "lookmyordersuccess";
+		return "buysuccess";
 	}
 //	查看我的订单
+	@RequestMapping("orderbuy")
+	public String orderbuy(@RequestParam("oUsername") String oUsername,HttpServletRequest request){
+		List<Order> order = orderService.selectOrder(oUsername);
+		request.setAttribute("orderbuy",order);
+		return "orderbuy";
+	}
+//	评论
+	@RequestMapping("totalk")
+	public String totalk(Talk talk,HttpServletRequest request){
+		this.talkService.insertTalk(talk);
+		log.info("评论成功");
+		List<Order> order = orderService.selectOrder(talk.gettName());
+		request.setAttribute("orderbuy",order);
+		return "orderbuy";
+	}
 //	添加购物车
 	@ResponseBody
 	@RequestMapping("shopCar")

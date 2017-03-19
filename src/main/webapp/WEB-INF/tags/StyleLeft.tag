@@ -14,7 +14,7 @@
 	</button>
 	<ul class="dropdown-menu" role="menu">
 		<li><a href="lookUserInfo">查看个人信息</a></li>
-		<li><a href="orderBuy.jsp">已买订单</a></li>
+		<li><a href="orderbuy?oUsername=${sessionScope.user.uName }">已买订单</a></li>
 		<li><a href="myShopThings?sUsername=${sessionScope.user.uName }">我的商品</a></li>
 		<li><a href="myNeedThings?nUsername=${sessionScope.user.uName }">我的求购信息</a></li>
 		<li class="divider"></li>

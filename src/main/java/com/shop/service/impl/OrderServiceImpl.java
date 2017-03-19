@@ -1,5 +1,7 @@
 package com.shop.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,10 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	public void insertOrder(Order order) {
 		orderDao.insert(order);
+	}
+	@Override
+	public List<Order> selectOrder(String ousername) {
+		return orderDao.selectOrder(ousername);
 	}
 
 }
