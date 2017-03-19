@@ -1,7 +1,6 @@
 package com.shop.controller;
 
 
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.request;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -25,10 +24,12 @@ import org.springframework.web.multipart.MultipartFile;
 import com.alibaba.fastjson.JSONObject;
 import com.shop.entity.Car;
 import com.shop.entity.Need;
+import com.shop.entity.Order;
 import com.shop.entity.Shop;
 import com.shop.entity.User;
 import com.shop.service.CarService;
 import com.shop.service.NeedService;
+import com.shop.service.OrderService;
 import com.shop.service.ShopService;
 import com.shop.service.UserService;
 @Controller
@@ -42,6 +43,8 @@ public class UserController{
     @Autowired 
     private NeedService needService;
     @Autowired
+    private OrderService orderService;
+    @Autowired
     private User user;
     @Autowired
     private Shop shop;
@@ -49,6 +52,8 @@ public class UserController{
     private Car car;
     @Autowired
     private Need need;
+    @Autowired
+    private Order order;
 	Logger log = Logger.getLogger(UserController.class);
 	//	註冊
 	@RequestMapping("register")
@@ -160,12 +165,21 @@ public class UserController{
 	public String lookUserInfo(){
 		return "userinfo";
 	}
-//	我的订单
-	@RequestMapping("orderBuy")
-	public String orderBuy(){
-		
-		return "";
+//	将要下的订单(点击购买跳转的jsp)
+	@RequestMapping("WantBuy")
+	public String WantBuy(@RequestParam("sId") Integer sId,
+			HttpServletRequest request){
+		Shop wantshop = shopService.lookShop(sId);
+		request.setAttribute("wantshop",wantshop);
+		return "wantgbuy";
 	}
+//	结算
+	@RequestMapping("ordershop")
+	public String ordershop(Order order){
+		orderService.insertOrder(order);
+		return "lookmyordersuccess";
+	}
+//	查看我的订单
 //	添加购物车
 	@ResponseBody
 	@RequestMapping("shopCar")

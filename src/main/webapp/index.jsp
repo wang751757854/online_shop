@@ -65,6 +65,7 @@
 				</div>
 			</div>
 			<p class="pull-right">&copy; online_shop</p>
+			<a href="adminlogin.jsp" style="margin-left: 1106px">管理员登录</a>
 		</div>
 </body>
 </html>

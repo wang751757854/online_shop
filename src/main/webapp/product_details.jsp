@@ -80,10 +80,9 @@ function one(sId){
 					</div>
 				  </div>
 				</form>
-				
 				<hr class="soft"/>
 				<h4>还剩${requestScope.shopthing.getsNumber()}件
-				<a href="#"><button type="button" class="btn btn-large btn-primary  pull-right"><span style="color: #fff">购买</span></button> </a>
+				<a href="WantBuy?sId=${requestScope.shopthing.getsId()}"><button type="button" class="btn btn-large btn-primary  pull-right"><span style="color: #fff">购买</span></button> </a>
 				</h4>
 				<hr class="soft clr"/>
 				<p>
