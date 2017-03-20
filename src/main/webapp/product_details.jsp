@@ -99,6 +99,7 @@ function one(sId){
             <ul id="productDetail" class="nav nav-tabs">
               <li class="active"><a href="#home" data-toggle="tab">产品细节</a></li>
               <li><a href="#profile" data-toggle="tab">相关产品</a></li>
+              <li><a href="#alltalk" data-toggle="tab"><b>评价</b></a></li>
             </ul>
             <div id="myTabContent" class="tab-content">
               <div class="tab-pane fade active in" id="home">
@@ -154,6 +155,23 @@ function one(sId){
 					</div>
 			</div>
 			</c:forEach>
+			<hr class="soft"/>
+		</div> 
+		</div>
+				<br class="clr">
+					 </div>
+					 <div class="tab-pane fade" id="alltalk">
+		<div id="myTab" class="pull-right">
+		</div>
+		<br class="clr"/>
+		<hr class="soft"/>
+		<div class="tab-content">
+			<c:forEach items="${requestScope.looktalk }" var="lts" begin="0" end="5">
+			<hr class="soft"/>
+			<div class="row">	  
+						<h3 style="margin-left: 150px">${lts.tContent}</h3>				
+			</div>
+			</c:forEach> 
 			<hr class="soft"/>
 		</div> 
 		</div>

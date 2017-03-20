@@ -96,6 +96,8 @@ public class UserController{
     public String lookShop(@RequestParam(value="sId") Integer sId,HttpServletRequest request){
     	Shop shopthing = shopService.lookShop(sId);
     	List<Shop> aboutShop = shopService.lookAbout(shopthing.getsKind());
+    	List<Talk> lookTalk = talkService.lookTalk(sId);
+    	request.setAttribute("looktalk",lookTalk);
     	request.setAttribute("aboutShop", aboutShop);
     	request.setAttribute("shopthing", shopthing);
     	return "product_details";

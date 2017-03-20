@@ -8,14 +8,43 @@
     <result column="t_name" property="tName" jdbcType="VARCHAR" />
     <result column="t_time" property="tTime" jdbcType="TIMESTAMP" />
   </resultMap>
+  <resultMap type="com.shop.entity.Talk" id="GlBaseResultMap">
+   <id column="t_id" property="tId" jdbcType="INTEGER" />
+    <result column="t_shopid" property="tShopid" jdbcType="INTEGER" />
+    <result column="t_content" property="tContent" jdbcType="VARCHAR" />
+    <result column="t_name" property="tName" jdbcType="VARCHAR" />
+    <result column="t_time" property="tTime" jdbcType="TIMESTAMP" />
+    <collection property="shop" ofType="com.shop.entity.Shop">
+    <id column="s_id" property="sId" jdbcType="INTEGER" />
+		<result column="s_int" property="sInt" jdbcType="INTEGER" />
+		<result column="s_name" property="sName" jdbcType="VARCHAR" />
+		<result column="s_price" property="sPrice" jdbcType="VARCHAR" />
+		<result column="s_kind" property="sKind" jdbcType="VARCHAR" />
+		<result column="s_say" property="sSay" jdbcType="VARCHAR" />
+		<result column="s_image" property="sImage" jdbcType="VARCHAR" />
+		<result column="s_number" property="sNumber" jdbcType="INTEGER" />
+		<result column="s_phone" property="sPhone" jdbcType="VARCHAR" />
+		<result column="s_school" property="sSchool" jdbcType="VARCHAR" />
+		<result column="s_type" property="sType" jdbcType="VARCHAR" />
+		<result column="s_time" property="sTime" jdbcType="TIMESTAMP" />
+		<result column="s_username" property="sUsername" jdbcType="VARCHAR" />
+		<result column="s_brand" property="sBrand" jdbcType="VARCHAR" />
+		<result column="s_smallsay" property="sSmallsay" jdbcType="VARCHAR" />
+		<result column="s_image2" property="sImage2" jdbcType="VARCHAR" />
+		<result column="s_image3" property="sImage3" jdbcType="VARCHAR" />
+		<result column="s_image4" property="sImage4" jdbcType="VARCHAR" />
+    </collection>
+  </resultMap>
   <sql id="Base_Column_List" >
     t_id, t_shopid, t_content, t_name, t_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from os_talk
-    where t_id = #{tId,jdbcType=INTEGER}
+  <!--查询商品的所有评价  -->
+  <select id="selectByPrimaryKey" resultMap="GlBaseResultMap" parameterType="java.lang.Integer" >
+   select s_id, t_id, t_name, t_shopid, t_content, t_time
+		from
+		os_shop,os_talk
+		where
+		s_id = #{sId,jdbcType=INTEGER} and s_id = t_shopid
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from os_talk

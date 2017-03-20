@@ -1,5 +1,7 @@
 package com.shop.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,11 @@ public class TalkServiceImpl implements TalkService{
 	@Override
 	public void insertTalk(Talk talk) {
 		this.talkDao.insert(talk);
+	}
+	@Override
+	public List<Talk> lookTalk(Integer sId) {
+		// TODO Auto-generated method stub
+		return talkDao.selectByPrimaryKey(sId);
 	}
 
 }

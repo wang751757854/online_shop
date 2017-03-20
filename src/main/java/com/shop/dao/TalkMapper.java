@@ -1,5 +1,9 @@
 package com.shop.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.shop.entity.Talk;
 
 public interface TalkMapper {
@@ -9,7 +13,7 @@ public interface TalkMapper {
 
     int insertSelective(Talk record);
 
-    Talk selectByPrimaryKey(Integer tId);
+    List<Talk> selectByPrimaryKey(@Param("sId") Integer sId);
 
     int updateByPrimaryKeySelective(Talk record);
 

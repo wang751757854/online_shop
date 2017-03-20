@@ -1,6 +1,7 @@
 package com.shop.entity;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.stereotype.Component;
 @Component
@@ -14,8 +15,20 @@ public class Talk {
     private String tName;
 
     private Date tTime;
+    
+    private List<Shop> shop;
+    
+    
 
-    public Integer gettId() {
+    public List<Shop> getShop() {
+		return shop;
+	}
+
+	public void setShop(List<Shop> shop) {
+		this.shop = shop;
+	}
+
+	public Integer gettId() {
         return tId;
     }
 
@@ -54,4 +67,11 @@ public class Talk {
     public void settTime(Date tTime) {
         this.tTime = tTime;
     }
+
+	@Override
+	public String toString() {
+		return "Talk [tId=" + tId + ", tShopid=" + tShopid + ", tContent=" + tContent + ", tName=" + tName + ", tTime="
+				+ tTime + ", shop=" + shop + "]";
+	}
+    
 }
