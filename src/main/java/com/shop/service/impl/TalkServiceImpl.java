@@ -19,8 +19,11 @@ public class TalkServiceImpl implements TalkService{
 	}
 	@Override
 	public List<Talk> lookTalk(Integer sId) {
-		// TODO Auto-generated method stub
 		return talkDao.selectByPrimaryKey(sId);
+	}
+	@Override
+	public List<Talk> lookMyTalk(String tName) {
+		return talkDao.lookMyTalk(tName);
 	}
 
 }

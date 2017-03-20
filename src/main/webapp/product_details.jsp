@@ -169,7 +169,7 @@ function one(sId){
 			<c:forEach items="${requestScope.looktalk }" var="lts" begin="0" end="5">
 			<hr class="soft"/>
 			<div class="row">	  
-						<h3 style="margin-left: 150px">${lts.tContent}</h3>				
+						<h3 style="margin-left: 150px">评论：${lts.tContent}~~用户：${lts.tName }</h3>				
 			</div>
 			</c:forEach> 
 			<hr class="soft"/>

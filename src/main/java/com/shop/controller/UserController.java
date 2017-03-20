@@ -102,6 +102,13 @@ public class UserController{
     	request.setAttribute("shopthing", shopthing);
     	return "product_details";
     }
+//    查看我给的评价
+    @RequestMapping("mytalkks")
+    public String mytalkks(@RequestParam("tName") String tName,HttpServletRequest request){
+    	List<Talk> listt = talkService.lookMyTalk(tName);
+    	request.setAttribute("listt",listt);
+    	return "lookmytalks";
+    }
 //    显示所有商品
 	@RequestMapping("showAllShop")
     public void showAllShop(HttpSession session){

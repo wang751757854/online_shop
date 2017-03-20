@@ -17,6 +17,7 @@
 		<li><a href="orderbuy?oUsername=${sessionScope.user.uName }">已买订单</a></li>
 		<li><a href="myShopThings?sUsername=${sessionScope.user.uName }">我的商品</a></li>
 		<li><a href="myNeedThings?nUsername=${sessionScope.user.uName }">我的求购信息</a></li>
+		<li><a href="mytalkks?tName=${sessionScope.user.uName }">查看评价</a></li>
 		<li class="divider"></li>
 		<li><a href="logout">注销</a></li>
 	</ul>

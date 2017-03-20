@@ -14,6 +14,8 @@ public interface TalkMapper {
     int insertSelective(Talk record);
 
     List<Talk> selectByPrimaryKey(@Param("sId") Integer sId);
+    
+    List<Talk> lookMyTalk(@Param("tName") String tName);
 
     int updateByPrimaryKeySelective(Talk record);
 
