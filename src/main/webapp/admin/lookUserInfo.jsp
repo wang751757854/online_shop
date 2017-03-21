@@ -58,19 +58,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 					<div class="data-div">
 						<div class="row tableHeader">
-							<div class="col-xs-2 ">排序</div>
-							<div class="col-xs-3">标题</div>
-							<div class="col-xs-2">发布者</div>
-							<div class="col-xs-3">发布时间</div>
+							<div class="col-xs-2 ">姓名</div>
+							<div class="col-xs-2">性别</div>
+							<div class="col-xs-2">手机号</div>
+							<div class="col-xs-2">邮箱</div>
+							<div class="col-xs-2">学校</div>
 							<div class="col-xs-2">操作</div>
 						</div>
 						<div class="tablebody">
 						 <c:forEach begin="0" end="5">
 							<div class="row">
-								<div class="col-xs-2">1</div>
-								<div class="col-xs-3">标题</div>
-								<div class="col-xs-2">发布者</div>
-								<div class="col-xs-3">发布时间</div>
+								<div class="col-xs-2">王宏宇</div>
+								<div class="col-xs-2">男</div>
+								<div class="col-xs-2">13611066094</div>
+								<div class="col-xs-2">751757854@qq.com</div>
+								<div class="col-xs-2">内蒙古师范大学</div>
 								<div class="col-xs-2">
 									<a href="lookOneNotice?id=${notice.n_id}" class="btn btn-success btn-xs" 
 										>查看</a>
