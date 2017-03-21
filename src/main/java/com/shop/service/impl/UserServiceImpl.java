@@ -1,5 +1,7 @@
 package com.shop.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,11 @@ public class UserServiceImpl implements UserService {
 	}
 	public User userinfo(int uId) {
 		return this.userdao.userinfo(uId);
+	}
+	@Override
+	public List<User> allUser() {
+		// TODO Auto-generated method stub
+		return userdao.allUser();
 	}
 
 }

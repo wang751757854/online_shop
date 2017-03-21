@@ -46,7 +46,7 @@
 			<!-- meun-item-active指定进来后优先默认的页面  -->
 			<!--在a标签里面添加data-toggle="tab"属性之后,这个a标签会失去默认行为,点击a标签的时候不会跳转,即使有href属性,但是它不管用  -->
 			<div class="meun-item " role="tab">
-				<a href="lookNotice.jsp" target="miniWindows">
+				<a href="orderUserInfo" target="miniWindows">
 					<img src="images/icon_user_grey.png">用户管理
 				</a>
 			</div>
@@ -86,7 +86,7 @@
 		<div style="width:84%;height:100%;margin-left:16%">
 			<!-- iframe分页-->
 			<iframe id="miniWindows" name="miniWindows" width="1166px"
-				height="636px" src="lookNotice.jsp"></iframe>
+				height="636px" src="lookUserInfo.jsp"></iframe>
 		</div>
 	</div>
 	<script src="js/jquery.nouislider.js"></script>

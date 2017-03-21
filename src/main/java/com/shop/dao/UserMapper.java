@@ -1,6 +1,8 @@
 package com.shop.dao;
 
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Param;
 
 import com.shop.entity.User;
@@ -21,4 +23,6 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
     
     User login(@Param("uName") String uName,@Param("uPwd") String uPwd);
+    
+    List<User> allUser();
 }

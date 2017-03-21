@@ -20,6 +20,12 @@
   <sql id="Base_Column_List" >
     u_id, u_name, u_pwd, u_phone, u_mail, u_address, u_sex, u_age, u_image, u_username, u_city, u_school, u_code, u_leavemsg
   </sql>
+  <!--查询所有用户  -->
+   <select id="allUser" resultMap="BaseResultMap" >
+    select 
+    <include refid="Base_Column_List" />
+    from os_user
+  </select>
   <select id="login" resultMap="BaseResultMap" >
     select 
     <include refid="Base_Column_List" />
