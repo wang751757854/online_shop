@@ -37,10 +37,12 @@
 <div class="tab-content">
 	<div class="tab-pane  active" id="blockView">
 		<ul class="thumbnails">
+		<form action="toOrder">
 		<c:forEach begin="0" end="5" items="${requestScope.lookMyCar}" var="llmm">
 			<li class="span3">
 			  <div class="thumbnail">
 				<div class="caption">
+				<input type="checkbox" name="${llmm.shop.get(0).sId}" >
 			<img alt="" src="${llmm.shop.get(0).sImage }">
 					   <h5>${llmm.shop.get(0).sName}</h5> 
 				  <p>
@@ -48,17 +50,18 @@
 				</p>
 				   <h4 style="text-align:center">
 				     <a href="#">${llmm.shop.get(0).sPrice }元</a></h4> 
-				     <a href="" style="margin-left: 30px">查看</a>
+				     <a href="lookShop?sId=${llmm.shop.get(0).sId}" style="margin-left: 30px">查看</a>
 				     <a href="deleteMyCar?cUsername=${sessionScope.user.uName }&cShopid=${llmm.shop.get(0).sId}" style="float: right;margin-right: 30px">删除</a>  
 				</div>
 			  </div>
 			</li>
 			</c:forEach>
+			</form>
 		  </ul>
 	<hr class="soft"/>
+	<a href="compair.jsp" class="pull-right"><span class="btn btn-large btn-primary">去结算</span></a>
 	</div>
 </div>
-	<a href="compair.jsp" class="pull-right"><span class="btn btn-large btn-primary">去结算</span></a>
 	<div class="pagination">
 			<ul>
 			<li><a href="#">&lsaquo;</a></li>

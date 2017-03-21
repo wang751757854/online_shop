@@ -1,5 +1,7 @@
 package com.shop.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.shop.entity.Admin;
 
 public interface AdminMapper {
@@ -14,4 +16,6 @@ public interface AdminMapper {
     int updateByPrimaryKeySelective(Admin record);
 
     int updateByPrimaryKey(Admin record);
+    
+    Admin alogin(@Param("aName") String aName,@Param("aPwd") String aPwd);
 }

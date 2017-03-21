@@ -16,6 +16,13 @@
     from os_admin
     where a_id = #{aId,jdbcType=INTEGER}
   </select>
+  <!--管理员登录  -->
+   <select id="alogin" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from os_admin
+    where a_name = #{aName,jdbcType=VARCHAR} and a_pwd = #{aPwd,jdbcType=VARCHAR}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from os_admin
     where a_id = #{aId,jdbcType=INTEGER}
