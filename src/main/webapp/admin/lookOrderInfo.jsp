@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>商品信息</title>
+    <title>订单查询</title>
     
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -61,25 +61,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="col-xs-2 ">商品</div>
 							<div class="col-xs-2">名称</div>
 							<div class="col-xs-2">价格</div>
-							<div class="col-xs-2">数量</div>
-							<div class="col-xs-2">发布人</div>
+							<div class="col-xs-2">卖家</div>
+							<div class="col-xs-2">买家</div>
 							<div class="col-xs-2">操作</div>
 						</div>
 						<div class="tablebody">
-						 <c:forEach items="${requestScope.allshop }" var="as">
+						 <c:forEach items="${requestScope.allorder }" var="ao">
 							<div class="row">
-								<div class="col-xs-2"><img src="${as.sImage }" style="width: 100px;height: 80px"></div>
-								<div class="col-xs-2">${as.sName }</div>
-								<div class="col-xs-2">${as.sPrice }</div>
-								<div class="col-xs-2">${as.sNumber }</div>
-								<div class="col-xs-2">${as.sUsername }</div>
+								<div class="col-xs-2"><img src="${ao.shop.get(0).sImage }" style="width: 100px;height: 80px"></div>
+								<div class="col-xs-2">${ao.shop.get(0).sName }</div>
+								<div class="col-xs-2">${ao.shop.get(0).sPrice }</div>
+								<div class="col-xs-2">${ao.shop.get(0).sUsername }</div>
+								<div class="col-xs-2">${ao.oUsername }</div>
 								<div class="col-xs-2">
-									<a href="lookUserInfo?uId=${as.sId }" class="btn btn-success btn-xs" 
+									<a href="lookUserInfo?oId=${ao.oId }" class="btn btn-success btn-xs" 
 										>查看</a>
-										<a href="editUserInfo?uId=${as.sId }" class="btn btn-warning btn-xs" 
+										<a href="editUserInfo?uId=${ao.oId }" class="btn btn-warning btn-xs" 
 										>修改</a>
-										<a href="deleteUserInfo?uId=${as.sId }" class="btn btn-danger btn-xs" 
-										>删除</a>
+										<a href="deleteUserInfo?uId=${ao.oId }" class="btn btn-danger btn-xs" 
+										>删除</a> 
 								</div>
 							</div>
 						</c:forEach>

@@ -25,5 +25,9 @@ public class TalkServiceImpl implements TalkService{
 	public List<Talk> lookMyTalk(String tName) {
 		return talkDao.lookMyTalk(tName);
 	}
+	@Override
+	public List<Talk> allTalk() {
+		return talkDao.allTalk();
+	}
 
 }

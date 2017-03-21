@@ -20,4 +20,6 @@ public interface TalkMapper {
     int updateByPrimaryKeySelective(Talk record);
 
     int updateByPrimaryKey(Talk record);
+    
+    List<Talk> allTalk();
 }

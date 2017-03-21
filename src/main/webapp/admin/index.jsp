@@ -51,18 +51,18 @@
 				</a>
 			</div>
 			<div class="meun-item" role="tab">
-				<a href="lookRecruitInfo.jsp" target="miniWindows"> <img
+				<a href="orderShopInfo" target="miniWindows"> <img
 					src="images/icon_chara_grey.png">商品管理
 				</a>
 			</div>
 			<div class="meun-item" role="tab">
-				<a href="orderResume.jsp" target="miniWindows"> <img
+				<a href="orderOrderInfo" target="miniWindows"> <img
 					src="images/icon_source.png">订单管理
 				</a>
 			</div>
 			<div class="meun-title">商品操作</div>
 			<div class="meun-item" href="#scho" role="tab">
-			<a href="resumeInfo.jsp" target="miniWindows">
+			<a href="orderTalkInfo" target="miniWindows">
 				<img src="images/icon_house_grey.png">评价管理</a>
 			</div>
 			<div class="meun-item" href="#regu" role="tab">

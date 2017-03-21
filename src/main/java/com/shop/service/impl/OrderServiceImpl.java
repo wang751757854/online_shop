@@ -21,5 +21,9 @@ public class OrderServiceImpl implements OrderService {
 	public List<Order> selectOrder(String ousername) {
 		return orderDao.selectOrder(ousername);
 	}
+	@Override
+	public List<Order> allOrder() {
+		return orderDao.allOrder();
+	}
 
 }

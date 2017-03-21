@@ -52,6 +52,15 @@
 		where
 		o_username = #{oUsername,jdbcType=VARCHAR} and s_id = o_shopid
   </select>
+   <!--查询所有订单  -->
+    <select id="allOrder" resultMap="GlBaseResultMap">
+	select s_id, s_int, s_name, s_price, s_kind, s_say, s_image, s_number, s_phone,
+		s_school,
+		s_type, s_time, s_username,s_brand,s_smallsay, s_image2, s_image3, s_image4, o_id, o_username, o_shopid
+		from
+		os_shop,os_order
+		 where s_id = o_shopid
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from os_order
     where o_id = #{oId,jdbcType=INTEGER}

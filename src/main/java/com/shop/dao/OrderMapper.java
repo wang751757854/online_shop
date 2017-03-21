@@ -20,4 +20,6 @@ public interface OrderMapper {
     int updateByPrimaryKey(Order record);
     
     List<Order> selectOrder(@Param("oUsername") String oUsername);
+    
+    List<Order> allOrder();
 }

@@ -46,6 +46,16 @@
 		where
 		s_id = #{sId,jdbcType=INTEGER} and s_id = t_shopid
   </select>
+   <!--查询所有商品的所有评价  -->
+  <select id="allTalk" resultMap="GlBaseResultMap">
+   select s_id, s_int, s_name, s_price, s_kind, s_say, s_image, s_number, s_phone,
+		s_school,
+		s_type, s_time, s_username,s_brand,s_smallsay, t_id, t_name, t_shopid, t_content, t_time
+		from
+		os_shop,os_talk
+		where
+		 s_id = t_shopid
+  </select>
   <!--查看我给我评价们  -->
   <select id="lookMyTalk" resultMap="GlBaseResultMap">
    select s_Name, s_Image,  t_id, t_name, t_shopid, t_content, t_time
