@@ -79,6 +79,13 @@
     </set>
     where a_id = #{aId,jdbcType=INTEGER}
   </update>
+  <!--修改管理员密码  -->
+   <update id="changepwd" parameterType="com.shop.entity.Admin" >
+    update os_admin
+    set 
+      a_pwd = #{aPwd,jdbcType=VARCHAR}
+    where a_name = #{aName,jdbcType=VARCHAR}
+  </update>
   <update id="updateByPrimaryKey" parameterType="com.shop.entity.Admin" >
     update os_admin
     set a_name = #{aName,jdbcType=VARCHAR},

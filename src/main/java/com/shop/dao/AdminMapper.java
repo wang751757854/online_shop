@@ -18,4 +18,6 @@ public interface AdminMapper {
     int updateByPrimaryKey(Admin record);
     
     Admin alogin(@Param("aName") String aName,@Param("aPwd") String aPwd);
+    
+     int changepwd(Admin admin);
 }

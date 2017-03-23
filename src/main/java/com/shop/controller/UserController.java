@@ -112,11 +112,13 @@ public class UserController{
     public void showAllShop(HttpSession session){
     	List<Shop> shop = shopService.showAllShop();
     	List<Shop> lunbo = shopService.lunbo();
+    	List<Shop> giveshop = shopService.giveShop();
     	log.info(shop);  
 			if(shop.size()!=0){
 				log.info("图片地址"+shop.get(0).getsImage());
 				session.setAttribute("shop", shop);
 				session.setAttribute("lunbo",lunbo);
+				session.setAttribute("giveshop",giveshop);
 			}else{
 				log.error("查询失败");
 			}

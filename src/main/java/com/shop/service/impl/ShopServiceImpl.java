@@ -122,4 +122,14 @@ public class ShopServiceImpl implements ShopService {
 		this.shopDao.usedTolunbo(sId);
 	}
 
+	@Override
+	public List<Shop> giveShop() {
+		return shopDao.giveShop();
+	}
+
+	@Override
+	public void usedToGive(Integer sId) {
+		this.shopDao.usedToGive(sId);
+	}
+
 }

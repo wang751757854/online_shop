@@ -554,7 +554,7 @@ Effect.Puff = function(element) {
   var oldStyle = { opacity: Element.getInlineOpacity(element), position: Element.getStyle(element, 'position') };
   return new Effect.Parallel(
    [ new Effect.Scale(element, 200, 
-      { sync: true, scaleFromCenter: true, scaleContent: true, restoreAfterFinish: true }), 
+		   oldpwd), 
      new Effect.Opacity(element, { sync: true, to: 0.0 } ) ], 
      Object.extend({ duration: 1.0, 
       beforeSetupInternal: function(effect) { with(Element) {

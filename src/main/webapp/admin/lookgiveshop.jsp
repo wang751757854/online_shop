@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>商品信息</title>
+    <title>推荐商品管理</title>
     
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,16 +52,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="col-xs-2">操作</div>
 						</div>
 						<div class="tablebody">
-						 <c:forEach items="${sessionScope.lunbo }" var="lb">
+						 <c:forEach items="${sessionScope.giveshop }" var="gs">
 							<div class="row">
-								<div class="col-xs-2"><img src="${lb.sImage }" style="width: 100px;height: 80px"></div>
-								<div class="col-xs-2">${lb.sName }</div>
-								<div class="col-xs-2">${lb.sPrice }</div>
-								<div class="col-xs-2">${lb.sNumber }</div>
-								<div class="col-xs-2">${lb.sUsername }</div>
+								<div class="col-xs-2"><img src="${gs.sImage }" style="width: 100px;height: 80px"></div>
+								<div class="col-xs-2">${gs.sName }</div>
+								<div class="col-xs-2">${gs.sPrice }</div>
+								<div class="col-xs-2">${gs.sNumber }</div>
+								<div class="col-xs-2">${gs.sUsername }</div>
 								<div class="col-xs-2">
-										<a href="admin/editlunboInfo?sId=${lb.sId }" class="btn btn-warning btn-xs" 
-										>取消轮播</a>
+										<a href="admin/editGiveInfo?sId=${gs.sId }" class="btn btn-warning btn-xs" 
+										>取消推荐</a>
 								</div>
 							</div>
 						</c:forEach>

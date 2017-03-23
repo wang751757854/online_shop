@@ -77,7 +77,7 @@
 		<include refid="Base_Column_List" />
 		from os_shop limit 0,40
 	</select>
-	<!--轮播图 -->
+	<!--查看轮播图 -->
 	<select id="lunbo" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
@@ -85,7 +85,15 @@
 		where
 		s_type = 1
 	</select>
-	<!--取消轮播图 -->
+	<!--查看推荐商品  -->
+	<select id="giveShop" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from os_shop
+		where
+		s_type = 2
+	</select>
+	<!--取消轮播图，推荐 -->
 	<update id="exitlunbo" parameterType="java.lang.Integer">
 		update os_shop
 		set 
@@ -98,6 +106,14 @@
 		update os_shop
 		set 
 		s_type = 1
+		where s_id =
+		#{sId,jdbcType=INTEGER}
+	</update>
+	<!--设置为推荐  -->
+	<update id="usedToGive" parameterType="java.lang.Integer">
+		update os_shop
+		set 
+		s_type = 2
 		where s_id =
 		#{sId,jdbcType=INTEGER}
 	</update>

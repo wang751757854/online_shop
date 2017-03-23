@@ -4,4 +4,5 @@ import com.shop.entity.Admin;
 
 public interface AdminService {
 	Admin alogin(String aName,String aPwd);
+	void changepwd(Admin admin);
 }

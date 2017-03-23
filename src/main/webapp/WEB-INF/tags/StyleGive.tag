@@ -1,8 +1,9 @@
 <%@ tag pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <div class="span9">
 					<div class="well well-small" style="height: 365px">
 						<h4>
-							推荐商品<small class="pull-right">200+ 主打商品</small>
+							最新商品<small class="pull-right">200+ 主打商品</small>
 						</h4>
 						<div class="row-fluid">
 							<div id="featured" class="carousel slide">
@@ -238,104 +239,25 @@
 							</div>
 						</div>
 					</div>
-					<h4>最新产品</h4>
+					<h4>推荐商品</h4>
 					<ul class="thumbnails">
+					<c:forEach items="${sessionScope.giveshop }" var="gs">
 						<li class="span3" style="height: 408px">
 							<div class="thumbnail">
-								<a href="lookShop?sId=${sessionScope.shop.get(22).getsId()}"><img
-									src="${sessionScope.shop.get(22).getsImage() }" alt="" /></a>
+								<a href="lookShop?sId=${gs.getsId()}"><img
+									src="${gs.getsImage() }" alt="" /></a>
 								<div class="caption">
-									<h5>${sessionScope.shop.get(22).getsName()}</h5>
-									<p>这也可以介绍</p>
-
+									<h5>${gs.getsName()}</h5>
+									<p>${gs.getsSmallsay()}</p>
 									<h4 style="text-align: center">
-										<a class="btn" href="lookShop?sId=${sessionScope.shop.get(22).getsId()}"> <i
+										<a class="btn" href="lookShop?sId=${gs.getsId()}"> <i
 											class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i
 											class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
-											href="#">${sessionScope.shop.get(22).getsPrice()}元</a>
+											href="#">${gs.getsPrice()}元</a>
 									</h4>
 								</div>
 							</div>
 						</li>
-						<li class="span3" style="height: 408px">
-							<div class="thumbnail">
-								<a href="lookShop?sId=${sessionScope.shop.get(23).getsId()}"><img
-									src="${sessionScope.shop.get(23).getsImage() }" alt="" /></a>
-								<div class="caption">
-									<h5>${sessionScope.shop.get(23).getsName()}</h5>
-									<p>这也可以介绍</p>
-									<h4 style="text-align: center">
-										<a class="btn" href="lookShop?sId=${sessionScope.shop.get(23).getsId()}"> <i
-											class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i
-											class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
-											href="#">${sessionScope.shop.get(23).getsPrice()}元</a>
-									</h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3" style="height: 408px">
-							<div class="thumbnail">
-								<a href="lookShop?sId=${sessionScope.shop.get(24).getsId()}"><img
-									src="${sessionScope.shop.get(24).getsImage() }" alt="" /></a>
-								<div class="caption">
-									<h5>${sessionScope.shop.get(24).getsName()}</h5>
-									<p>这也可以介绍</p>
-									<h4 style="text-align: center">
-										<a class="btn" href="lookShop?sId=${sessionScope.shop.get(24).getsId()}"> <i
-											class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i
-											class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
-											href="#">${sessionScope.shop.get(24).getsPrice()}元</a>
-									</h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3" style="height: 408px">
-							<div class="thumbnail">
-								<a href="lookShop?sId=${sessionScope.shop.get(25).getsId()}"><img
-									src="${sessionScope.shop.get(25).getsImage() }" alt="" /></a>
-								<div class="caption">
-									<h5>${sessionScope.shop.get(25).getsName()}</h5>
-									<p>这也可以介绍</p>
-									<h4 style="text-align: center">
-										<a class="btn" href="lookShop?sId=${sessionScope.shop.get(25).getsId()}"> <i
-											class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i
-											class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
-											href="#">${sessionScope.shop.get(25).getsPrice()}元</a>
-									</h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3" style="height: 408px">
-							<div class="thumbnail">
-								<a href="lookShop?sId=${sessionScope.shop.get(26).getsId()}"><img
-									src="${sessionScope.shop.get(26).getsImage() }" alt="" /></a>
-								<div class="caption">
-									<h5>${sessionScope.shop.get(26).getsName()}</h5>
-									<p>这也可以介绍</p>
-									<h4 style="text-align: center">
-										<a class="btn" href="lookShop?sId=${sessionScope.shop.get(26).getsId()}"> <i
-											class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i
-											class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
-											href="#">${sessionScope.shop.get(26).getsPrice()}元</a>
-									</h4>
-								</div>
-							</div>
-						</li>
-						<li class="span3" style="height: 408px">
-							<div class="thumbnail">
-								<a href="lookShop?sId=${sessionScope.shop.get(27).getsId()}"><img
-									src="${sessionScope.shop.get(27).getsImage() }" alt="" /></a>
-								<div class="caption">
-									<h5>${sessionScope.shop.get(27).getsName()}</h5>
-									<p>这也可以介绍</p>
-									<h4 style="text-align: center">
-										<a class="btn" href="lookShop?sId=${sessionScope.shop.get(27).getsId()}"> <i
-											class="icon-zoom-in"></i></a> <a class="btn" href="#">添加到<i
-											class="icon-shopping-cart"></i></a> <a class="btn btn-primary"
-											href="#">${sessionScope.shop.get(27).getsPrice()}元</a>
-									</h4>
-								</div>
-							</div>
-						</li>
+						</c:forEach>
 					</ul>
 				</div>

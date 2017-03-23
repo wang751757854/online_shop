@@ -23,4 +23,6 @@ public interface ShopService {
     List<Shop> lunbo();
     void exitlunbo(Integer sId);
     void usedTolunbo(Integer sId);
+    List<Shop> giveShop();
+    void usedToGive(Integer sId);
 }

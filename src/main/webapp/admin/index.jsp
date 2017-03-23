@@ -28,17 +28,14 @@
 		<div class="leftMeun" id="leftMeun" style="width:16%;height:100%">
 			<div id="logoDiv">
 				<p id="logoP">
-					<img id="logo" alt="在线招聘" src="images/logo.png"><span>后台管理</span>
+					<img id="logo" alt="后台管理" src="images/logo.png"><span>后台管理</span>
 				</p>
 			</div>
 			<s:else>
 				<div id="personInfor">
-					<p id="userName">勇士，欢迎归来</p>
+					<p id="userName"><span style="font-size: 20px;margin-left: 10px">勇士，欢迎归来</span></p>
 					<p>
-						<span>${sessionScope.adminInfo.aName}</span>
-					</p>
-					<p>
-						<a href="userloginout">退出登录</a>
+						<span style="font-size: 30px;margin-left: 47px">${sessionScope.adminInfo.aName}</span>
 					</p>
 				</div>
 			</s:else>
@@ -70,17 +67,17 @@
 				<img src="images/icon_rule_grey.png">轮播图管理</a>
 			</div>
 			<div class="meun-item" href="#stud" role="tab">
-			<a href="lookNeedJobInfo.jsp" target="miniWindows">
+			<a href="lookgiveshop" target="miniWindows">
 				<img src="images/icon_card_grey.png">推荐商品管理</a>
 			</div>
 			<div class="meun-title">系统设置</div>
 			<div class="meun-item" href="#scho" role="tab">
-			<a href="5.jsp" target="miniWindows">
+			<a href="editAdminPwd.jsp" target="miniWindows">
 				<img src="images/icon_house_grey.png">修改密码</a>
 			</div>
 			<div class="meun-item" href="#regu" role="tab">
-			<a href="6.jsp" target="miniWindows">
-				<img src="images/icon_rule_grey.png">完善资料</a>
+			<a href="alogout">
+				<img src="images/icon_rule_grey.png">退出登录</a>
 			</div>
 		</div>
 		<div style="width:84%;height:100%;margin-left:16%">

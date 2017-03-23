@@ -16,5 +16,10 @@ public class AdminServiceImpl implements AdminService{
 	public Admin alogin(String aName, String aPwd) {
 		return adminDao.alogin(aName, aPwd);
 	}
+
+	@Override
+	public void changepwd(Admin admin) {
+		this.adminDao.changepwd(admin);
+	}
 	
 }

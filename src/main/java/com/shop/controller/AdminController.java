@@ -1,6 +1,8 @@
 package com.shop.controller;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.shop.entity.Admin;
 import com.shop.entity.Order;
@@ -38,7 +41,7 @@ public class AdminController {
 	@Autowired
 	private AdminService adminservice;
 	Logger log = Logger.getLogger(UserController.class);
-	
+//	管理员登录
 	@RequestMapping("alogin")
 	public String alogin(@RequestParam("aName") String aName,
 			@RequestParam("aPwd") String aPwd,
@@ -51,6 +54,12 @@ public class AdminController {
 			return "404";
 		}
 	}
+//	注销
+	@RequestMapping("alogout")
+    public String alogout(HttpSession session){
+    	session.removeAttribute("adminInfo");
+    	return "redirect:../index.jsp";
+    }
 //	查看所有用户
 	@RequestMapping("orderUserInfo")
 	public String orderUserInfo(HttpServletRequest request){
@@ -155,5 +164,45 @@ public class AdminController {
 		List<Shop> lunbo = shopService.lunbo();
 		session.setAttribute("lunbo",lunbo);
 		return "admin/lookShopInfo";
+	}
+//  查看推荐	
+	@RequestMapping("lookgiveshop")
+	public String lookgiveshop(){
+		return "admin/lookgiveshop";
+	}
+//	取消推荐
+	@RequestMapping("editGiveInfo")
+	public String editGiveInfo(@RequestParam("sId") Integer sId,HttpSession session){
+		this.shopService.exitlunbo(sId);
+		List<Shop> giveshop = shopService.lunbo();
+		session.setAttribute("giveshop",giveshop);
+		return "admin/lookgiveshop";
+	}
+//	设置推荐
+	@RequestMapping("usedTogive")
+	public String usedTogive(@RequestParam("sId") Integer sId,HttpSession session){
+		this.shopService.usedToGive(sId);
+		List<Shop> giveshop = shopService.giveShop();
+		session.setAttribute("giveshop",giveshop);
+		return "admin/lookgiveshop";
+	}
+//	检查密码
+	@RequestMapping("checkpwd")
+	@ResponseBody
+	public Map<String,String> checkpwd(@RequestParam("aName") String aName,@RequestParam("aPwd") String aPwd){
+		Map<String, String> modelMap = new HashMap<String, String>();
+		Admin adminInfo = adminservice.alogin(aName, aPwd);
+		if(adminInfo!=null){
+			modelMap.put("msg","验证通过");
+		}else{
+			modelMap.put("msg","密码错误");
+		}
+		return modelMap;
+	}
+//	修改密码
+	@RequestMapping("changepwd")
+	public String changepwd(Admin admin){
+		this.adminservice.changepwd(admin);
+		return "redirect:../index.jsp";
 	}
 }

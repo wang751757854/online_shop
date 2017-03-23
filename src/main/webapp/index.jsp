@@ -29,7 +29,7 @@
 		<div class="container">
 			<div class="row">
 				<w:StyleTopppp />
-				<!--推荐商品  -->
+				<!--最新商品  -->
 				<w:StyleGive />
 			</div>
 		</div>

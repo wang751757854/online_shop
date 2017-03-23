@@ -67,6 +67,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-xs-2">
 										<a href="admin/usedTolunbo?sId=${as.sId }" class="btn btn-warning btn-xs" 
 										>设置轮播图</a>
+										<a href="admin/usedTogive?sId=${as.sId }" class="btn btn-warning btn-xs" 
+										>设置推荐</a>
 										<a href="admin/editShopInfo?sId=${as.sId }" class="btn btn-warning btn-xs" 
 										>修改</a>
 										<a href="admin/deleteShopInfo?sId=${as.sId }" class="btn btn-danger btn-xs" 

@@ -55,10 +55,14 @@ public interface ShopMapper {
     int deleteShopInfo(@Param("sId") Integer sId);
     
     List<Shop> searchShop(@Param("sName") String sName);
-//    查找轮播图
+//    查看轮播图
     List<Shop> lunbo();
 //    取消轮播图
     int exitlunbo(@Param("sId") Integer sId);
 //    设置为轮播图
     int usedTolunbo(@Param("sId") Integer sId);
+//    查看推荐商品
+    List<Shop> giveShop();
+//    设置为推荐
+    int usedToGive(@Param("sId") Integer sId);
 }
