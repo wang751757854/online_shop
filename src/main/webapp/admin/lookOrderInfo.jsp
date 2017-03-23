@@ -35,25 +35,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
    <div role="tabpanel" class="tab-pane" >
 					<div class="check-div">
 						<div class="col-xs-3">
-							<button class="btn btn-yellow btn-xs" data-toggle="modal"
-								data-target="#addUser">查看公告</button>
 						</div>
 						<div class="col-xs-4">
-							<input type="text" class="form-control input-sm"
-								placeholder="输入文字搜索">
-							<button class="btn btn-white btn-xs ">查 询</button>
 						</div>
 						<div class="col-lg-3 col-lg-offset-2 col-xs-4"
 							style="padding-right: 40px; text-align: right;">
-							<label for="paixu">排序:&nbsp;</label> <select
-								class=" form-control">
-								<option>地区</option>
-								<option>地区</option>
-								<option>班期</option>
-								<option>性别</option>
-								<option>年龄</option>
-								<option>份数</option>
-							</select>
 						</div>
 					</div>
 					<div class="data-div">
@@ -74,10 +60,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-xs-2">${ao.shop.get(0).sUsername }</div>
 								<div class="col-xs-2">${ao.oUsername }</div>
 								<div class="col-xs-2">
-									<a href="lookUserInfo?oId=${ao.oId }" class="btn btn-success btn-xs" 
-										>查看</a>
-										<a href="deleteUserInfo?uId=${ao.oId }" class="btn btn-danger btn-xs" 
-										>删除</a> 
+										<button class="btn btn-danger btn-xs" 
+										>NO</a> 
 								</div>
 							</div>
 						</c:forEach>

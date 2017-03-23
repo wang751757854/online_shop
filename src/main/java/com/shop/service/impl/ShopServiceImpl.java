@@ -107,4 +107,19 @@ public class ShopServiceImpl implements ShopService {
 		return this.shopDao.searchShop(sName);
 	}
 
+	@Override
+	public List<Shop> lunbo() {
+		return shopDao.lunbo();
+	}
+
+	@Override
+	public void exitlunbo(Integer sId) {
+		this.shopDao.exitlunbo(sId);
+	}
+
+	@Override
+	public void usedTolunbo(Integer sId) {
+		this.shopDao.usedTolunbo(sId);
+	}
+
 }

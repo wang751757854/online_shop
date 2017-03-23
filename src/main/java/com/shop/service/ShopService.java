@@ -20,4 +20,7 @@ public interface ShopService {
     void EditShop(Shop shop);
     void deleteShopInfo(Integer sId);
     List<Shop> searchShop(String sName);
+    List<Shop> lunbo();
+    void exitlunbo(Integer sId);
+    void usedTolunbo(Integer sId);
 }

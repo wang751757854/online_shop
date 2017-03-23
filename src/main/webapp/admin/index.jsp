@@ -66,7 +66,7 @@
 				<img src="images/icon_house_grey.png">评价管理</a>
 			</div>
 			<div class="meun-item" href="#regu" role="tab">
-			<a href="outJobInfo.jsp" target="miniWindows">
+			<a href="looklunbo" target="miniWindows">
 				<img src="images/icon_rule_grey.png">轮播图管理</a>
 			</div>
 			<div class="meun-item" href="#stud" role="tab">

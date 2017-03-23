@@ -3,7 +3,7 @@
 <div id="carouselBlk">
 	<div id="myCarousel" class="carousel slide">
 		<div class="carousel-inner">
-		  <c:forEach items="${sessionScope.shop }" var="s" begin="0" end="5">
+		  <c:forEach items="${sessionScope.lunbo }" var="s">
 		  <div class="item">
 		  <div class="container">
 			<a href="lookShop?sId=${s.sId}"><img src="${s.sImage }" alt="" id="two"/></a>

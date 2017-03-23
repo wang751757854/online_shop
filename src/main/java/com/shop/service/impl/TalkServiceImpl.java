@@ -29,5 +29,9 @@ public class TalkServiceImpl implements TalkService{
 	public List<Talk> allTalk() {
 		return talkDao.allTalk();
 	}
+	@Override
+	public void deleteTalkInfo(Integer tId) {
+		this.talkDao.deleteByPrimaryKey(tId);
+	}
 
 }

@@ -1,4 +1,5 @@
 package com.shop.controller;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
@@ -110,10 +111,12 @@ public class UserController{
 	@RequestMapping("showAllShop")
     public void showAllShop(HttpSession session){
     	List<Shop> shop = shopService.showAllShop();
+    	List<Shop> lunbo = shopService.lunbo();
     	log.info(shop);  
 			if(shop.size()!=0){
 				log.info("图片地址"+shop.get(0).getsImage());
 				session.setAttribute("shop", shop);
+				session.setAttribute("lunbo",lunbo);
 			}else{
 				log.error("查询失败");
 			}

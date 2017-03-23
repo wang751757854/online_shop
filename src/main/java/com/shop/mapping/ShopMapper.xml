@@ -22,9 +22,11 @@
 		<result column="s_image4" property="sImage4" jdbcType="VARCHAR" />
 	</resultMap>
 	<sql id="Base_Column_List">
-		s_id, s_int, s_name, s_price, s_kind, s_say, s_image, s_number, s_phone,
+		s_id, s_int, s_name, s_price, s_kind, s_say, s_image,
+		s_number, s_phone,
 		s_school,
-		s_type, s_time, s_username,s_brand,s_smallsay, s_image2, s_image3, s_image4
+		s_type, s_time,
+		s_username,s_brand,s_smallsay, s_image2, s_image3, s_image4
 	</sql>
 	<!-- 根据分页数据start 和size查询数据 -->
 	<select id="findByPage" parameterType="Map" resultMap="BaseResultMap">
@@ -35,8 +37,9 @@
 			limit #{start},#{size}
 		</if>
 	</select>
-	<!--查看我的商品信息  -->
-	<select id="myShopThings" resultMap="BaseResultMap"	parameterType="java.lang.String">
+	<!--查看我的商品信息 -->
+	<select id="myShopThings" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
 		select
 		<include refid="Base_Column_List" />
 		from os_shop where s_username = #{sUsername,jdbcType=VARCHAR}
@@ -45,7 +48,7 @@
 	<select id="selectAllThings" resultType="com.shop.entity.Shop">
 		select
 		<include refid="Base_Column_List" />
-		from os_shop 
+		from os_shop
 	</select>
 
 	<!-- 查询物品记录总数 -->
@@ -57,32 +60,55 @@
 		select
 		<include refid="Base_Column_List" />
 		from os_shop where
-	    s_name like CONCAT('%','${sName}','%' )  
+		s_name like CONCAT('%','${sName}','%' )
 		and
 		s_kind = #{sKind,jdbcType=VARCHAR}
 	</select>
-	<!--管理员查找商品  -->
+	<!--管理员查找商品 -->
 	<select id="searchShop" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
 		from os_shop where
-	    s_name like CONCAT('%','${sName}','%' )  
+		s_name like CONCAT('%','${sName}','%' )
 	</select>
-	<!--查看所有商品  -->
+	<!--查看所有商品 -->
 	<select id="showAllShop" resultMap="BaseResultMap">
 		select
 		<include refid="Base_Column_List" />
 		from os_shop limit 0,40
 	</select>
-	<!--相关产品，查询分类下的东东  -->
-	<select id="lookAbout" resultMap="BaseResultMap"
-		parameterType="java.lang.String">
+	<!--轮播图 -->
+	<select id="lunbo" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from os_shop
+		where
+		s_type = 1
+	</select>
+	<!--取消轮播图 -->
+	<update id="exitlunbo" parameterType="java.lang.Integer">
+		update os_shop
+		set 
+		s_type = 0
+		where s_id =
+		#{sId,jdbcType=INTEGER}
+	</update>
+	<!--设置轮播图  -->
+	<update id="usedTolunbo" parameterType="java.lang.Integer">
+		update os_shop
+		set 
+		s_type = 1
+		where s_id =
+		#{sId,jdbcType=INTEGER}
+	</update>
+	<!--相关产品，查询分类下的东东 -->
+	<select id="lookAbout" resultMap="BaseResultMap" parameterType="java.lang.String">
 		select
 		<include refid="Base_Column_List" />
 		from os_shop
 		where s_kind = #{sKind,jdbcType=VARCHAR} limit 0,6
 	</select>
-	<!--通过分类查看所有商品  -->
+	<!--通过分类查看所有商品 -->
 	<select id="lookKindShop" resultMap="BaseResultMap"
 		parameterType="java.lang.String">
 		select
@@ -90,7 +116,7 @@
 		from os_shop
 		where s_kind = #{sKind,jdbcType=VARCHAR}
 	</select>
-	<!--通过id查看商品详情  -->
+	<!--通过id查看商品详情 -->
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
 		parameterType="java.lang.Integer">
 		select
@@ -99,33 +125,41 @@
 		where s_id = #{sId,jdbcType=INTEGER}
 	</select>
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-		delete from os_shop
+		delete from
+		os_shop
 		where s_id = #{sId,jdbcType=INTEGER}
 	</delete>
-	<!--删除我发布的商品  -->
+	<!--删除我发布的商品 -->
 	<delete id="deleteMyshop">
 		delete from os_shop
-		where s_username = #{sUsername,jdbcType=VARCHAR} and s_id = #{sId,jdbcType=INTEGER}
+		where s_username =
+		#{sUsername,jdbcType=VARCHAR} and s_id = #{sId,jdbcType=INTEGER}
 	</delete>
-	<!--管理员操作删除商品  -->
+	<!--管理员操作删除商品 -->
 	<delete id="deleteShopInfo">
 		delete from os_shop
-		where  s_id = #{sId,jdbcType=INTEGER}
+		where s_id =
+		#{sId,jdbcType=INTEGER}
 	</delete>
-	<!--发布商品  -->
+	<!--发布商品 -->
 	<insert id="insert" parameterType="com.shop.entity.Shop">
-		insert into os_shop (s_id, s_int, s_name,
+		insert into os_shop (s_id,
+		s_int, s_name,
 		s_price, s_kind, s_say,
 		s_image, s_number, s_phone,
 		s_school, s_type, s_time,
 		s_username,s_brand,s_smallsay,s_image2,s_image3,s_image4)
-		values (#{sId,jdbcType=INTEGER}, #{sInt,jdbcType=INTEGER},
+		values
+		(#{sId,jdbcType=INTEGER}, #{sInt,jdbcType=INTEGER},
 		#{sName,jdbcType=VARCHAR},
-		#{sPrice,jdbcType=VARCHAR}, #{sKind,jdbcType=VARCHAR}, #{sSay,jdbcType=VARCHAR},
+		#{sPrice,jdbcType=VARCHAR},
+		#{sKind,jdbcType=VARCHAR}, #{sSay,jdbcType=VARCHAR},
 		#{sImage,jdbcType=VARCHAR}, #{sNumber,jdbcType=INTEGER},
 		#{sPhone,jdbcType=VARCHAR},
-		#{sSchool,jdbcType=VARCHAR}, #{sType,jdbcType=VARCHAR}, #{sTime,jdbcType=TIMESTAMP},
-		#{sUsername,jdbcType=VARCHAR}, #{sBrand,jdbcType=VARCHAR},#{sSmallsay,jdbcType=VARCHAR},
+		#{sSchool,jdbcType=VARCHAR},
+		#{sType,jdbcType=VARCHAR}, #{sTime,jdbcType=TIMESTAMP},
+		#{sUsername,jdbcType=VARCHAR},
+		#{sBrand,jdbcType=VARCHAR},#{sSmallsay,jdbcType=VARCHAR},
 		#{sImage2,jdbcType=VARCHAR},#{sImage3,jdbcType=VARCHAR},#{sImage4,jdbcType=VARCHAR})
 	</insert>
 	<insert id="insertSelective" parameterType="com.shop.entity.Shop">
@@ -302,23 +336,31 @@
 	</update>
 	<update id="updateByPrimaryKey" parameterType="com.shop.entity.Shop">
 		update os_shop
-		set s_int = #{sInt,jdbcType=INTEGER},
+		set
+		s_int = #{sInt,jdbcType=INTEGER},
 		s_name = #{sName,jdbcType=VARCHAR},
 		s_price = #{sPrice,jdbcType=VARCHAR},
-		s_kind = #{sKind,jdbcType=VARCHAR},
+		s_kind =
+		#{sKind,jdbcType=VARCHAR},
 		s_say = #{sSay,jdbcType=VARCHAR},
-		s_image = #{sImage,jdbcType=VARCHAR},
+		s_image =
+		#{sImage,jdbcType=VARCHAR},
 		s_number = #{sNumber,jdbcType=INTEGER},
 		s_phone = #{sPhone,jdbcType=VARCHAR},
-		s_school = #{sSchool,jdbcType=VARCHAR},
+		s_school =
+		#{sSchool,jdbcType=VARCHAR},
 		s_type = #{sType,jdbcType=VARCHAR},
-		s_time = #{sTime,jdbcType=TIMESTAMP},
-		s_username = #{sUsername,jdbcType=VARCHAR},
+		s_time
+		= #{sTime,jdbcType=TIMESTAMP},
+		s_username =
+		#{sUsername,jdbcType=VARCHAR},
 		s_brand = #{sBrand,jdbcType=VARCHAR},
 		s_smallsay = #{s_Smallsay,jdbcType=VARCHAR},
-		s_image2 = #{sImage2,jdbcType=VARCHAR},
+		s_image2 =
+		#{sImage2,jdbcType=VARCHAR},
 		s_image3 = #{sImage3,jdbcType=VARCHAR},
 		s_image4 = #{sImage4,jdbcType=VARCHAR}
-		where s_id = #{sId,jdbcType=INTEGER}
+		where s_id =
+		#{sId,jdbcType=INTEGER}
 	</update>
 </mapper>

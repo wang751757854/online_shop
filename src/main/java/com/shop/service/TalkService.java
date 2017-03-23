@@ -9,4 +9,5 @@ public interface TalkService {
 	List<Talk> lookTalk(Integer sId);
 	List<Talk> lookMyTalk(String tName);
 	List<Talk> allTalk();
+	void deleteTalkInfo(Integer tId);
 }

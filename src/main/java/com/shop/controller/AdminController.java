@@ -129,5 +129,31 @@ public class AdminController {
 		request.setAttribute("searchUser",user);
 		return "admin/looksearchuser";
 	}
-	
+//	删除评论
+	@RequestMapping("deleteTalkInfo")
+	public String deleteTalkInfo(@RequestParam("tId") Integer tId){
+		this.talkService.deleteTalkInfo(tId);
+		return "admin/lookTalkInfo";
+	}
+//	查看轮播图(s_style=1)
+	@RequestMapping("looklunbo")
+	public String looklunbo(){
+		return "admin/looklunbo";
+	}
+//	取消轮播图(s_style=0)
+	@RequestMapping("editlunboInfo")
+	public String editlunboInfo(@RequestParam("sId") Integer sId,HttpSession session){
+		this.shopService.exitlunbo(sId);
+		List<Shop> lunbo = shopService.lunbo();
+		session.setAttribute("lunbo",lunbo);
+		return "admin/looklunbo";
+	}
+//	设置轮播图
+	@RequestMapping("usedTolunbo")
+	public String usedTolunbo(@RequestParam("sId") Integer sId,HttpSession session){
+		this.shopService.usedTolunbo(sId);
+		List<Shop> lunbo = shopService.lunbo();
+		session.setAttribute("lunbo",lunbo);
+		return "admin/lookShopInfo";
+	}
 }

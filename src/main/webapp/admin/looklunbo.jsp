@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>订单查询</title>
+    <title>商品信息</title>
     
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,6 +37,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="col-xs-3">
 						</div>
 						<div class="col-xs-4">
+						<form action="admin/searchShop" style="height: 50px">
+							<input type="text" class="form-control input-sm"
+								placeholder="输入文字搜索" name="sName">
+							<button type="submit" class="btn btn-white btn-xs ">查 询</button>
+							</form>
 						</div>
 						<div class="col-lg-3 col-lg-offset-2 col-xs-4"
 							style="padding-right: 40px; text-align: right;">
@@ -46,22 +51,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						<div class="row tableHeader">
 							<div class="col-xs-2 ">商品</div>
 							<div class="col-xs-2">名称</div>
-							<div class="col-xs-2">评价</div>
-							<div class="col-xs-2">卖家</div>
-							<div class="col-xs-2">买家</div>
+							<div class="col-xs-2">价格</div>
+							<div class="col-xs-2">数量</div>
+							<div class="col-xs-2">发布人</div>
 							<div class="col-xs-2">操作</div>
 						</div>
 						<div class="tablebody">
-						 <c:forEach items="${requestScope.alltalk }" var="at">
+						 <c:forEach items="${sessionScope.lunbo }" var="lb">
 							<div class="row">
-								<div class="col-xs-2"><img src="${at.shop.get(0).sImage }" style="width: 100px;height: 80px"></div>
-								<div class="col-xs-2">${at.shop.get(0).sName }</div>
-								<div class="col-xs-2">${at.tContent }</div>
-								<div class="col-xs-2">${at.shop.get(0).sUsername }</div>
-								<div class="col-xs-2">${at.tName }</div>
+								<div class="col-xs-2"><img src="${lb.sImage }" style="width: 100px;height: 80px"></div>
+								<div class="col-xs-2">${lb.sName }</div>
+								<div class="col-xs-2">${lb.sPrice }</div>
+								<div class="col-xs-2">${lb.sNumber }</div>
+								<div class="col-xs-2">${lb.sUsername }</div>
 								<div class="col-xs-2">
-										<a href="admin/deleteTalkInfo?tId=${at.tId }" class="btn btn-danger btn-xs" 
-										>删除</a> 
+										<a href="admin/editlunboInfo?sId=${lb.sId }" class="btn btn-warning btn-xs" 
+										>取消轮播</a>
 								</div>
 							</div>
 						</c:forEach>
