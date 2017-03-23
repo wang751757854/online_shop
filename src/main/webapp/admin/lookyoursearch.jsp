@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>求职信息发布</title>
+    <title>查找的商品</title>
     
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,49 +32,57 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
   
   <body>
-    <div role="tabpanel" class="tab-pane" id="scho">
-
-					<div class="check-div form-inline">
+   <div role="tabpanel" class="tab-pane" >
+					<div class="check-div">
 						<div class="col-xs-3">
 							<button class="btn btn-yellow btn-xs" data-toggle="modal"
-								data-target="#addSchool">添加地区</button>
+								data-target="#addUser">查看公告</button>
 						</div>
-						<div class="col-lg-4 col-xs-5">
-							<input type="text" class=" form-control input-sm "
-								placeholder="输入文字搜索">
-							<button class="btn btn-white btn-xs ">查 询</button>
+						<div class="col-xs-4">
+						<form action="searchShop" style="height: 50px">
+							<input type="text" class="form-control input-sm"
+								placeholder="输入文字搜索" name="sName">
+							<button type="submit" class="btn btn-white btn-xs ">查 询</button>
+							</form>
 						</div>
-						<div class="col-lg-3 col-lg-offset-1 col-xs-3"
-							style="padding-right: 40px; text-align: right; float: right;">
-							<label for="paixu">排序:&nbsp;</label> <select class="form-control">
+						<div class="col-lg-3 col-lg-offset-2 col-xs-4"
+							style="padding-right: 40px; text-align: right;">
+							<label for="paixu">排序:&nbsp;</label> <select
+								class=" form-control">
 								<option>地区</option>
-								<option>排名</option>
+								<option>地区</option>
+								<option>班期</option>
+								<option>性别</option>
+								<option>年龄</option>
+								<option>份数</option>
 							</select>
 						</div>
 					</div>
 					<div class="data-div">
 						<div class="row tableHeader">
-							<div class="col-xs-1 ">排序</div>
-							<div class="col-xs-2 ">标题</div>
-							<div class="col-xs-4">内容</div>
-							<div class="col-xs-2">创建时间</div>
+							<div class="col-xs-2 ">商品</div>
+							<div class="col-xs-2">名称</div>
+							<div class="col-xs-2">价格</div>
+							<div class="col-xs-2">数量</div>
+							<div class="col-xs-2">发布人</div>
 							<div class="col-xs-2">操作</div>
 						</div>
 						<div class="tablebody">
-
+						 <c:forEach items="${requestScope.searchShop }" var="as">
 							<div class="row">
-								<div class="col-xs-1 ">1</div>
-								<div class="col-xs-2">Test标题</div>
-								<div class="col-xs-4">Test内容</div>
-								<div class="col-xs-2">2017年01月11日</div>
+								<div class="col-xs-2"><img src="${as.sImage }" style="width: 100px;height: 80px"></div>
+								<div class="col-xs-2">${as.sName }</div>
+								<div class="col-xs-2">${as.sPrice }</div>
+								<div class="col-xs-2">${as.sNumber }</div>
+								<div class="col-xs-2">${as.sUsername }</div>
 								<div class="col-xs-2">
-									<button class="btn btn-success btn-xs" data-toggle="modal"
-										data-target="#reviseSchool">修改</button>
-									<button class="btn btn-danger btn-xs" data-toggle="modal"
-										data-target="#deleteSchool">删除</button>
+										<a href="admin/editShopInfo?sId=${as.sId }" class="btn btn-warning btn-xs" 
+										>修改</a>
+										<a href="admin/deleteShopInfo?sId=${as.sId }" class="btn btn-danger btn-xs" 
+										>删除</a>
 								</div>
 							</div>
-
+						</c:forEach>
 						</div>
 
 					</div>
@@ -100,7 +108,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</footer>
 
 					<!--弹出添加用户窗口-->
-					<div class="modal fade" id="addSchool" role="dialog"
+					<div class="modal fade" id="addUser" role="dialog"
 						aria-labelledby="gridSystemModalLabel">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -109,37 +117,68 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
-									<h4 class="modal-title" id="gridSystemModalLabel">添加地区</h4>
+									<h4 class="modal-title" id="gridSystemModalLabel">添加用户</h4>
 								</div>
 								<div class="modal-body">
 									<div class="container-fluid">
 										<form class="form-horizontal">
 											<div class="form-group ">
-												<label for="sName" class="col-xs-3 control-label">地区名称：</label>
-												<div class="col-xs-8 ">
-													<input type="email" class="form-control input-sm duiqi"
-														id="sName" placeholder="">
-												</div>
-											</div>
-											<div class="form-group ">
-												<label for="sName" class="col-xs-3 control-label">经度：</label>
+												<label for="sName" class="col-xs-3 control-label">用户名：</label>
 												<div class="col-xs-8 ">
 													<input type="email" class="form-control input-sm duiqi"
 														id="sName" placeholder="">
 												</div>
 											</div>
 											<div class="form-group">
-												<label for="sLink" class="col-xs-3 control-label">纬度：</label>
+												<label for="sLink" class="col-xs-3 control-label">真实姓名：</label>
 												<div class="col-xs-8 ">
 													<input type="" class="form-control input-sm duiqi"
 														id="sLink" placeholder="">
 												</div>
 											</div>
 											<div class="form-group">
-												<label for="sOrd" class="col-xs-3 control-label">简称：</label>
+												<label for="sOrd" class="col-xs-3 control-label">电子邮箱：</label>
 												<div class="col-xs-8">
 													<input type="" class="form-control input-sm duiqi"
 														id="sOrd" placeholder="">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="sKnot" class="col-xs-3 control-label">电话：</label>
+												<div class="col-xs-8">
+													<input type="" class="form-control input-sm duiqi"
+														id="sKnot" placeholder="">
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="sKnot" class="col-xs-3 control-label">地区：</label>
+												<div class="col-xs-8">
+													<select class=" form-control select-duiqi">
+														<option value="">国际关系地区</option>
+														<option value="">北京大学</option>
+														<option value="">天津大学</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="sKnot" class="col-xs-3 control-label">权限：</label>
+												<div class="col-xs-8">
+													<select class=" form-control select-duiqi">
+														<option value="">管理员</option>
+														<option value="">普通用户</option>
+														<option value="">游客</option>
+													</select>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="situation" class="col-xs-3 control-label">状态：</label>
+												<div class="col-xs-8">
+													<label class="control-label" for="anniu"> <input
+														type="radio" name="situation" id="normal">正常
+													</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <label
+														class="control-label" for="meun"> <input
+														type="radio" name="situation" id="forbid"> 禁用
+													</label>
 												</div>
 											</div>
 										</form>
@@ -158,7 +197,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<!-- /.modal -->
 
 					<!--弹出修改用户窗口-->
-					<div class="modal fade" id="reviseSchool" role="dialog"
+					<div class="modal fade" id="reviseUser" role="dialog"
 						aria-labelledby="gridSystemModalLabel">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -167,46 +206,29 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 										aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
-									<h4 class="modal-title" id="gridSystemModalLabel">修改地区</h4>
+									<h4 class="modal-title" id="gridSystemModalLabel">查看公告</h4>
 								</div>
 								<div class="modal-body">
 									<div class="container-fluid">
 										<form class="form-horizontal">
 											<div class="form-group ">
-												<label for="sName" class="col-xs-3 control-label">地区名称：</label>
-												<div class="col-xs-8 ">
-													<input type="email" class="form-control input-sm duiqi"
-														id="sName" placeholder="">
-												</div>
-											</div>
-											<div class="form-group ">
-												<label for="sName" class="col-xs-3 control-label">经度：</label>
-												<div class="col-xs-8 ">
-													<input type="email" class="form-control input-sm duiqi"
-														id="sName" placeholder="">
+												<label for="sName" class="col-xs-4 control-label" style="font-size: 20px">标题：</label>
+												<div class="col-xs-4 ">
+												1321321321
 												</div>
 											</div>
 											<div class="form-group">
-												<label for="sLink" class="col-xs-3 control-label">纬度：</label>
-												<div class="col-xs-8 ">
-													<input type="" class="form-control input-sm duiqi"
-														id="sLink" placeholder="">
-												</div>
-											</div>
-											<div class="form-group">
-												<label for="sOrd" class="col-xs-3 control-label">简称：</label>
+												<label for="sKnot" class="col-xs-4 control-label" style="font-size: 20px">内容：</label>
 												<div class="col-xs-8">
-													<input type="" class="form-control input-sm duiqi"
-														id="sOrd" placeholder="">
+													19198151361
 												</div>
 											</div>
 										</form>
 									</div>
 								</div>
 								<div class="modal-footer">
-									<button type="button" class="btn btn-xs btn-white"
-										data-dismiss="modal">取 消</button>
-									<button type="button" class="btn btn-xs btn-green">保 存</button>
+									<button type="button" class="btn btn-xs btn-green"
+										data-dismiss="modal">返回</button>
 								</div>
 							</div>
 							<!-- /.modal-content -->
@@ -216,7 +238,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<!-- /.modal -->
 
 					<!--弹出删除用户警告窗口-->
-					<div class="modal fade" id="deleteSchool" role="dialog"
+					<div class="modal fade" id="deleteUser" role="dialog"
 						aria-labelledby="gridSystemModalLabel">
 						<div class="modal-dialog" role="document">
 							<div class="modal-content">
@@ -228,12 +250,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 									<h4 class="modal-title" id="gridSystemModalLabel">提示</h4>
 								</div>
 								<div class="modal-body">
-									<div class="container-fluid">确定要删除该地区？删除后不可恢复！</div>
+									<div class="container-fluid">确定要删除该用户？删除后不可恢复！</div>
 								</div>
 								<div class="modal-footer">
 									<button type="button" class="btn btn-xs btn-white"
 										data-dismiss="modal">取 消</button>
-									<button type="button" class="btn btn-xs btn-danger">保
+									<button type="button" class="btn  btn-xs btn-danger">保
 										存</button>
 								</div>
 							</div>

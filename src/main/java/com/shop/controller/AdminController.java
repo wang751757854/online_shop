@@ -79,10 +79,48 @@ public class AdminController {
 		request.setAttribute("alltalk",alltalk);
 		return "admin/lookTalkInfo";
 	}
-	@RequestMapping("deleteUserInfo")
-	public String deleteUserInfo(@RequestParam("uId") Integer uId){
+//	修改用户信息(页面)
+	@RequestMapping("editUserInfo")
+	public String editUserInfo(@RequestParam("uId") Integer uId,HttpServletRequest request){
+		User u = userService.userinfo(uId);
+		log.info("要修改的用户信息"+u);
+		request.setAttribute("userin",u);
+		return "admin/editUserInfo";
+	}
+//	修改用户信息(Controller)
+	@RequestMapping("updateUserfo")
+	public String updateUserfo(User u,HttpServletRequest request){
+		this.userService.updateUser(u);
+		List<User> alluser = userService.allUser();
+		request.setAttribute("alluser",alluser);
+		return "admin/lookUserInfo";
+	}
+//	修改商品信息(页面)
+	@RequestMapping("editShopInfo")
+	public String editShopInfo(@RequestParam("sId") Integer sId,HttpServletRequest request){
+		Shop allshop = shopService.lookShop(sId);
+		request.setAttribute("allshop",allshop);
+		return "admin/editShopInfo";
+	}
+//	修改商品信息(Controller)
+	@RequestMapping("updateShopfo")
+	public String updateShopfo(Shop shop,HttpServletRequest request){
+		this.shopService.EditShop(shop);
+		return "admin/lookShopInfo";
+	}
+//	删除商品
+	@RequestMapping("deleteShopInfo")
+	public String deleteShopInfo(@RequestParam("sId") Integer sId,HttpServletRequest request){
+		this.shopService.deleteShopInfo(sId);
+		return "admin/lookShopInfo";
+	}
+//	查找商品
+	@RequestMapping("searchShop")
+	public String searchShop(@RequestParam("sName") String sName,HttpServletRequest request){
+		List<Shop> shop = this.shopService.searchShop(sName);
+		request.setAttribute("searchShop",shop);
+		return "admin/lookyoursearch";
 		
-		return "";
 	}
 	
 }

@@ -74,12 +74,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-xs-2">${au.uMail }</div>
 								<div class="col-xs-2">${au.uSchool }</div>
 								<div class="col-xs-2">
-									<a href="lookUserInfo?uId=${au.uId }" class="btn btn-success btn-xs" 
-										>查看</a>
-										<a href="editUserInfo?uId=${au.uId }" class="btn btn-warning btn-xs" 
+										<a href="admin/editUserInfo?uId=${au.uId }" class="btn btn-warning btn-xs" 
 										>修改</a>
-										<a href="deleteUserInfo?uId=${au.uId }" class="btn btn-danger btn-xs" 
-										>删除</a>
 								</div>
 							</div>
 						</c:forEach>

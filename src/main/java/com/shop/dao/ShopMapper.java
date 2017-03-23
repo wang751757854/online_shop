@@ -51,4 +51,8 @@ public interface ShopMapper {
     List<Shop> myShopThings(String sUsername);
     
     int deleteMyshop(@Param("sUsername") String sUsername,@Param("sId") Integer sId);
+    
+    int deleteShopInfo(@Param("sId") Integer sId);
+    
+    List<Shop> searchShop(@Param("sName") String sName);
 }

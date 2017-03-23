@@ -76,8 +76,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-xs-2">
 									<a href="lookUserInfo?oId=${ao.oId }" class="btn btn-success btn-xs" 
 										>查看</a>
-										<a href="editUserInfo?uId=${ao.oId }" class="btn btn-warning btn-xs" 
-										>修改</a>
 										<a href="deleteUserInfo?uId=${ao.oId }" class="btn btn-danger btn-xs" 
 										>删除</a> 
 								</div>

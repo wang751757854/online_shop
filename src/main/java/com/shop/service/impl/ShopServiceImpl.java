@@ -97,4 +97,14 @@ public class ShopServiceImpl implements ShopService {
 		this.shopDao.EditShop(shop);
 	}
 
+	@Override
+	public void deleteShopInfo(Integer sId) {
+		this.shopDao.deleteShopInfo(sId);
+	}
+
+	@Override
+	public List<Shop> searchShop(String sName) {
+		return this.shopDao.searchShop(sName);
+	}
+
 }

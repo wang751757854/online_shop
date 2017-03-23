@@ -18,4 +18,6 @@ public interface ShopService {
     List<Shop> myShopThings(String sUsername);
     void deleteMyhop(String sUsername,Integer sId);
     void EditShop(Shop shop);
+    void deleteShopInfo(Integer sId);
+    List<Shop> searchShop(String sName);
 }

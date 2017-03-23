@@ -61,6 +61,13 @@
 		and
 		s_kind = #{sKind,jdbcType=VARCHAR}
 	</select>
+	<!--管理员查找商品  -->
+	<select id="searchShop" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from os_shop where
+	    s_name like CONCAT('%','${sName}','%' )  
+	</select>
 	<!--查看所有商品  -->
 	<select id="showAllShop" resultMap="BaseResultMap">
 		select
@@ -99,6 +106,11 @@
 	<delete id="deleteMyshop">
 		delete from os_shop
 		where s_username = #{sUsername,jdbcType=VARCHAR} and s_id = #{sId,jdbcType=INTEGER}
+	</delete>
+	<!--管理员操作删除商品  -->
+	<delete id="deleteShopInfo">
+		delete from os_shop
+		where  s_id = #{sId,jdbcType=INTEGER}
 	</delete>
 	<!--发布商品  -->
 	<insert id="insert" parameterType="com.shop.entity.Shop">

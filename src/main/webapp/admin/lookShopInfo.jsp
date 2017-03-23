@@ -39,9 +39,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								data-target="#addUser">查看公告</button>
 						</div>
 						<div class="col-xs-4">
+						<form action="admin/searchShop" style="height: 50px">
 							<input type="text" class="form-control input-sm"
-								placeholder="输入文字搜索">
-							<button class="btn btn-white btn-xs ">查 询</button>
+								placeholder="输入文字搜索" name="sName">
+							<button type="submit" class="btn btn-white btn-xs ">查 询</button>
+							</form>
 						</div>
 						<div class="col-lg-3 col-lg-offset-2 col-xs-4"
 							style="padding-right: 40px; text-align: right;">
@@ -74,11 +76,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<div class="col-xs-2">${as.sNumber }</div>
 								<div class="col-xs-2">${as.sUsername }</div>
 								<div class="col-xs-2">
-									<a href="lookUserInfo?uId=${as.sId }" class="btn btn-success btn-xs" 
-										>查看</a>
-										<a href="editUserInfo?uId=${as.sId }" class="btn btn-warning btn-xs" 
+										<a href="admin/editShopInfo?sId=${as.sId }" class="btn btn-warning btn-xs" 
 										>修改</a>
-										<a href="deleteUserInfo?uId=${as.sId }" class="btn btn-danger btn-xs" 
+										<a href="admin/deleteShopInfo?sId=${as.sId }" class="btn btn-danger btn-xs" 
 										>删除</a>
 								</div>
 							</div>
