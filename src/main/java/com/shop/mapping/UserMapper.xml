@@ -26,6 +26,13 @@
     <include refid="Base_Column_List" />
     from os_user
   </select>
+  <!--管理员查找用户  -->
+   <select id="searchUser" resultMap="BaseResultMap" >
+    select
+		<include refid="Base_Column_List" />
+		from os_user where
+	    u_name like CONCAT('%','${uName}','%' )  
+  </select>
   <select id="login" resultMap="BaseResultMap" >
     select 
     <include refid="Base_Column_List" />

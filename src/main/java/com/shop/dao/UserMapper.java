@@ -25,4 +25,5 @@ public interface UserMapper {
     User login(@Param("uName") String uName,@Param("uPwd") String uPwd);
     
     List<User> allUser();
+    List<User> searchUser(@Param("uName") String uName);
 }

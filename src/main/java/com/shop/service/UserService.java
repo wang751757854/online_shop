@@ -12,4 +12,5 @@ public interface UserService {
 	User login(String uName,String uPwd);
 	User userinfo(int uId);
 	List<User> allUser();
+	List<User> searchUser(String uName);
 }

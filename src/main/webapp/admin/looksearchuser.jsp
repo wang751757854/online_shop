@@ -10,7 +10,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <head>
     <base href="<%=basePath%>">
     
-    <title>用户信息</title>
+    <title>查看查找的用户</title>
     
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,11 +39,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								data-target="#addUser">查看公告</button>
 						</div>
 						<div class="col-xs-4">
-						<form action="admin/searchUser" style="height: 50px">
 							<input type="text" class="form-control input-sm"
-								placeholder="输入文字搜索" name="uName">
-							<button type="submit" class="btn btn-white btn-xs ">查 询</button>
-							</form>
+								placeholder="输入文字搜索">
+							<button class="btn btn-white btn-xs ">查 询</button>
 						</div>
 						<div class="col-lg-3 col-lg-offset-2 col-xs-4"
 							style="padding-right: 40px; text-align: right;">
@@ -68,7 +66,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<div class="col-xs-2">操作</div>
 						</div>
 						<div class="tablebody">
-						 <c:forEach items="${requestScope.alluser }" var="au">
+						 <c:forEach items="${requestScope.searchUser }" var="au">
 							<div class="row">
 								<div class="col-xs-2">${au.uName}</div>
 								<div class="col-xs-2">${au.uSex }</div>

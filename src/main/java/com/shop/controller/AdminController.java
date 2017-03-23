@@ -122,5 +122,12 @@ public class AdminController {
 		return "admin/lookyoursearch";
 		
 	}
+//	查找用户
+	@RequestMapping("searchUser")
+	public String searchUser(@RequestParam("uName") String uName,HttpServletRequest request){
+		List<User> user = this.userService.searchUser(uName);
+		request.setAttribute("searchUser",user);
+		return "admin/looksearchuser";
+	}
 	
 }
