@@ -83,7 +83,7 @@
 		<div style="width:84%;height:100%;margin-left:16%">
 			<!-- iframe分页-->
 			<iframe id="miniWindows" name="miniWindows" width="1166px"
-				height="636px" src="lookUserInfo.jsp"></iframe>
+				height="636px" src="while.jsp"></iframe>
 		</div>
 	</div>
 	<script src="js/jquery.nouislider.js"></script>
