@@ -5,14 +5,46 @@
 <head>
 <title>注册</title>
 <w:StyleHead />
+<script type="text/javascript">
+$.validator.setDefaults({
+    submitHandler: function() {
+      return true
+    }
+});
+$().ready(function() {
+    $("#commentForm").validate();
+});
+</script>
+<style>
+.error {
+	color: red;
+}
+</style>
 </head>
 <body>
+	<script type="text/javascript">
+	function checkmyname(){
+	var myname = $("#myname").val()
+	if(myname.length<3){
+		alert("最少输入3个字符");
+		}else{
+		$.ajax({
+		url: "checkmyname",
+		data: {"uName":myname},
+		dataType:"JSON",
+		success:function(data){
+			alert(data.msg);
+			}
+			});
+			}
+		}
+</script>
 	<w:StyleLeft />
 	<div id="mainBody">
 		<div class="container">
 			<div class="row">
 				<div id="sidebar" class="span3">
-				<!--通用的购物车有几件商品  -->
+					<!--通用的购物车有几件商品  -->
 					<w:StyleCar />
 					<!--分类  -->
 					<w:StyletTitle />
@@ -25,26 +57,28 @@
 					</ul>
 					<h3>注册</h3>
 					<div class="well">
-						<form class="form-horizontal" action="register" >
+						<form class="form-horizontal" class="cmxform" action="register"
+							id="commentForm">
 							<h4>你的个人信息</h4>
 							<div class="control-group">
 								<label class="control-label" for="inputFname1">昵称<sup>*</sup></label>
 								<div class="controls">
-									<input type="text" id="inputFname1" placeholder="昵称" name="uUsername">
+									<input type="text" id="myname" placeholder="昵称"
+										name="uUsername" minlength="3" required onblur="checkmyname()">
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="input_email">邮箱 <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" name=uMail id="input_email"
-										placeholder="${param.email}"  value="${param.email}">
+									<input type="email" name=uMail id="input_email"
+										placeholder="${param.email}" value="${param.email}" required>
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="inputPassword1">密码 <sup>*</sup></label>
 								<div class="controls">
 									<input type="password" id="inputPassword1" name="uPwd"
-										placeholder="Password">
+										placeholder="Password" style="height: 26px" minlength="6" required>
 								</div>
 							</div>
 							<div class="control-group">
@@ -57,62 +91,20 @@
 									</select>
 								</div>
 							</div>
-							<!-- <div class="control-group">
-								<label class="control-label" for="inputLnam">姓名<sup>*</sup></label>
-								<div class="controls">
-									<input type="text" id="inputLnam" placeholder="Last Name">
-								</div>
-							</div> -->
-							<!-- <div class="control-group">
-								<label class="control-label">生日 <sup>*</sup></label>
-								<div class="controls">
-									<select class="span1" name="days">
-										<option value="">-</option>
-										<option value="1">1&nbsp;&nbsp;</option>
-										<option value="2">2&nbsp;&nbsp;</option>
-										<option value="3">3&nbsp;&nbsp;</option>
-										<option value="4">4&nbsp;&nbsp;</option>
-										<option value="5">5&nbsp;&nbsp;</option>
-										<option value="6">6&nbsp;&nbsp;</option>
-										<option value="7">7&nbsp;&nbsp;</option>
-									</select> <select class="span1" name="days">
-										<option value="">-</option>
-										<option value="1">1&nbsp;&nbsp;</option>
-										<option value="2">2&nbsp;&nbsp;</option>
-										<option value="3">3&nbsp;&nbsp;</option>
-										<option value="4">4&nbsp;&nbsp;</option>
-										<option value="5">5&nbsp;&nbsp;</option>
-										<option value="6">6&nbsp;&nbsp;</option>
-										<option value="7">7&nbsp;&nbsp;</option>
-									</select> <select class="span1" name="days">
-										<option value="">-</option>
-										<option value="1">1&nbsp;&nbsp;</option>
-										<option value="2">2&nbsp;&nbsp;</option>
-										<option value="3">3&nbsp;&nbsp;</option>
-										<option value="4">4&nbsp;&nbsp;</option>
-										<option value="5">5&nbsp;&nbsp;</option>
-										<option value="6">6&nbsp;&nbsp;</option>
-										<option value="7">7&nbsp;&nbsp;</option>
-									</select>
-								</div>
-							</div> -->
-
-							<!-- <div class="alert alert-block alert-error fade in">
-								<button type="button" class="close" data-dismiss="alert">×</button>
-								<strong>文本内容为空</strong> 请把*的内容全部填写
-							</div> -->
 
 							<h4>你的地址</h4>
 							<div class="control-group">
 								<label class="control-label" for="inputFname">收货人姓名 <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" id="inputFname" placeholder="your name" name="uName">
+									<input type="text" id="inputFname" placeholder="your name"
+										name="uName" required />
 								</div>
 							</div>
 							<div class="control-group">
 								<label class="control-label" for="city">城市<sup>*</sup></label>
 								<div class="controls">
-									<input type="text" id="city" placeholder="city" name="uCity"/>
+									<input type="text" id="city" placeholder="city" name="uCity"
+										required />
 								</div>
 							</div>
 							<div class="control-group">
@@ -128,14 +120,16 @@
 							<div class="control-group">
 								<label class="control-label" for="inputLname">详细地址 <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" id="inputLname" placeholder="详细地址" name="uAddress"/>
+									<input type="text" id="inputLname" placeholder="详细地址"
+										name="uAddress" required />
 								</div>
 							</div>
 
 							<div class="control-group">
 								<label class="control-label" for="company">邮编</label>
 								<div class="controls">
-									<input type="text" id="company" placeholder="不知道可不填写" name="uCode"/>
+									<input type="text" id="company" placeholder="不知道可不填写"
+										name="uCode" />
 								</div>
 							</div>
 							<div class="control-group">
@@ -148,15 +142,15 @@
 							<div class="control-group">
 								<label class="control-label" for="phone">联系方式 <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" name="uPhone" id="phone" placeholder="手机号码" />
+									<input type="text" name="uPhone" id="phone" placeholder="手机号码" range:[5,10]/>
 									<span>你必须填写一个电话号码</span>
 								</div>
 							</div>
 							<div class="control-group">
 								<div class="controls">
-									<input type="hidden" name="email_create" value="1">
-									 <input type="hidden" name="is_new_customer" value="1">
-									  <input class="btn btn-large btn-success" type="submit"
+									<input type="hidden" name="email_create" value="1"> <input
+										type="hidden" name="is_new_customer" value="1"> <input
+										class="btn btn-large btn-success" type="submit"
 										value="Register" />
 								</div>
 							</div>
@@ -192,8 +186,8 @@
 					<a href="#"><img width="60" height="60"
 						src="themes/images/facebook.png" title="facebook" alt="facebook" /></a>
 					<a href="#"><img width="60" height="60"
-						src="themes/images/twitter.png" title="twitter" alt="twitter" /></a> <a
-						href="#"><img width="60" height="60"
+						src="themes/images/twitter.png" title="twitter" alt="twitter" /></a>
+					<a href="#"><img width="60" height="60"
 						src="themes/images/youtube.png" title="youtube" alt="youtube" /></a>
 				</div>
 			</div>

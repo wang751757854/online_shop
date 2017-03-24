@@ -228,6 +228,19 @@ public class UserController{
 		}
 		return modelMap;
 	}
+//	检查用户名(注册时)
+	@RequestMapping("checkmyname")
+	@ResponseBody
+	public Map<String,String> checkmyname(@RequestParam("uName") String uName){
+		Map<String,String> mymap = new HashMap<String,String>();
+		List<User> u = userService.searchUser(uName);
+		if(u.size()!=0){
+			mymap.put("msg","用户名已被占用");
+		}else{
+			mymap.put("msg","用户名正确");
+		}
+		return mymap;
+	}
 //	查看购物车
 	@RequestMapping("myShopCar")
 	public String myShopCar(@RequestParam("cUsername") String cUsername,HttpServletRequest request){
