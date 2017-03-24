@@ -142,7 +142,7 @@ $().ready(function() {
 							<div class="control-group">
 								<label class="control-label" for="phone">联系方式 <sup>*</sup></label>
 								<div class="controls">
-									<input type="text" name="uPhone" id="phone" placeholder="手机号码" range:[5,10]/>
+									<input type="text" name="uPhone" id="phone" placeholder="手机号码" digits:true required/>
 									<span>你必须填写一个电话号码</span>
 								</div>
 							</div>
@@ -151,7 +151,7 @@ $().ready(function() {
 									<input type="hidden" name="email_create" value="1"> <input
 										type="hidden" name="is_new_customer" value="1"> <input
 										class="btn btn-large btn-success" type="submit"
-										value="Register" />
+										value="注册" />
 								</div>
 							</div>
 						</form>
